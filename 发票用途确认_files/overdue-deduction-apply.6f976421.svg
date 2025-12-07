@@ -1,0 +1,15 @@
+<svg id="逾期抵扣申请" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_307" data-name="Rectangle 307" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_308" data-name="Rectangle 308" width="46" height="46" rx="4" transform="translate(5 5)" fill="#12b787"/>
+  <g id="组_26" data-name="组 26" transform="translate(-952.639 -1079)">
+    <path id="路径_47" data-name="路径 47" d="M13.318,1.087,0,15.094" transform="translate(980.75 1105.64)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <g id="组_19" data-name="组 19" transform="translate(769.195 836.667)">
+      <path id="路径_38" data-name="路径 38" d="M205.718,284.633h-6.275V260.917H218.83v4.441" transform="translate(0 -0.566)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="直线_25" data-name="直线 25" y2="5.333" transform="translate(214.296 257.332)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="直线_26" data-name="直线 26" y2="5.333" transform="translate(204.193 257.333)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+    <line id="直线_28" data-name="直线 28" x1="9" y2="9" transform="translate(973.323 1103.674)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <circle id="椭圆_9" data-name="椭圆 9" cx="2" cy="2" r="2" transform="translate(978.823 1109.796)" fill="#fff"/>
+    <circle id="椭圆_10" data-name="椭圆 10" cx="2" cy="2" r="2" transform="translate(972.323 1103.174)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0201)https://etax.jiangsu.chinatax.gov.cn/shenqing/bpmForm/indexAction.action?home=mainfcjydksq&nsrdzdah=10113204000164688009&new_dlm=91320411MA1MCT53X4&username=91320411MA1MCT53X4&djxh=10113204000051481241 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+
+<script type="text/javascript" src="./json2(1).js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./help_gy.js"></script>
+<script type="text/javascript">
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--  ca签名实现部分 -->
+<script type="text/javascript">
+var _nsrsbh="91320411MA1MCT53X4";//当前登录用户的nsrsbh
+var _old_nsrsbh="91320411MA1MCT53X4";//旧纳税人识别号
+var _djxh="10113204000051481241";//纳税人电子档案号
+var _swrybj="0";//税务员标记
+var _YHXX=_nsrsbh+","+_old_nsrsbh+","+_djxh;
+//申请签名状态，0不需要签名 1需要签名 
+var _sqqm=""; 
+
+</script>
+<link rel="stylesheet" href="./layer(1).css" id="layui_layer_skinlayercss" style=""><link href="./WdatePicker.css" rel="stylesheet" type="text/css"></head><body><div id="div_calogin" style="display:none"></div>
+<input type="hidden" name="_swrybj" id="_swrybj" value="0">
+
+
+    <title>房产交易代开发票申请</title>
+	<!-- layer -->
+
+	<script type="text/javascript" src="./layer(2).js"></script>
+	<script type="text/javascript" src="./jquery.form.js"></script>
+	<script type="text/javascript" src="./ligerui.min.js"></script>
+	<script type="text/javascript" src="./jsgz.js"></script>
+	<!-- JSON2 -->
+	<script type="text/javascript" src="./help.js"></script>
+	<script type="text/javascript" src="./json2(1).js"></script>
+	<script type="text/javascript" src="./base64.min.js"></script>
+	<!-- WdatePicker -->
+	<script type="text/javascript" src="./WdatePicker.js"></script>
+	<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./ligerui-all.css">
+	<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./web.css">
+	
+<style type="text/css">
+	a.linkadd {
+    background: transparent url("../styles/default/indeximg/btnsmall1_1.png") no-repeat scroll 0% 0%;
+    height: 24px;
+    padding: 0px 12px 0px;
+    width:52px;    
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    color: #fff;      
+}
+</style>
+ <script type="text/javascript">
+   	var width;
+	var save = "0";
+	var process = "4";//受理中
+	var agree = "2"; //通过
+	var refuse = "1"; //未通过
+	var SUBMITSUCCESS = "3"; //提交成功
+	var token_id;
+	var ytzt = "";
+	$(function (){	
+	debugger;
+	   token_id = $("#token_id").val();
+	   ytzt = $("#ytzt").val();
+	   initItemList("fcjydksq");
+	   window["f_doEdit"]=function(id,formdefid,fwsdswjg,mxid,htbh){
+		   window.location.href = "/shenqing/ywForm/fcjydksq.action?sign=editForm&type=edit&ywdm="+id+"&fwsdswjg="+fwsdswjg+"&mxid="+mxid+"&htbh="+htbh;
+	   };
+       
+   	   window["f_doView"]=function (id,formdefid,fwsdswjg,mxid){
+		   window.location.href = "/shenqing/ywForm/fcjydksq.action?sign=editForm&type=view&ywdm="+id+"&fwsdswjg="+fwsdswjg+"&mxid="+mxid;
+   	   };
+
+   	   window["f_doremove"]=function (id, formDefId) {
+ 				var coverLayer = $('<div class="sq-busy-cover"></div>');
+ 				$.ajax({
+ 					cache : true,
+ 					type : "POST",
+ 					url : "/shenqing/ywForm/ylcjbg.action",
+					data : {
+						sign : "removecg",
+						formId : id
+					},
+ 					async : false,
+ 					error : function(response) {
+ 					    layer.alert("删除失败!",{icon:2}); 						
+ 					},
+ 					success : function(obj) {
+     					if(obj.RESULT>0){
+     					    layer.alert("删除成功!",{icon:1}); 
+ 						} else
+ 						    layer.alert("删除失败!" + obj.Msg,{icon:2}); 	
+ 						    $("#maingrid").ligerGrid().loadData();
+ 					}
+ 				});
+   	  };
+	});
+
+   function initItemList(ids) {
+		/* itemsList(ids);
+		window.onresize = function() {
+			itemsList(ids);
+		}; */
+		$('.title ul li').click(function() {
+			var cur = $(this), tabul = cur.parent(), cont = cur.parents('.title').next(), i = tabul.children().index(cur);
+			tabul.children().removeClass('on');
+			cur.addClass('on');
+			cont.children().addClass('hide');
+			cont.children().eq(i).removeClass('hide');
+		});
+	}
+
+	//根据查询条件查询数据
+	function btn_sjcx(){
+		var ids = "fcjydksq";
+		var data = {};
+		if($("#tjsjq").val()==""){
+			$.ligerDialog.error("时间起不能为空!");
+			return;
+		}
+		if($("#tjsjz").val()==""){
+			$.ligerDialog.error("时间止不能为空!");
+			return;
+		}
+
+		var c = Date.parse(delimiterConverts($("#tjsjq").val())) / 86400000;
+		var d = Date.parse(delimiterConverts($("#tjsjz").val())) / 86400000;
+		if(d < c){
+			layer.alert("起止日期不得大于提交截止日期!", {icon : 2});
+			return;
+		}
+		if(d-c>30){
+			$.ligerDialog.error("查询时间跨度不能超过30天!");
+			return;
+		}
+		if($.trim($("#swjg_dm").val()) == "" ){
+			layer.alert("请输入查询条件!",{icon:2});
+			return false;
+		}
+		
+		data["swjg_dm"] = $("#swjg_dm").val();
+		data["tjsjq"] = $("#tjsjq").val();
+		data["tjsjz"] = $("#tjsjz").val();
+		var cxtj = JSON2.stringify(data);
+		itemsList(ids,cxtj);
+	}
+	
+	 function delimiterConverts(val) {
+  		return val.replace('-','/').replace('-','/');
+  	}
+	
+	//初始化办理中业务列表
+	function itemsList(ids,cxtj) {
+		width=document.body.clientWidth*0.93;	
+		var columns = [
+				{
+					display : '纳税人识别号',
+					name : 'NSRSBH',
+					width : width * 0.1
+				},
+				{
+					display : '名称',
+					name : 'NSRMC',
+					width : width * 0.15
+				},
+				{
+					display : '合同号',
+					name : 'HTBH',
+					width : width * 0.1
+				},
+				{
+					display : '地址',
+					name : 'FWDZ',
+					width : width * 0.2
+				},
+				{
+					display : '机关',
+					name : 'FWSDSWJGMC',
+					width : width * 0.15
+				},
+				{
+					display : '时间',
+					name : 'LRRQ',
+					width : width * 0.1
+				},
+				{
+					display : '申请时间',
+					name : 'SQRQ',
+					width : width * 0.1
+				},
+				{
+					display : '状态',
+					name : 'STATUS',
+					width : width * 0.05,
+					render : function(r, i) {
+						var status = r.STATUS;
+						if ('1' == status) {
+							return "通过";
+						} else if ('2' == status ) {
+							return "未通过";
+						} else if ('3' == status ) {
+							return "受理中";
+						}  else
+						return "未申请";
+					}
+				},
+				{
+					display : '操作',
+					width : width * 0.05,
+					render : function(r, i) {
+					var amt = r.STATUS;
+					debugger;
+					 if( ("2" == amt || "1" == amt || "3" == amt)) {
+						return "<a  href =\"javascript:f_doView('" + r.SQID
+								+ "','" + r.FORMDEFID + "','" + r.FWSDSWJG + "','" + r.MXID + "')\" >详情</a>";
+						
+					}else{
+						return "<a  href =\"javascript:f_doEdit('" + r.SQID
+						+ "','" + r.FORMDEFID + "','" + r.FWSDSWJG + "','" + r.MXID + "','" + r.HTBH + "')\" >申请</a>";
+					}
+						
+					}
+				}];
+				if($(".pcontrol")!=null){
+					$(".pcontrol").find("input").val(1);
+					$(".pcontrol").find("input").blur();
+				}
+		      $("#maingrid").ligerGrid({
+					dataAction : 'local',
+					url : '/shenqing/ywForm/fcjydksq.action?sign=initTable&formDefList='+ ids+"&cxtj="+cxtj,
+					columns : columns,
+					height : '200',
+					pageSize : 10,
+					width : '100%',
+					enabledSort : true,
+					rownumbers : true,
+					autoFilter : false
+		      });
+	}
+  </script>
+
+
+     <input type="hidden" name="_loginmode" id="_loginmode" value="TQ">
+     <input type="hidden" name="_zswjgdm" id="_zswjgdm" value="">
+     <input type="hidden" name="token_id" id="token_id" value="">
+     <input type="hidden" name="ytzt" id="ytzt" value="">
+     <input type="hidden" name="yqtstxbz" id="yqtstxbz" value="">
+    <div class="mainContent">   
+        <div class="welcometouse" style="padding-top:20px;margin-left:0px;" align="center">
+    	<div class="sq_top">
+    	   <span class="top_title">业务功能</span>
+    	   </div>
+    	<div class="app_list">
+		
+ 		<dl> 
+		  <dt>
+			  <a href="javascript:void(0)" onclick="qztstx(&#39;3&#39;);">	 
+			    <img width="88" height="94" src="./sq_3.png">	 
+			  </a>		    
+		  </dt> 
+		  <dd>房产交易代开发票申请</dd>
+		</dl>		 
+
+		<div style="clear:both"></div>
+    	</div>
+   </div>
+
+		<div class="sq_top" style="background:none;border:0">
+			<span class="top_title">办理中业务</span>
+		</div>
+   <div class="welcometouse" align="center">   			
+    	  <div class="content_news" style="margin-top:5px;height:auto;">
+				<ul class="">
+					<div style="width: 97%;margin-top: 10px">
+					<table class="top_content">
+						<tbody><tr>
+							<td style="text-align: right;">所在地市：</td>
+							<td style="width: 300px;">
+								<select name="swjg_dm" id="swjg_dm" class="select" style="width: 250px;">
+									
+										<option value="13201">国家税务总局南京市税务局</option>
+									
+										<option value="13202">国家税务总局无锡市税务局</option>
+									
+										<option value="13203">国家税务总局徐州市税务局</option>
+									
+										<option value="13204">国家税务总局常州市税务局</option>
+									
+										<option value="13205">国家税务总局苏州市税务局</option>
+									
+										<option value="13206">国家税务总局南通市税务局</option>
+									
+										<option value="13207">国家税务总局连云港市税务局</option>
+									
+										<option value="13208">国家税务总局淮安市税务局</option>
+									
+										<option value="13209">国家税务总局盐城市税务局</option>
+									
+										<option value="13210">国家税务总局扬州市税务局</option>
+									
+										<option value="13211">国家税务总局镇江市税务局</option>
+									
+										<option value="13212">国家税务总局泰州市税务局</option>
+									
+										<option value="13213">国家税务总局宿迁市税务局</option>
+									
+										<option value="13215">国家税务总局江苏省税务局第三税务分局</option>
+									
+										<option value="13216">国家税务总局张家港保税区税务局</option>
+									
+										<option value="13217">国家税务总局苏州工业园区税务局</option>
+									
+								</select>
+							</td>
+							<td style="text-align: right;">提交时间起：</td>
+							<td style="width: 300px;">
+								<input type="text" style="border: 0.1px solid;" readonly="true" name="tjsjq" id="tjsjq" class="inputText date" value="">
+							</td>
+							<td style="text-align: right;">提交时间止：</td>
+							<td style="width: 300px;">
+								<input type="text" style="border: 0.1px solid;" readonly="true" name="tjsjz" id="tjsjz" class="inputText date" value="">
+							</td>
+							
+							<td>
+								<a class="linkadd" id="btn_sjcx" href="javascript:void(0)" onclick="btn_sjcx();">
+									<span></span>
+									查询
+								</a>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				 	<div class="top_content" style="margin-left:0px;">
+			            <div id="maingrid">
+			    		</div>
+		    		</div>
+				</ul>
+			</div>
+	   </div>
+     <div>
+    	<div class="sq_top" style="background:none;border:0;margin: 5px 0 0 1%;">
+    	   <span class="top_title">准备资料（标注<span style="color:red">*</span>的为必报项）</span>
+    	   </div>
+    	<div class="content_news">
+				<div class="title">
+					<input type="hidden" id="ylbz" value="dksq">
+					<ul>
+						<li class="title_left">房产交易代开发票申请</li>
+					</ul>
+				</div>
+
+				<div class="content_li">
+					<ul class="">
+					 	<li>无</li>
+					</ul>
+					<ul class="hide">
+
+					 </ul>
+				</div>
+			</div>
+    	</div>
+    </div>
+    
+ <script type="text/javascript">
+  var isInit = false; 
+  var key = "fcjydksq";
+ </script> 
+
+
+		</body></html>

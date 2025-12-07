@@ -1,0 +1,270 @@
+#fdxx_dia{
+	padding: 15px 0;
+	margin: 0 auto;
+	width: 900px;
+	color: #333;
+	height:460px;
+}
+#fdxx_dia div,#dia_ecfd div{
+	font-size:14px;
+} 
+#fdxx_dia .title{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 15px 0;
+}
+#fdxx_dia .tit{
+	margin: 10px 0;
+	font-weight: bold;
+}
+.content_body{
+	height:380px;
+	overflow-y: auto;
+}
+#fdxx_dia .section{
+	line-height: 1.8;
+	text-indent: 2em;
+}
+#fdxx_dia .right_section{
+	margin: 15px 0;
+	text-align: right;
+}
+#fdxx_dia .table_box{
+	width: 800px;
+	margin: 30px auto;
+	color: #666;
+}
+#fdxx_dia .table_box table{
+	border: 1px solid #fff;
+	width: 100%;
+	text-align: center;
+	line-height: 2.2;
+}
+#fdxx_dia .table_box table td, .table_box table th{
+	border: 1px solid #fff;
+}
+#fdxx_dia .table_box table th{
+	background-color: #DEEBFB;
+}
+#fdxx_dia .table_box table tr:nth-child(odd) td{
+	background-color: #F2F6FC;
+}
+#fdxx_dia .btnbox{
+	text-align: center;
+	margin: 20px auto 0px;
+}
+#fdxx_dia .btn:hover{
+	background-color: #bfdde8;
+}
+#fdxx_dia .btn{
+	border: 1px solid #0eb8f7;
+	color: #85D3F0;
+	background-color:#fff;
+	padding:4px 10px;
+	display: inline-block;
+	cursor: pointer;
+	height: 30px;
+    line-height: 30px;
+	border-radius: 4px;
+}
+#fdxx_dia .btn span{
+	color: #f00;
+	display: inline-block;
+	width: 20px;
+}
+.checkbox_yzx{
+	margin:10px 0;
+}
+.yzx_span{
+	vertical-align:middle;
+	margin-left:5px;
+}
+.wxts_info {
+	border: 1px solid #F5EFAA;
+	padding: 10px 20px;
+	background-color: #FEF7DA;
+	margin: 10px auto 0px;
+    width: 500px;
+    line-height: 24px;
+}
+#dia_tsnr{
+	width: 670px;
+	margin: 0 auto;
+}
+#dia_tsnr .dia_header{
+	padding: 5px 10px;
+}
+#dia_tsnr .header_tit{
+	padding-left: 10px;
+	border-left: 5px solid #0E89E8;
+	font-size: 20px;
+	font-weight: bold;
+}
+#dia_tsnr .header_close{
+	width: 15px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+#dia_tsnr .header_close img{
+	width: 100%;
+	vertical-align: top;
+}
+#dia_tsnr .dia_content{
+	padding: 20px 50px 10px;
+}
+#dia_tsnr .content_left{
+	width: 80px;
+}
+#dia_tsnr .content_right{
+	width: 490px;
+}
+#dia_tsnr .btnbox{
+	text-align: center;
+}
+#dia_tsnr .btn{
+	border: 2px solid #85D3F0;
+	color: #85D3F0;
+	display: inline-block;
+	width: 80px;
+	line-height: 30px;
+	margin: 0 20px;
+	cursor: pointer;
+}
+#dia_tsnr .btn img{
+	width: 15px;
+	margin-right: 3px;
+	vertical-align: top;
+	margin-top: 8px;
+}
+
+#dia_ecfd{
+	padding: 15px 0;
+	margin: 0 auto;
+	width: 900px;
+	color: #333;
+	height: 460px;
+}
+#dia_ecfd .title{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 15px 0;
+}
+#dia_ecfd .tit{
+	margin: 10px 0;
+	font-weight: bold;
+}
+#dia_ecfd .section{
+	line-height: 1.8;
+	text-indent: 2em;
+}
+#dia_ecfd .content{
+	height:380px;
+	overflow-y:auto;
+}
+#dia_ecfd .right_section{
+	margin: 15px 0;
+	text-align: right;
+}
+#dia_ecfd .btnbox{
+	text-align: center;
+}
+#dia_ecfd .sure:hover{
+	background-color:  #65bbf5;
+}
+#dia_ecfd .btn{
+	border-radius: 4px;
+	display: inline-block;
+	cursor: pointer;
+}
+#dia_ecfd .sure{
+	color: #fff;
+	background-color:#0099FF;
+}
+#dia_ecfd .close{
+	border: 1px solid #0099FF;
+	color: #0099FF;
+	background-color: #fff;
+    margin-left: 15px;
+}
+#dia_ecfd .close:hover{
+	border: 1px solid #7dc0ec;
+	color: #7dc0ec;
+}
+.fdxx_div{
+	padding-bottom: 80px;
+}
+.fdxx_div td{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border: none;
+}
+.fdxx_div th, .fdxx_div table,.fdxx_div thead, .fdxx_div tbody{
+	border: none;
+}
+.fdxx_div tr{
+	border-bottom: 1px solid #ccc;
+}
+.fdxx_div .wghfdxx_table{
+	width: 95%;
+	margin: 0 auto;
+}
+.fdxx_div .next{
+	position: static;
+}
+
+#yjfk_dia{
+	padding: 15px 0;
+	margin: 0 auto;
+	width: 900px;
+	color: #333;
+	height:400px;
+	font-size:14px;
+	text-align: center;
+}
+#yjfk_dia .title{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 15px 0;
+}
+#yjfk_inp{
+	margin: 20px 0;
+    width: 800px;
+    height: 300px;
+    padding: 10px;
+    line-height: 30px;
+}
+
+#yjfk_dia .btnbox{
+	text-align: center;
+}
+
+#yjfk_dia .sure:hover{
+	background-color:  #65bbf5;
+}
+#yjfk_dia .btn{
+	border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+    padding: 2px 20px;
+    border: 1px solid #0099FF;
+}
+#yjfk_dia .sure{
+	color: #fff;
+	background-color:#0099FF;
+	
+}
+#yjfk_dia .close{
+	color: #0099FF;
+	background-color: #fff;
+    margin-left: 15px;
+}
+#yjfk_dia .close:hover{
+	border: 1px solid #7dc0ec;
+	color: #7dc0ec;
+}

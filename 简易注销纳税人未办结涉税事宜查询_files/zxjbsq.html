@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- saved from url=(0193)https://etax.jiangsu.chinatax.gov.cn/shenqing/ywForm/zxjbsq.action?sign=queryWbjsx&nsrdzdah=10113204000164688009&new_dlm=91320411MA1MCT53X4&username=91320411MA1MCT53X4&djxh=10113204000051481241 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript" src="./json2(1).js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./help_gy.js"></script>
+<script type="text/javascript">
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--  ca签名实现部分 -->
+<script type="text/javascript">
+var _nsrsbh="91320402791965190J";//当前登录用户的nsrsbh
+var _old_nsrsbh="91320402791965190J";//旧纳税人识别号
+var _djxh="10113204000047917036";//纳税人电子档案号
+var _swrybj="0";//税务员标记
+var _YHXX=_nsrsbh+","+_old_nsrsbh+","+_djxh;
+//申请签名状态，0不需要签名 1需要签名 
+var _sqqm=""; 
+
+</script>
+<link rel="stylesheet" href="./layer(1).css" id="layui_layer_skinlayercss" style=""><link href="./WdatePicker.css" rel="stylesheet" type="text/css"></head><body><div id="div_calogin" style="display:none"></div>
+<input type="hidden" name="_swrybj" id="_swrybj" value="0">
+
+
+
+
+
+<title>简易注销未办结事项查询</title>
+
+<link rel="stylesheet" type="text/css" href="./temp.css">
+<link rel="stylesheet" type="text/css" href="./ligerui-all.css">
+<link rel="stylesheet" type="text/css" href="./ace.css">
+<link rel="stylesheet" type="text/css" href="./bootstrap.css">
+
+<!-- layer -->
+<script type="text/javascript" src="./json2(1).js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+<!-- layer -->
+<script type="text/javascript" src="./easyui-lang-zh_CN(1).js"></script>
+<script type="text/javascript" src="./ligerui.min.js"></script>
+<script type="text/javascript" src="./layer(2).js"></script>
+<!-- jqgrid -->
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<!-- WdatePicker -->
+<script type="text/javascript" src="./WdatePicker.js"></script>
+<!-- help -->
+<script type="text/javascript" src="./help.js"></script>
+
+<!-- chosen -->
+<script type="text/javascript" src="./require.js" id="requirejs" data-basepath="/shenqing" data-bdzt="nsr" data-sign="open"></script>
+
+
+<style type="text/css">
+	.l-grid-header {
+       background-color: #FFF;
+	}
+	.l-panel-bar{
+       background-color: #eee;
+	}
+	.sure-btn {
+	    background: #4585eb;
+	    color: #fff!important;
+	    cursor: pointer;
+	    width: 85px;
+	    height: 30px;
+	    line-height: 30px;
+	    border: none;
+	    border-radius: 3px;
+	}
+</style>
+
+
+<script type="text/javascript">
+    var width;
+	$(function (){
+	debugger;
+	   initItemList();
+	});
+	
+
+	
+	
+	
+	function initItemList() {
+		 itemsList('2');
+		 
+		$('.title ul li').click(function() {
+			var cur = $(this), tabul = cur.parent(), cont = cur.parents('.title').next(), i = tabul.children().index(cur);
+			tabul.children().removeClass('on');
+			cur.addClass('on');
+			cont.children().addClass('hide');
+			cont.children().eq(i).removeClass('hide');
+		});
+	}
+
+	//初始化办理中业务列表
+	function itemsList(obj) {
+		var width=document.body.clientWidth*0.93;	
+		var columns = [
+				{
+					display : '涉税事宜名称',
+					name : 'jkxmmc',
+					width : width * 0.2
+				},
+				{
+					display : '监控类型',
+					name : 'jkjgmc',
+					width : width * 0.1,
+					render : function(r, i) {
+					    var jkxmlxDm = r.jkxmlxDm;
+					    if(jkxmlxDm == "1"){
+							return "信息提示";
+						}else{
+						    return "强制监控";
+						}
+					}
+				},
+				
+				{
+					display : '监控结果',
+					name : 'jkjgmc',
+					width : width * 0.1
+				},
+				{
+					display : '涉税事宜明细',
+					name : 'gyxx',
+					width : width * 0.5
+					
+				},
+				{
+					display : '主管税务机关',
+					name : 'swjgDm',
+					width : width * 0.2
+					
+				}];
+		   $("#maingrid").ligerGrid({
+					dataAction : 'local',
+					url : '/shenqing/ywForm/zxjbsq.action?sign=init&cxbj='+obj,
+					columns : columns,
+					height : '400',
+					pageSize : 10,
+					width : '100%',
+					enabledSort : true,
+					rownumbers : true,
+					autoFilter : false
+		  });
+	}
+	
+ //根据查询条件查询数据
+	function btn_cx(){
+		itemsList('1');
+	} 
+
+</script>
+
+
+	<div class="mainContent">
+	<form id="dataForm" method="post" action="https://etax.jiangsu.chinatax.gov.cn/shenqing/ywForm/zxjbsq.action?sign=queryWbjsx&amp;nsrdzdah=10113204000164688009&amp;new_dlm=91320411MA1MCT53X4&amp;username=91320411MA1MCT53X4&amp;djxh=10113204000051481241#" style="padding-top: 0px;">
+	    <input type="hidden" name="djxh" id="djxh" value="10113204000047917036">
+        <input type="hidden" name="nsrsbh" id="nsrsbh" value="91320402791965190J">
+        <input type="hidden" name="zgswjg_dm" id="zgswjg_dm" value="13204020400">
+		<div class="welcometouse" align="center">   	
+	    	<div>
+	    		<div id="panel">					
+					<table class="formTable firsttable" border="1" cellpadding="2" cellspacing="0" id="sqsxcxTable">
+							<tbody><tr>
+								<td colspan="4" class="formHead" style="text-align: left; height: 50px;">
+								     <span style="margin-left: 6px;"></span>
+								     								 
+								</td>
+							</tr>
+							<tr style="text-align: center; height: 50px;">
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">统一社会信用代码</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;">
+								   913204027919XXXXXX	
+								</td>
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">当前主管税务机关</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;">
+								     国家税务总局常州市天宁区税务局税源管理二股
+								</td>
+							</tr>
+							<tr style="text-align: center; height: 50px;">
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">纳税人名称</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;">
+								   常州XXXX有限公司	
+								</td>
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">纳税人状态</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;">
+								     正常
+								</td>
+							</tr>
+							<tr style="text-align: center; height: 50px;">
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">登记注册类型</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;">
+								   私营有限责任公司	
+								</td>
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">法定代表人姓名</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;">
+								     俞XXXX
+								</td>
+							</tr>
+							<tr style="text-align: center; height: 50px;">
+								<td class="formtitle" style="text-align: right; height: 50px;width: 20%;">生产经营地址</td>
+								<td class="formtitle" style="text-align: left; height: 50px;width: 30%;" colspan="3">
+								   天宁区XX小区1幢甲单元203室	
+								</td>
+							</tr>				
+					  </tbody></table>
+			       </div>
+	       <div align="right" style="padding-top: 20px; width: 98%">
+			  <input class="sure-btn" type="button" value="查询" onclick="btn_cx();"> 
+			</div>
+	    	    
+	    		<div class="top_content" style="padding-top: 20px; ">
+	    		  <div style="text-align: left;background-color: #F4F4F4;height: 35px;">
+	    		    <span style="margin-left: 16px;line-height: 35px; background: #ebebeb;color: #3b8dd2;font-size: 14px; font-weight: bold;">当前机关涉税事宜详细信息</span></div>
+		            <div id="maingrid" class="l-panel l-frozen" ligeruiid="maingrid" style="width: 100%;">        <div class="l-panel-header" style="display: none;"><span class="l-panel-header-text"></span></div>                    <div class="l-grid-loading" style="display: none;">加载中...</div>                <div class="l-panel-bwarp">            <div class="l-panel-body">                <div class="l-grid" id="maingridgrid" style="height: 368px;">                    <div class="l-grid-dragging-line"></div>                    <div class="l-grid-popup" style="display: none;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="1" ligeruiid="CheckBox1015"></div></td><td class="l-column-right">涉税事宜名称</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="2" ligeruiid="CheckBox1016"></div></td><td class="l-column-right">监控类型</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="3" ligeruiid="CheckBox1017"></div></td><td class="l-column-right">监控结果</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="4" ligeruiid="CheckBox1018"></div></td><td class="l-column-right">涉税事宜明细</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="5" ligeruiid="CheckBox1019"></div></td><td class="l-column-right">主管税务机关</td></tr></tbody></table></div>                  <div class="l-grid1" style="width: 27px;">                      <div class="l-grid-header l-grid-header1" style="height: 23px;">                          <div class="l-grid-header-inner"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell l-grid-hd-cell-rownumbers" id="maingrid|hcell|c101" columnindex="0" style="height: 23px; width: 26px;"><div class="l-grid-hd-cell-inner"></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body1" style="height: 328px;"><div class="l-grid-body-inner"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody><tr id="maingrid|1|r1001" class="l-grid-row"><td id="maingrid|1|r1001|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">1</div></td></tr><tr id="maingrid|1|r1002" class="l-grid-row l-grid-row-alt"><td id="maingrid|1|r1002|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">2</div></td></tr><tr id="maingrid|1|r1003" class="l-grid-row"><td id="maingrid|1|r1003|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">3</div></td></tr><tr id="maingrid|1|r1004" class="l-grid-row l-grid-row-alt"><td id="maingrid|1|r1004|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">4</div></td></tr><tr id="maingrid|1|r1005" class="l-grid-row"><td id="maingrid|1|r1005|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">5</div></td></tr><tr id="maingrid|1|r1006" class="l-grid-row l-grid-row-alt"><td id="maingrid|1|r1006|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">6</div></td></tr><tr id="maingrid|1|r1007" class="l-grid-row"><td id="maingrid|1|r1007|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">7</div></td></tr><tr id="maingrid|1|r1008" class="l-grid-row l-grid-row-alt"><td id="maingrid|1|r1008|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">8</div></td></tr><tr id="maingrid|1|r1009" class="l-grid-row"><td id="maingrid|1|r1009|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">9</div></td></tr><tr id="maingrid|1|r1010" class="l-grid-row l-grid-row-alt"><td id="maingrid|1|r1010|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">10</div></td></tr></tbody></table></div></div>                  </div>                  <div class="l-grid2" style="width: 1379px; left: 27px;">                      <div class="l-grid-header l-grid-header2" style="height: 23px;">                          <div class="l-grid-header-inner" style="width: 1480px;"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell" id="maingrid|hcell|c102" columnindex="1" columnname="jkxmmc" style="height: 23px; width: 261.516px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">涉税事宜名称</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c103" columnindex="2" columnname="jkjgmc" style="height: 23px; width: 130.758px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">监控类型</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c104" columnindex="3" columnname="jkjgmc" style="height: 23px; width: 130.758px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">监控结果</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c105" columnindex="4" columnname="gyxx" style="height: 23px; width: 653.79px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">涉税事宜明细</span></div></td><td class="l-grid-hd-cell l-grid-hd-cell-last" id="maingrid|hcell|c106" columnindex="5" columnname="swjgDm" style="height: 23px; width: 261.516px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">主管税务机关</span></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body2 l-scroll" style="height: 346px;"><div class="l-grid-body-inner" style="width: 1440px;"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody><tr id="maingrid|2|r1001" class="l-grid-row"><td id="maingrid|2|r1001|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">扣减限额小于0</div></td><td id="maingrid|2|r1001|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1001|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1001|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1001|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1002" class="l-grid-row l-grid-row-alt"><td id="maingrid|2|r1002|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">独资合伙企业异常经营监控（权益性投资）</div></td><td id="maingrid|2|r1002|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1002|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1002|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1002|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1003" class="l-grid-row"><td id="maingrid|2|r1003|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">监控纳税人是否存在未处理完毕的个人所得税身份冒用异议申诉</div></td><td id="maingrid|2|r1003|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1003|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1003|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">该纳税人不存在未处理完毕的个人所得税身份冒用异议申诉</div></td><td id="maingrid|2|r1003|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1004" class="l-grid-row l-grid-row-alt"><td id="maingrid|2|r1004|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">纳税人是否领用过发票</div></td><td id="maingrid|2|r1004|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1004|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1004|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">纳税人未领用过发票</div></td><td id="maingrid|2|r1004|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1005" class="l-grid-row"><td id="maingrid|2|r1005|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">纳税人是否代开过发票</div></td><td id="maingrid|2|r1005|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1005|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1005|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1005|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1006" class="l-grid-row l-grid-row-alt"><td id="maingrid|2|r1006|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">政策适用监控（二）</div></td><td id="maingrid|2|r1006|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1006|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1006|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1006|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1007" class="l-grid-row"><td id="maingrid|2|r1007|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">个人独资企业和个人合伙企业异常经营监控情形二</div></td><td id="maingrid|2|r1007|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1007|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1007|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1007|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1008" class="l-grid-row l-grid-row-alt"><td id="maingrid|2|r1008|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">个人独资企业和个人合伙企业异常经营监控情形三</div></td><td id="maingrid|2|r1008|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1008|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1008|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1008|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1009" class="l-grid-row"><td id="maingrid|2|r1009|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">纳税人是否存在未注销的出口退税资格</div></td><td id="maingrid|2|r1009|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1009|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1009|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">该纳税人不存在未注销的出口退税资格</div></td><td id="maingrid|2|r1009|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr><tr id="maingrid|2|r1010" class="l-grid-row l-grid-row-alt"><td id="maingrid|2|r1010|c102" class="l-grid-row-cell " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">监控纳税人是否存在个人所得税其他未办结事项</div></td><td id="maingrid|2|r1010|c103" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">强制监控</div></td><td id="maingrid|2|r1010|c104" class="l-grid-row-cell " style="width:130.758px;  "><div class="l-grid-row-cell-inner" style="width:122px;height:22px;min-height:22px; ">监控通过</div></td><td id="maingrid|2|r1010|c105" class="l-grid-row-cell " style="width:653.7900000000001px;  "><div class="l-grid-row-cell-inner" style="width:645px;height:22px;min-height:22px; ">该纳税人不存在个人所得税其他未办结事项</div></td><td id="maingrid|2|r1010|c106" class="l-grid-row-cell l-grid-row-cell-last " style="width:261.516px;  "><div class="l-grid-row-cell-inner" style="width:253px;height:22px;min-height:22px; ">国家税务总局常州市天宁区税务局税源管理二股</div></td></tr></tbody></table></div></div>                  </div>                 </div>              </div>         </div>         <div class="l-panel-bar">            <div class="l-panel-bbar-inner">                <div class="l-bar-group  l-bar-message"><span class="l-bar-text">显示从1到10，总 25 条 。每页显示：10</span></div>            <div class="l-bar-group l-bar-selectpagesize"><select name="rp"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option></select></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                    <div class="l-bar-button l-bar-btnfirst"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnprev"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group"><span class="pcontrol"> <input type="text" size="4" value="1" style="width:20px" maxlength="3"> / <span>3</span></span></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnnext"><span class=""></span></div>                    <div class="l-bar-button l-bar-btnlast"><span class=""></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnload"><span class=""></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-clear"></div>            </div>         </div></div>    	
+	    	    </div>
+	        </div>
+         </div>
+         </form>
+	</div>
+ 
+
+</body></html>

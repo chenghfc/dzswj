@@ -1,0 +1,135 @@
+a {
+	text-decoration: none;
+	color: #3371d5;
+	font-size: 14px;
+	margin: 0 6px;
+}
+
+.special-btn {
+	background: #4585eb;
+	color: #fff;
+	cursor: pointer;
+	width: 45px;
+	height: 25px;
+	line-height: 15px;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.special-btn2 {
+	background: #4585eb;
+	color: #fff;
+	cursor: pointer;
+	width: 80px;
+	height: 25px;
+	line-height: 15px;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.ui-resizable {
+	position: absolute;
+	height: auto;
+	width: 70%;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	z-index: 101;
+	bottom: 0;
+	margin: auto;
+}
+
+.fsrx {
+	background-color: #fff;
+}
+
+table tr {
+	line-height: 20px;
+}
+
+table td span {
+	border: 0;
+}
+
+.checkbox{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 18px;
+	margin-right: 10px;
+	position: relative;
+}
+.checkbox:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #7D7D7D;
+	border-radius: 4px;
+}
+.checkbox.checked:before{
+	content: "\2713";
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	color: #7D7D7D;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+span {
+	font-family: 宋体;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+/* input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 18px;
+	margin-right: 10px;
+	position: relative;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+ 
+input[type="checkbox"]:checked::before {
+    content: "\2713";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #7D7D7D;
+    border-radius:4px;
+    color: #7D7D7D;
+    font-size: 20px;
+    font-weight: bold;
+} */

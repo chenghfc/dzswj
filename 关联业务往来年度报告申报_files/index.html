@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0169)https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/setting/index.html?ywlx=sb&ywbm=glywwlndbgsb&vueYwbm=glywwlndbgsb&SssqQ=2023-01-01&SssqZ=2023-12-31 -->
+<html xmlns="http://www.w3.org/1999/xhtml" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="./Message.css">
+    <link rel="stylesheet" type="text/css" href="./loadMask.css">
+    <link href="./comon0.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./smartMenu.css">
+    <link rel="stylesheet" type="text/css" href="./message_solid.css">
+    <link href="./table.css" rel="stylesheet" type="text/css">
+    <link href="./layui.css" rel="stylesheet" type="text/css">
+    <link href="./common.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link href="./table-step.css" rel="stylesheet">
+    <link rel="stylesheet" href="./iconfont.css">
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./layui.js"></script>
+    <script type="text/javascript" src="./json3.min.js"></script>
+    <script type="text/javascript" src="./mask.js"></script>
+    <script type="text/javascript" src="./pxsp.js"></script>
+    <!--    <script type="text/javascript" src="../../static/_res_/js/abacus/loadCssAndJs.js"></script>-->
+    <script type="text/javascript" src="./Message.js"></script>
+    <script type="text/javascript" src="./Message(1).js"></script>
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <title id="title"></title>
+    <script type="text/javascript">
+			var layer;
+			layui.use('layer', function () {
+				//独立版的layer无需执行这一句
+				layer = layui.layer;
+			});
+
+			var laydate;
+			layui.use('laydate', function () {
+				laydate = layui.laydate;
+			});
+
+			window.console = window.console || {
+        log: $.noop,
+        debug: $.noop,
+        info: $.noop,
+        warn: $.noop,
+        exception: $.noop,
+        assert: $.noop,
+        dir: $.noop,
+        dirxml: $.noop,
+        trace: $.noop,
+        group: $.noop,
+        groupCollapsed: $.noop,
+        groupEnd: $.noop,
+        profile: $.noop,
+        profileEnd: $.noop,
+        count: $.noop,
+        clear: $.noop,
+        time: $.noop,
+        timeEnd: $.noop,
+        timeStamp: $.noop,
+        table: $.noop,
+        error: $.noop
+      };
+    </script>
+    <script type="text/javascript">
+      //逾期申报入口
+      var yqsbbz = '<%=yqsbbz%>';
+      var yqsbuuid = '<%=yqsbuuid%>';
+      var flagDataLoaded = false;
+      var formData; //json
+      var formCT = {};
+
+      var queryString = window.location.href.substr(window.location.href.indexOf('?') + 1);
+      var urlParams = (function () {
+        var href = window.location.href;
+        var searchList = href && href.substring(href.indexOf('?') + 1).split('&');
+        var urlParams = {};
+        searchList.forEach(function (item) {
+          var key = item.split('=')[0];
+          var value = item.split('=')[1];
+          //修正链接中undefined值转换到请求参数中去导致业务判断非空
+          if(value === "undefined"){
+            value = "";
+          }
+          urlParams[key] = value;
+
+          if (key === 'SssqQ' || key === 'SssqZ' || key === 'SwjgDm') {
+            $('#' + key.substring(0, 1).toLowerCase() + key.substring(1)).val(value);
+          }
+        });
+        return urlParams;
+      })();
+
+      var ywlx = urlParams.ywlx;
+      var ywbm = urlParams.ywbm;
+      var vueYwbm = urlParams.vueYwbm;
+      // TODO 模拟token
+      var token = sessionStorage.getItem('token');
+      // TODO 获取配置中心
+      var qddm = parent.qddm;
+
+      // 获取环境变量
+      var envConfig = parent.STATIC_ENV_CONFIG;
+      var pathRoot = envConfig.ROUTER_PREFIX;
+      var apiPrefix = envConfig.API_PREFIX;
+
+      // ctrl层上下文
+      var ctrl = apiPrefix || '/sbzx/api/sdsfsgjssb';
+      // 微服务名称
+      var sev = '/qysdssb';
+
+      // 接口前缀
+      var urlPrefix = ctrl + sev + '/' + ywbm + '/v1/';
+      // 监听vue外壳发送的事件
+      window.addEventListener(
+        'message',
+        function (e) {
+          var iframe = document.getElementById('iframehtm');
+          var iframeWindow = iframe.contentWindow;
+
+          var data = e.data;
+          var type = data.type;
+
+          if (type === 'submitSettings') {
+            saveSettings();
+          }
+          if (type === 'getInitData') {
+            reGetInitData();
+          }
+        },
+        false
+      );
+
+      // 与外壳vue交互的统一入口方法
+      function postMessage2Vue(message, e) {
+        if (e) {
+          e.source.postMessage(message, e.origin);
+        } else {
+          parent.postMessage(message, '*');
+        }
+      }
+
+      function resizeFrame() {
+        var winH = window.innerHeight || Math.max(document.body.offsetHeight, document.documentElement.offsetHeight);
+        var stepHeight = $('.table-step-box').height() || 0;
+        var btnBoxHeight = $('.BtnBox').height() || 0;
+        var bodyHeight = winH - stepHeight - btnBoxHeight;
+        document.body.style.height = bodyHeight + 'px';
+        $('#iframehtm').attr('height', bodyHeight);
+      }
+
+     
+
+      function initFrame() {
+        window.setTimeout(resizeFrame, 1);
+        window.setTimeout(loadPage, 1);
+
+        var stepData = ['基本信息', '表单选择', '填报报表', '提交报表'];
+        function step(data, id) {
+          this.id = eval('$("#' + id + '")');
+          var items = '';
+          var item = function () {
+            var line = '<i class="pro-line"></i>';
+            $.each(data, function (index, value) {
+              if (index + 1 === data.length) {
+                line = '';
+              }
+                items=items+'<div class="pro-step"><span><dd>'+(index+1)+'</dd></span><p>'+value+'</p>'+line+'</div>';
+            });
+            return items;
+          };
+          var html =
+            '<div class="table-step-main"><div class="table-step-center" style="display: block;width: 100%;opacity: 1;"><div class="table-step-item" >' +
+            item() +
+            '</div></div></div>';
+          this.id.append(html);
+          this.active = function (n) {
+            var that = this;
+            $.each(data, function (index, value) {
+              if (index < n) {
+                that.id.find('.pro-step').eq(index).addClass('finish-step');
+              } else if (index === n) {
+                that.id.find('.pro-step').eq(index).addClass('cur-step');
+              }
+            });
+          };
+        }
+
+        var sbStep = new step(stepData, 'stepId');
+        sbStep.active(0);
+      }
+    </script>
+  <link id="layuicss-layer" rel="stylesheet" href="./layer.css" media="all"><link id="layuicss-laydate" rel="stylesheet" href="./laydate.css" media="all"></head>
+
+  <body onresize="resizeFrame()" onload="initFrame()" style="height: 457px;">
+    <input type="hidden" id="bzz" value="">
+    <input type="hidden" id="ywbm" value="">
+    <input type="hidden" id="swjgDm" value="">
+    <input type="hidden" id="djxh" value="">
+    <input type="hidden" id="sssqQ" value="">
+    <input type="hidden" id="sssqZ" value="">
+    <input type="hidden" id="gdslxDm" value="">
+    <input type="hidden" id="nsrsbh" value="">
+    <input type="hidden" id="test" value="">
+    <input type="hidden" id="sjlybz" value="">
+    <input type="hidden" id="kjzdzzDm" value="">
+    <input type="hidden" id="isycs" value="">
+    <input type="hidden" id="cusId" value="">
+    <input type="hidden" id="bbbsqDm" value="">
+    <input type="hidden" id="zlbsxlDm" value="">
+    <input type="hidden" id="isGgUser" value="">
+    <input type="hidden" id="showNbDrmb" value="">
+
+    <div class="table-step-box" style="position: relative;height: 80px;" id="stepId"><div class="table-step-main"><div class="table-step-center" style="display: block;width: 100%;opacity: 1;"><div class="table-step-item"><div class="pro-step cur-step"><span><dd>1</dd></span><p>基本信息</p><i class="pro-line"></i></div><div class="pro-step"><span><dd>2</dd></span><p>表单选择</p><i class="pro-line"></i></div><div class="pro-step"><span><dd>3</dd></span><p>填报报表</p><i class="pro-line"></i></div><div class="pro-step"><span><dd>4</dd></span><p>提交报表</p></div></div></div></div></div>
+		<!-- <div class="BtnBox" style="text-align:right;">
+				<button type="button" class="layui-btn layui-btn-primary layui-border-blue" id="czan">获取初始化数据</button>
+		</div> -->
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <tbody><tr height="100%">
+        <td valign="top">
+          <div class="TableMain">
+            <iframe id="iframehtm" name="iframehtm" width="100%" height="457" src="glywwlndbgsb.html" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+  
+  <script type="text/javascript" src="./setting_common.js"></script>
+
+<div class="layui-layer-move"></div><div><div id="maskLevel" style="position:absolute;top:0;left:0;display:none;text-align:center;z-index:10000;"></div><div id="msg-window" style="position:absolute;z-index:10001;display:none"><div class="msg-tl" id="msg-tl"><div class="msg-tr"><div class="msg-tc" style="cursor:move;"><div class="msg-header-text"></div><div class="msg-header-tools"><div class="Message_min" title="最小化"><strong>0</strong></div><div class="Message_max" title="最大化"><strong>1</strong></div><div class="Message_close" title="关闭"><strong>r</strong></div></div></div></div></div><div class="msg-ml" id="msg-ml"><div class="msg-mr"><div class="msg-mc"><div class="msg-body" style="position:relative"></div></div></div></div><div class="msg-ml" id="msg-btnl"><div class="msg-mr"><div class="msg-btn"></div></div></div><div class="msg-bl" id="msg-bl"><div class="msg-br"><div class="msg-bc"></div></div></div></div></div></body></html>

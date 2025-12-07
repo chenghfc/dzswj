@@ -1,0 +1,88 @@
+.mask {
+	position: absolute;
+	top: 0px;
+	filter: alpha(opacity =       60);
+	background: #777;
+	z-index: 1002;
+	left: 0px;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+}
+
+.model {
+	position: absolute;
+	z-index: 1002;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	background-color: #777;
+	display: none;
+}
+
+.fail_detialcontent {
+	margin-left: 20px;
+}
+
+.fail_detial {
+	padding: 10px 0;
+	clear: both;
+	color: #448aca
+}
+
+a.panel-tool-close {
+	display: none;
+}
+
+.tabsContentBox span.number {
+	width: 80px;
+}
+
+em {
+	font-style: normal;
+}
+
+.topbox .topimg {
+	margin: 2px 20px 2px 20px;
+}
+
+.topbox {
+	height: 62px;
+}
+
+.sbbtn {
+	margin: 17px 30px 10px 0px;
+}
+
+.dialogtablebox {
+	overflow-y: auto;
+}
+
+.dialogtable {
+	width: 99%;
+	margin: 5px auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.dialogtable thead td {
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 14px;
+	border: 1px solid #ccc;
+}
+
+.dialogtable tbody td {
+	line-height: 30px;
+	border: 1px solid #ccc;
+}
+
+.dialogtable tbody td.left {
+	text-align: left;
+	line-height: 22px;
+	padding-left: 15px;
+}
+
+.my_check {
+	float: left;
+	margin: 14px 0 0 20px;
+}

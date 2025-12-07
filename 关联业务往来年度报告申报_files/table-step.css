@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* 2018-10-18 table-step.css */
+.table-step-box{position: fixed;right: 0px; z-index:1; background-color: #fff;font-size: 0px}
+.table-step-box .table-step-main{ position: relative;}
+.table-step-box .table-step-main .float-icon{  position: absolute; top:12px;right:8px; width: 46px; height: 46px; line-height: 46px;color: #FFF; text-align: center; background-image: url(../../tax-module/table_step/step_bg.png); background-repeat: no-repeat;}
+.table-step-box .table-step-main .table-step-center { display: none; width: 0;  padding-top: 26px; overflow: hidden; border-bottom: 1px solid #ededed;opacity: 0;box-sizing: border-box;
+height: 76px;
+}
+.table-step-box .table-step-main .table-step-center .table-step-item{  position: relative; text-align: center;}
+.table-step-box .table-step-main .table-step-center .table-step-item .pro-step{ position: relative; display: inline-block;  }
+.table-step-box .table-step-main .table-step-center .table-step-item .pro-step span{
+   display:inline-block;width: 24px; height: 24px;  line-height: 24px; color: #aaa;background-image: url(../../tax-module/table_step/step_03.png);
+    background-size: auto;font-size: 16px;font-weight: bold;
+}
+.table-step-box .table-step-main .table-step-center .table-step-item .pro-step span dd{color: #aaa;font-size: 16px;}
+.table-step-box .table-step-main .table-step-center .table-step-item .pro-step p{ font-size: 16px; line-height: 24px; color: #999;text-align: left;margin-left: 8px;display: inline-block }
+
+.table-step-box .table-step-main .table-step-center .table-step-item .cur-step span{ font-weight: 500; color: #fff;  background-image: url(step_01.png);}
+.table-step-box .table-step-main .table-step-center .table-step-item .cur-step span dd{color: #fff;font-size: 16px;}
+.table-step-box .table-step-main .table-step-center .table-step-item .cur-step p{ color: #4285F4; font-weight:bold;}
+
+.table-step-box .table-step-main .table-step-center .table-step-item .finish-step span{ color: #fff;  background-image: url(step_02.png); }
+.table-step-box .table-step-main .table-step-center .table-step-item .finish-step p{ color: #333; }
+
+.table-step-box .table-step-main .table-step-center .table-step-item .pro-line{ display:inline-block;width: 80px; height:16px; background-image: url(dot02.png);margin: 0 8px }
+.table-step-box .table-step-main .table-step-center .table-step-item  .finish-line{background-image: url(dot01.png);}
+.table-step-box .table-step-main .table-step-center .table-step-item .finish-step dd{visibility: hidden;}
+.table-step-box .table-step-main .table-step-center .table-step-item .pro-step.finish-step .pro-line{background-image: url(dot01.png);}

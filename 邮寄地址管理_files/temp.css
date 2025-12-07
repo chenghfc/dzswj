@@ -1,0 +1,269 @@
+body,p,table ,tr,td,h1,h2,h3,h4,h5,h6,input,dd,dl,dt{
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+}
+body{
+	min-width: 1200px;
+	color: #333;
+}
+ul ,li{
+	text-decoration: none;
+	list-style-type:none;
+	padding: 0;
+	margin: 0;
+}
+em{
+	font-size: 12px;
+	font-style: normal;
+}
+img{
+	border: none;
+}
+a{
+	text-decoration: none;
+	color: #555;
+}
+.temp_page{
+	width: 97%;
+	padding: 0 20px;
+}
+.hide-panel{
+	width: 100%;
+	margin:0 auto;
+	z-index: 100;
+	_position: relative;
+	_top:0px;
+	padding-top: 0px;
+	position: fixed;
+	top: 0;
+	height: 45px;
+	overflow: auto;
+}
+.panel-top{
+	display: block;
+	z-index: 100;
+	overflow: visible;
+	background: #ffffff;
+	background-repeat: no-repeat; 
+    background-position: right; 
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+
+}
+.tbar-title{
+	border:1px solid #8DC2E3;
+	display: block;
+	font-size: 13px;
+	font-weight: bold;
+	height: 24px;
+	margin-top: 0px;
+	padding-left: 5px;
+	padding-top: 5px;
+	display: none;
+}
+.panel-toolbar{
+	height: 30px;
+	margin-top: 0;
+	padding:8px 0 5px 0;
+	background: #ffffff;
+	width: 100%;
+	border-bottom: 2px solid #f59702;
+}
+.panel{
+	width: 100%;
+	position: relative;
+	overflow: auto;
+	/* padding:30px 0 10px 0; */
+/*	border-bottom: 2px solid #f59702;*/
+}
+.panel .panel_btn a.link,.panel-toolbar a.link,#dataForm .answer .answer_import a.link,.nav .nextpanel a.link{
+  background: url("./btn1_2.png") no-repeat transparent;
+  height: 30px;
+  line-height: 30px;
+  width: 85px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+}
+ .panel-toolbar a.link_green{
+  background: url("../images/btn1_3.png") no-repeat transparent;
+  height: 30px;
+  line-height: 30px;
+  width: 85px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+}
+.nav .nextpanel a.link{
+	margin-left: 200px;
+}
+.panel .panel_btn{
+	text-align: center;
+}
+.panel .panel_btn a.link{
+	margin: 0 20px;
+
+}
+.listTable{
+	margin: 30px 0;
+	color: #333;
+}
+
+.listTable,#dataForm .formTable{
+	background: #f9f9f9 none repeat scroll 0 0;
+    border: medium none;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: center;
+    width: 100% !important;
+}
+.listTable tr td,.formTable tr td{
+	line-height: 30px;
+	box-sizing:border-box;
+	padding:0 10px;
+	word-break:break-all;
+}
+.listTable .formHead,.formTable .formHead{
+    background: #ebebeb;
+    color: #3b8dd2;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #999999;
+    height: 22px;
+    text-align: center;
+}
+.listTable td.formtitle,.formTable  td.formtitle{
+	background: #fafafa;
+	border:1px solid #999999;
+	height: 23px;
+	text-align: right;
+}
+#dataForm .firsttable  td{
+   text-align: center;
+   height: 30px;
+   line-height: 23px;
+}
+#dataForm .firstimport td.formdata{
+	 text-align: center;
+
+}
+.formTable td.transport,.changetable td.formtitle{
+	text-align: center;
+}
+.changetable td #add,.changetable td #reduce,.delaytable td  #alter{
+	border-radius: 5px;
+	background: #477DBC;
+	color: #fff;
+	padding:5px;
+	margin:0 3px;
+    cursor: pointer;
+}
+.listTable td.formdata,.formTable  td.formdata,.changetable td.formdata{
+	background: #ffffff;
+	border:1px solid #999999;
+	height: 23px;
+	text-align: left;
+}
+.formTable  td.transport{
+	text-align: center;
+}
+.listTable td.formdata .choose{
+	display: inline-block;
+	margin: 0 10px;
+	height: 20px;
+	line-height: 20px;
+	width: 30px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.formTable  td.formdata input{
+	margin: 0 2px;
+	width: 95%;
+	border:none;
+}
+.formTable  .red{
+	color: red;
+	font-weight: bold;
+	margin-left: 1px;
+}
+.listTable .headRow th{
+	background: #fafafa;
+	border: 1px solid #999999;
+	font-size: 12px;
+	font-weight: bold;
+	height: 25px;
+	text-align: center;
+	padding: 4px;
+}
+.listTable td.formdata b{
+	font-weight: normal;
+}
+.listTable td.formdata .must,.listTable td.formdata .must_write{
+	color: red;
+	font-weight: bold;
+}
+
+#dataForm .info p{
+	height: 30px;
+	line-height: 30px;
+	text-indent: 2em;
+}
+#dataForm .answer{
+	width: 100%;
+}
+#dataForm .answer .time,#dataForm .answer .answer_import{
+ height: 30px;
+ line-height: 30px;
+ display: inline-block;
+ text-indent: 5px;
+ margin-bottom: 15px;
+}
+#dataForm .answer .answer_import{
+	display: inline-block;
+	text-align: right;
+	float: right;
+	overflow: hidden;
+	padding-right: 20px;
+}
+.nav{
+	width:1000px ;
+	margin: 20px auto;
+}
+.nav ul{
+	margin-bottom: 20px;
+}
+.nav ul li{
+	height: 40px; 
+	line-height: 40px;
+	font-size: 14px;
+
+}
+.nav ul li .nav_content{
+	padding-left: 10px;
+}
+#dataForm .dataForm_head{
+ width: 100%;
+ margin-bottom: 20px;
+}
+#dataForm .dataForm_head .legal{
+	margin-right:20px;
+
+}
+#dataForm .dataForm_bottom{
+	margin:10px 0 10px 0;
+	float: right;
+	overflow: hidden;
+}
+#dataForm .dataForm_bottom .phone{
+	margin-right: 20px;
+}
+
+

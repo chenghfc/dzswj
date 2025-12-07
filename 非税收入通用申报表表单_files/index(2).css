@@ -1,0 +1,1590 @@
+.boxInfo{
+    float: left;
+    width: 890px;
+}
+.newbox{
+    float: right;
+    margin-right: 20px;
+    margin-top: 32px;
+    width: 240px;
+}
+.newList{
+    height: 25px;
+    width: 240px;
+    border-bottom: 2px solid #70c1ff;
+}
+.listSelect{
+    background: #70c1ff;
+    color: #fff !important;
+    font-weight: bold;
+}
+.newList ul li{
+    color: #555;
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    cursor: pointer;
+}
+.newTab{
+    height: 195px;
+    padding-top: 15px;
+    width: 240px;
+}
+
+
+.banerInfo .bannerTop{
+    display:block;
+    width:890px;
+    margin-left:10px;
+    margin-top:10px;
+    height:126px;
+}
+.banerInfo .bannerTop span{
+    background: none repeat scroll 0 0 #fbfbfb;
+    border-left: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+    border-top: 2px solid #f2f2f2;
+    display: block;
+    height: 21px;
+    width: 175px;
+}
+.banerInfo .bannerTop p{
+    border-bottom: none;
+    border-right: none;
+    line-height: 18px;
+    display: block;
+    float: left;
+    height: 100px;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 700px;
+}
+.tilFont{
+    color: #12629b;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.banerInfo .bannerTop img{
+    cursor: pointer;
+    float:left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.bannerBox{
+    float:left;
+    width:885px;
+    height:100px;
+    background:#fbfbfb;
+    border:2px solid #f2f2f2;
+}
+.dateBox{
+    padding-left: 17px;
+}
+.dateBox .calendar-body table{
+    color:#31a3c5;
+    height:162px;
+    width:205px;
+    background:#fbfbfb;
+    border-left:1px solid #70c1ff;
+    border-top:1px solid #70c1ff;
+}
+.dateBox .calendar-body table tr{
+    display:block;
+    height:20px;
+    width:203px;
+}
+.dateBox .calendar-body table th{
+    background: none repeat scroll 0 0 #c9e3ff;
+    font-weight:600;
+}
+
+.dateBox .calendar-today{
+    background:#facd89;
+    color:#fff;
+    font-weight:600;
+}
+.dateBox .calendar-title{
+    font-weight:600;
+    color: #31a3c5;
+    font-size: 13px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 2px;
+    width: 150px;
+}
+.helpBox{
+    background: none repeat scroll 0 0 #fbfbfb;
+    border: 1px solid #70c1ff;
+    height: 50px;
+    width: 240px;
+}
+.helpBox a{
+    float: left;
+    display: block;
+    height: 33px;
+    width: 33px;
+    margin-top:9px;
+    margin-left:9px;
+}
+.helpLink{
+    float: left;
+    margin-left: 20px;
+    width: 167px;
+    margin-top: 4px;
+}
+.helpLink a{
+    color: #12629b;
+    margin-left: 0px;
+    display: block;
+    height: 15px;
+    width: 120px;
+    margin-top: 3px;
+}
+.weatherBox ._blank{
+    color: #70c1ff;
+    font-weight: bold;
+}
+
+.qytiltle{
+    color: #12629b;
+    display: block;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 100px;
+}
+/**/
+.potarBox{
+    float: left;
+    width: 890px;
+}
+.topUser{
+    float: left;
+    height: 20px;
+    width: 885px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.topUser span{
+    color: #12629b;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.topUser span a{
+    color: #f39800;
+    width:80px;
+    margin-left:20px;
+}
+.actionBoxLi{
+    float: left;
+    height: 188px;
+    width: 885px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.actionBox{
+    float: left;
+    height: 145px;
+    width: 885px;
+    background: #fbfbfb;
+    border: 2px solid #f2f2f2;
+}
+.actionBox ul{
+    display:block;
+    padding:10px;
+}
+.actionBox ul li{
+    display:block;
+    height:20px;
+    line-height: 20px;
+}
+.actionTiltle{
+    float: left;
+    height: 25px;
+    width: ;
+    
+}
+.actionTiltle ul li{
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 120px;
+    cursor: pointer;
+}
+.actionBox ul li span{
+    display: block;
+    float:right;
+    margin-right:20px;
+}
+.actionBox ul li a{
+    display: block;
+    float:left;
+}
+.active{
+    color: #12629b;
+    font-weight: bold;
+    background: none repeat scroll 0 0 #fbfbfb;
+    border-right: 2px solid #f2f2f2;
+    border-left: 2px solid #f2f2f2;
+    border-top: 2px solid #f2f2f2;
+}
+.scrollNew{
+    display:block;
+    float: left;
+    height: 250px;
+    width: 885px;
+    margin-left: 10px;
+}
+.scrollInfo{
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 120px;
+    background: none repeat scroll 0 0 #fbfbfb;
+    border-left: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+    border-top: 2px solid #f2f2f2;
+    color: #a40000;
+    font-weight: bold;
+}
+.taxpay{
+    background: none repeat scroll 0 0 #fbfbfb;
+    border: 2px solid #f2f2f2;
+    float: left;
+    height:220px;
+    width: 885px;
+}
+.Invoice{
+    padding:10px;
+}
+.InvoiceLi{
+    height:25px;
+    float:left;
+    border-top:1px solid #ccc;
+    margin-top:20px;
+}
+.InvoiceLi ul li{
+    display: block;
+    float: left;
+    line-height: 25px;
+    margin-left: 80px;
+    margin-right: 80px;
+    text-align: center;
+    width: 120px;
+    cursor: pointer;
+}
+.selectInvoice{
+    border-top: 2px solid #208dda;
+}
+.scrollNoBox{
+    margin-top:10px;
+    float: left;
+    height:150px;
+    width: 865px;
+    overflow-x: hidden;
+}
+.scrollNoBox table{
+    background:#fff;
+    margin-left:10px;
+    width: 845px;
+    border-top:1px solid #ededed;
+    border-left:1px solid #ededed;
+}
+.scrollNoBox table tr{
+    height:25px;
+}
+.scrollNoBox table tr td{
+    text-align: center;
+    width:173px;
+    border-right:1px solid #ededed;
+    border-bottom:1px solid #ededed;
+}
+.appBox{
+    height: 180px;
+    width: 240px;
+}
+.appBox ul{
+    display: block;
+    margin-top: 6px;
+}
+.appBox ul li{
+    display: block;
+    float: left;
+    height: 65px;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 60px;
+    text-align: center;
+}
+.appBox ul li a{
+    display: block;
+    color:#12629b;
+}
+.appBox ul li a i{
+    background: none repeat scroll 4px 4px #2894c1;
+    border-radius: 3px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin-left:10px;
+}
+.appBox ul li a span{
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 3px;
+}
+.appLi{
+    color: #12629b;
+    font-weight: bold;
+    padding-left: 2px;
+}
+.noneInfo{
+    padding-left:20px;
+    padding-top:20px;
+    color:#a40000;
+}
+.adduserBtn{
+    float:left;
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    width: 70px;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+.tableWidth{
+    margin-top: 10px;
+}
+/* .tableBox table{
+    border-left: 1px solid #d6d6d6;
+    border-top: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    margin-left: 20px;
+    width: 96%;
+} */
+.tableBox table thead{
+    height:22px;
+    background-color:#f2f2f2;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#fff,endColorStr=#f2f2f2);/*IE6*/
+    background:-moz-linear-gradient(top,#fff,#f2f2f2);/*闈濱E6鐨勫叾瀹�/
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#f2f2f2));/*闈濱E6鐨勫叾瀹�/
+}
+.tableBox table tbody{
+    background-color:#ffffff;
+}
+.tableBox table td, th{
+    border-bottom: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    /* display: block;
+    float: left; */
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+/* .tableWidth table td, th{
+    width: 12.055%;
+} */
+.billqyContentBox{
+    border: 1px solid #d6d6d6;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.activeTableWidth table td{
+    width: 24.91%;
+    background:#fdfdfd;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+.activeTableWidth table th{
+    width: 24.56%;
+}
+.tingTableWidth table th{
+    width: 24.56%;
+}
+.tingTableWidth table td{
+    width: 24.91%;
+    background:#fdfdfd;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+.addUesrBox{
+    width:468px;
+    height:30px;
+    float:left;
+    margin-top: 7px;
+}
+.addUesrBox h1{
+    display: block;
+    float: left;
+    margin-left: 30px;
+    width: 60px;
+    line-height:30px;
+}
+.addUesrBox span{
+    color:red;
+    display:block;
+    float: left;
+    margin-left: 13px;
+}
+.addUesrBox span input{
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #c1c1c1;
+    color: #777777;
+    height: 21px;
+    width:150px;
+}
+.addUesrBox span select{
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #c1c1c1;
+    color: #777777;
+    height: 25px;
+    width: 155px;
+}
+.addUesrBox span a img{
+    cursor: pointer;
+}
+.addAppNameBox{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    width: 450px;
+}
+.addAppNameBox span{
+    display: block;
+    float: left;
+    font-weight: bold;
+    text-align: center;
+    width: 80px;
+}
+.addAppNameBox label{
+    display: block;
+    float: left;
+    width: 80px;
+}
+.addAppNameBox .tempBox{
+    float: left;
+    width: 80px;
+}
+.tempBox label select{
+    border: 1px solid #c1c1c1;
+    height: 21px;
+    width: 80px;
+}
+.addAppNameBox .uesrNameBox{
+    float: left;
+    width: 240px;
+}
+.sureUserBtn{
+    display: block;
+    float: right;
+    line-height: 21px;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 70px;
+}
+
+.appActive{
+    color: #12629b;
+    display: block;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 20px;
+    /* margin-top: 10px; */
+}
+.nameSure{
+    display: block;
+    padding-left:20px;
+    width:1140px;
+    line-height:17px;
+    margin-top: 8px;
+}
+.star{
+    float: left;
+    margin-left:5px;
+    width:19px;
+    height:19px;
+    background:url("img/star.png");
+}
+.saveOne{
+    width:73px;
+    height:74px;
+    background:url("img/img-osave.png");
+}
+.saveTwo{
+    width:73px;
+    height:74px;
+    background:url("img/img-save.png");
+}
+.saveThree{
+    width:73px;
+    height:74px;
+    background:url("img/img-name.png");
+}
+.savefine{
+    width:73px;
+    height:74px;
+    background:url("img/img-usb.png");
+}
+.savefire{
+    width:73px;
+    height:74px;
+    background:url("img/aqkj_03.png");
+}
+.aqlist{
+    padding:10px;
+    margin-top:10px;
+}
+.aqlist .text{
+    width:500px;
+    height:55px;
+    line-height:21px;
+}
+.aqlist span{
+    color: #12629b;
+    font-weight: bold;
+    height:35px;
+    line-height:35px;
+}
+.aqlist table tr{
+    display:block;
+    height:140px;
+}
+.sqBtn{
+    width:120px;
+    height:25px;
+}
+.activeButton{
+    cursor: pointer;
+    background: none repeat scroll 0 0 #12629b;
+    border: 1px solid #12629b;
+    border-radius: 3px;
+    color: #fff45c;
+    font-weight: bold;
+}
+.activeButton:hover{
+    background: none repeat scroll 0 0 #094c7c;
+    color: #fff;
+}
+.minbox{
+    height: 30px;
+    margin-left: 20px;
+    height: 30px;
+}
+.minbox .minboxText{
+    font-weight: bold;
+    line-height: 30px;
+}
+.minbox input{
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #c1c1c1;
+    color: #777777;
+    height: 21px;
+    width: 150px;
+    float: left;
+    margin-left: 15px;
+}
+.minbox span{
+    display: block;
+    float: left;
+    line-height: 30px;
+    
+}
+.minbox img{
+    display: block;
+    float: left;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+.minbtn{
+    float: right;
+    height: 21px;
+    margin-right: 53px;
+    width: 60px;
+}
+.portalTop{
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.portalTop span{
+    font-weight: bold;
+    height:21px;
+    line-height:21px;
+}
+.portalInfo{
+    background: #fbfbfb;
+    border: 2px solid #f2f2f2;
+    margin-top: 10px;
+    min-height: 123px;
+    padding: 10px;
+    width: 885px;
+    margin-bottom:20px;
+    line-height: 20px;
+}
+.portalInfo ul li{
+    display:block;
+    height:20px;
+    width:885px;
+    float: left;
+}
+.portalInfo ul li span{
+    font-weight: inherit;
+    float:right;
+    margin-right:20px;
+}
+/*绋庡姟瀛︽牎*/
+
+.warpRight{
+    width:220px;
+    float:right;
+    background: none repeat scroll 0 0 #fbfbfb;
+    border: 2px solid #f2f2f2;
+    margin-right:10px;
+    margin-top:36px;
+    margin-bottom:20px;
+}
+.warpLeft{
+    margin-bottom:20px;
+    margin-top:10px;
+    margin-left:10px;
+    width:910px;
+    float:left;
+}
+.firstBox{
+    line-height: 25px;
+    width:885px;
+    height:203px;
+    float:left;
+    padding:10px;
+    background: none repeat scroll 0 0 #fbfbfb;
+    border: 2px solid #f2f2f2;
+}
+.rightTiltle{
+    background:#70c1ff;
+    color: #fff;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 220px;
+}
+.askList{
+    float: left;
+    line-height: 25px;
+    text-align: left;
+    
+}
+.askList ul li span{
+    color: #12629b;
+    display: block;
+    float: left;
+    font-weight: bold;
+    margin-top: 0;
+    width: 200px;
+    padding-left: 10px;
+}
+.askList ul li div{
+    border-bottom:none;
+    border-right: none;
+    display: block;
+    padding-right:10px;
+    width: 200px;
+}
+.askList ul li div a{
+    display: block;
+    float: left;
+    padding-left: 10px;
+}
+.askBox{
+    margin-left: 20px;
+    width: 338px;
+    float:left;
+    background:#70c1ff;
+    color: #fff;
+    height: 230px;
+    border: 2px solid #41a2e8;
+}
+
+.askBox ul li a{
+    font-weight: bold;
+    color:#fff;
+}
+.askBox ul{
+    color:#fff;
+    display: block;
+    float: left;
+    line-height: 25px;
+    padding-left: 10px;
+    padding-top: 9px;
+}
+.dnBj{
+    float: right;
+    height: 120px;
+    margin-right: 44px;
+    width: 90px;
+    background:url("img/dn_14.png");
+}
+.chartsBox{
+    float: left;
+    height: 175px;
+    margin-top:17px;
+    width: 910px;
+    line-height: 25px;
+}
+.chartsBox .chartOne{
+    float: left;
+    height: 230px;
+    width: 260px;
+    background: #fbfbfb;
+    border: 2px solid #f2f2f2;
+}
+.chartsBox .chartTwo{
+    float: left;
+    height: 230px;
+    width: 260px;
+    margin-left:20px;
+    background: #fbfbfb;
+    border: 2px solid #f2f2f2;
+}
+.askTiltle ul li{
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 120px;
+    cursor: pointer;
+}
+.firstBox div{
+    margin-left: 10px;
+}
+.chartOne ul li a{
+    display: block;
+    float: left;
+    cursor: pointer;
+    color: #f39800;
+    font-weight: bold;
+    width: 70px;
+    margin-left: 30px;
+}
+.chartTwo ul li a{
+    display: block;
+    float: left;
+    cursor: pointer;
+    color: #f39800;
+    font-weight: bold;
+    width: 70px;
+    margin-left: 30px;
+}
+/*搴旂敤涓績*/
+.tabs-selected{
+    background:#41a1ce;
+    border-left:1px solid #fff;
+}
+
+.magBtn{
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 21px;
+    line-height: 21px;
+    margin-top: 3px;
+    width: 65px;
+    text-align: center;
+}
+#top{
+    float: left;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 0 20px;
+    padding: 0;
+    width: 200px;
+}
+.app-boxM{
+    float: left;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    min-height: 450px;
+    width: 98.8%;
+    background:#f3f3f3;
+    border:1px solid #c9c9c9;
+    border-top:none;
+}
+#save{
+    height: 30px;
+    padding-top: 10px;
+    width: 96%;
+}
+#save span{
+    line-height: 30px;
+    padding-left:20px;
+}
+#finish{
+    height: 30px;
+    padding-top: 10px;
+    width: 96%;
+}
+#finish span{
+    line-height: 30px;
+    padding-left:20px;
+}
+.ui-title{
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 120px;
+    background:#fff;
+    border:1px solid #e6e6e6;
+    border-bottom:none;
+    margin-top: 10px;
+}
+#myAppDiv{
+    background: #fff;
+    border:1px solid #e6e6e6;
+    float: left;
+    min-height: 300px;
+    width: 100%;
+    padding-top: 20px;
+}
+.appshuiwu{
+    cursor: pointer;
+    float: left;
+    height: 80px;
+    margin-left: 40px;
+    width: 50px;
+}
+.Appshuiwu{
+    cursor: pointer;
+    float: left;
+    height: 80px;
+    margin-left: 30px;
+    width: 80px;
+}
+.appshuiwu a{
+    display: block;
+    margin-top: 10px;
+}
+.appimgs{
+    
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+}
+.Appimgs{
+    
+    border-radius: 5px;
+    height: 75px;
+    width: 75px;
+}
+.appimgs img{
+    margin-left: 9px;
+    margin-top: 8px;
+}
+.color1{
+    background: #a8d293;
+}
+.color2{
+    background: #d6b5d4;
+}
+.color3{
+    background: #a8d7e9;
+}
+.color4{
+    background: #e9877a;
+}
+.AppDiv{
+    background: #fff;
+    border:1px solid #e6e6e6;
+    float: left;
+    min-height: 300px;
+    min-width:98.1%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+.bgcolor1{
+    background: #2894c1;
+    border-radius: 5px;
+}
+.addAppBox{
+    height: 180px;
+    width: 240px;
+}
+.addAppBox ul{
+    /* display: block; */
+    margin-top: 6px;
+}
+.addAppBox ul li{
+    display: block;
+    float: left;
+    height: 65px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    width: 80px;
+}
+.addAppBox ul li a{
+    display: block;
+    color:#12629b;
+}
+.addAppBox ul li a i{
+    background: none repeat scroll 4px 4px #2894c1;
+    border-radius: 3px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin-left:10px;
+}
+.addAppBox ul li a span{
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 3px;
+}
+.AppDiv ul{
+    display:block;
+    float:left;
+    width:100%;
+    height:25px;
+    background:#c9e3ff;
+    border-bottom: 1px solid #7ecef4;
+    border-left: 1px solid #7ecef4;
+}
+.AppDiv ul li{
+    border-right: 1px solid #7ecef4;
+    color: #999;
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 165px;
+}
+.AppDiv .tabs-panels .panel{
+    margin-top: 28px;
+}
+.dialog-button{
+    bottom: 0;
+    float: left;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+.dialog-button .l-btn{
+    display: block;
+    float: right;
+    height: 21px;
+    margin-right: 10px;
+    width: 50px;
+}
+.dialog-button .l-btn .l-btn-left .l-btn-text{
+    
+}
+.dialog-button .l-btn .l-btn-left{
+    line-height: 21px;
+    display:block;
+    height: 21px;
+    width: 50px;
+    color: #555;
+    border:1px solid #b8b8b8;
+    cursor:pointer;
+    text-align:center;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    background-color:#e6e6e6;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#fff,endColorStr=#e6e6e6);
+    background:-moz-linear-gradient(top,#fff,#e6e6e6);
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#e6e6e6));
+}
+.saveBtn{
+    display: block;font-size: 14px;margin-left: 10px; padding-top: 10px;
+}
+.dragsort{
+    float: left;
+    height: 100px; 
+    margin-left: 30px;
+    margin-top: 35px;
+    min-width: 1050px; 
+}
+.appAllIconLi {
+    float: left;
+    height: 80px;
+    margin-left: 20px;
+    width: 80px;
+}
+.appAllIconLi img{
+    float: left;
+    margin-left: 14px;
+}
+.appAllIconLi a{
+    display: block;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    width: 80px;
+}
+/*鐢ㄦ埛璐︽埛绠＄悊*/
+.maincon{
+    margin-left:20px;
+    width:96%;
+}
+.addresstit{
+    background: #e1f0ff;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    padding-left: 20px;
+    width:99%;
+    float: left;
+}
+.wapLeft{
+    float: left;
+    height: 153px;
+    width: 500px;
+}
+.wapRight{
+    float: right;
+    height: 153px;
+    width: 400px;
+}
+.baseBoxInfo div{
+    float: left;
+    height: 25px;
+    margin-top: 10px;
+    width: 500px;
+}
+.baseBoxInfo div input{
+    background:#fafafa;
+    border: 1px solid #c1c1c1;
+    height: 21px;
+    width: 150px;
+    margin-left: 10px;
+}
+.baseBoxInfo div label{
+    float: left;
+    line-height: 25px;
+    margin-left: 20px;
+    width: 80px;
+}
+.baseBoxInfo div span a{
+    color: #f19149;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+#security{
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.wapRight em{
+    background: none repeat scroll 0 0 #12639b;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 120px;
+}
+#preview{
+    margin-top:15px;
+}
+.oterInfo{
+    float: left;
+    height: 300px;
+    width: 100%;
+}
+.dobaseBoxInfo div{
+    float: left;
+    height: 25px;
+    margin-top: 10px;
+    width: 100%;
+}
+.baseInputBox{
+    color: #555;
+    border: 1px solid #c1c1c1;
+    height: 21px;
+    width: 150px;
+    margin-left: 10px;
+}
+.dobaseBoxInfo div label{
+    float: left;
+    line-height: 25px;
+    margin-left: 20px;
+    width: 80px;
+}
+.dobaseBoxInfo div span a{
+    color: #f19149;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.radioBox{
+    height: 21px;
+    margin-left: 0;
+    width: 33px;
+}
+.baseInputSelectBox{
+    border: 1px solid #c1c1c1;
+    height: 25px;
+    width: 150px;
+    margin-left: 10px;
+    color: #555;
+    font-family: "寰蒋闆呴粦";
+    font-size: 13px;
+    line-height: 25px;
+}
+.tips{
+    color: #12629b;
+    font-weight: bold;
+    line-height: 25px;
+    margin-left: 10px;
+}
+.saveInfo{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 100px;
+    width: 100px;
+}
+.aqzxtit{
+    float: left;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    width: 100%;
+}
+.salf{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+}
+.salf div{
+    color: #fff100;
+    text-shadow: 0 1px 1px #556fb5;
+    font-weight: bold;
+    float: left;
+}
+.salf span{
+    float: left;
+    color:#a40000;
+}
+.salf img{
+    float: left;
+    margin-top: 10px;
+}
+.salfBox{
+    background: #fafafa;
+    border: 1px solid #c9e3ff;
+    float: left;
+    width: 100%;
+    border-bottom:none;
+}
+.salfBox div{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+.salfBox label{
+    color: green;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    width: 120px;
+}
+.salfBox .tipSalf{
+    margin-left: 30px;
+    width: 386px;
+}
+.salfBox div a{
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    margin-left: 80px;
+    margin-right: 20px;
+    margin-top: 2px;
+    text-align: center;
+    width: 70px;
+}
+.salfMainBox{
+    float: left;
+    height: auto;
+    width: auto;
+    margin-top:30px;
+    border-bottom: 1px solid #c9e3ff;
+}
+.password{
+    background: none repeat scroll 0 0 #f3f3f3;
+    border-left: 1px solid #c9e3ff;
+    border-right: 1px solid #c9e3ff;
+    color: #eb6100;
+    margin-left: 20px;
+    padding-right: 20px;
+    width: 290px;
+}
+.salfInfo{
+    border-left: 1px solid #c9e3ff;
+    width: 350px;
+}
+.addresstit2{
+    color: #a40000;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    width: 100%;
+}
+.addresslist{
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%;
+}
+.addresslist tabel{
+    width: 100%;
+}
+.addresslist tabel tr{
+    height: 25px;
+    width: 100%;
+}
+.ui-col3 span{
+    color:#fff;
+}
+
+/* .addresslist table td, th {
+    width: 10%;
+} */
+.addresslist table td, th {
+    border-bottom: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+.addresslist table th{
+    background: -moz-linear-gradient(center top , #fff, #f2f2f2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.addresslist table td{
+    background:#fdfdfd;
+}
+#addico{
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+}
+#addico img{
+    float: left;
+    margin-top: 5px;
+}
+#addico span{
+    display:block;
+    line-height:30px;
+    width:75px;
+    margin-left:30px;
+}
+#addico a{
+    display: block;
+    float: left;
+    margin-left: 40%;
+}
+.addressadd{
+    float: left;
+    margin-bottom: 30px;
+}
+.addressadd ul li{
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 100%;
+}
+.addressadd ul li span{
+    display: block;
+    float: left;
+    width:80px;
+}
+.addressadd ul li input{
+    border: 1px solid #c1c1c1;
+    height: 21px;
+    margin-left: 10px;
+    width: 150px;
+    float: left;
+    font-size:12px;
+}
+.addressadd ul li select{
+    border: 1px solid #c1c1c1;
+    color: #555;
+    font-family: "寰蒋闆呴粦";
+    font-size: 13px;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 10px;
+    width: 155px;
+    float: left;
+    font-size:12px;
+}
+.addressadd ul li textarea{
+    float: left;
+    border: 1px solid #c1c1c1;
+    height: 60px;
+    margin-left: 10px;
+    width: 250px;
+    font-size:12px;
+}   
+.saveinfoBtn{
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 90px;
+    width: 60px;
+}
+.helpinfoBox{
+    float: left;
+    width:100%;
+    height:80px;
+    background:#d1f0fb;
+    border:1px solid #bfe6f3;
+}
+.tabs-header-noborder{
+    float: left;
+    width:100%;
+    height:25px;
+}
+/* #tt{
+    margin-top: 20px;
+} */
+#tt .panel-body{
+    background: none;
+    border: none;
+}
+/* #fp table{
+    margin-left:20px;
+} */
+.evetdaddresstit{
+    background: none repeat scroll 0 0 #c9e3ff;
+    border-bottom: 1px solid #66a1d0;
+    float: left;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    cursor: pointer;
+}
+.jianyiBox {
+    margin-top:10px;
+    margin-left: 50%;
+    width: 1100px;
+}
+.jianyiBox table{
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    margin-left: -550px;
+    text-align: center;
+    width: 1100px;
+}
+.jianyiBox table td{
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height:21px;
+}
+.thBj{
+    background:#f2f2f2;
+    background: -moz-linear-gradient(center top , #fff, #f2f2f2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.helpOneInfo{
+    color: #009fd5;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 60px;
+    margin-top: 24px;
+}
+.helpinfoBtn{
+    display: block;
+    float: left;
+    font-size: 17px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 23px;
+}
+.helpTwoInfo{
+    color: #22ac38;
+    display: block;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 26px;
+}
+.helpThreeInfo{
+    color: #f8b551;
+    display: block;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 19px;
+    text-shadow: 0 1px 1px #a84200;
+}
+.infoTelephone{
+    margin-left:130px;
+    margin-top:16px;
+    height:42px;
+    width:39px;
+    float:left;
+    background:url("img/tel_03.png");
+}
+#win table tr{
+    height:35px;
+    line-height:35px;
+}
+#win table tr td label{
+    display: block;
+    float: left;
+    padding-left: 30px;
+    width: 130px;
+}
+.wintableinput{
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    width: 150px;
+}
+.updataBtn{
+    height: 25px;
+    line-height: 25px;
+    width:153px;
+}
+.updatainfoBtn{
+    height: 25px;
+    width:60px;
+    margin-left:255px;
+}
+.delDiv label{
+    display: block;
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 20px;
+    width:90px;
+}
+.delDiv input{
+    background: none repeat scroll 0 0 #fafafa;
+    border: 1px solid #c1c1c1;
+    height: 21px;
+    margin-left: 10px;
+    width: 150px;
+    font-size: 12px;
+}
+.delBox{
+    width:100%;
+    height:35px;
+    line-height:35px;
+}
+
+.onck{
+    display: block;
+    float: left;
+    height:16px;
+    margin-left: 33px;
+    margin-top: 5px;
+    width: 16px;
+    background:url("img/bj_03.png");
+}
+.del{
+    display: block;
+    float: left;
+    height: 16px;
+    margin-top: 5px;
+    width: 16px;
+    background:url("img/del_05.png");
+}
+.addresstitinfo{
+    background: #e1f0ff;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    height: 26px;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-top: 4px;
+    width: 98%;
+}
+.tabs{
+    cursor: pointer;
+    width:100%;
+    line-height: 38px;
+    float:left;
+    height: 38px;
+    padding: 0px;
+    margin: 0;
+    text-indent: 10px;
+    font-size: 14px;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+    /* margin-bottom: 1px; */
+    background-color: #ececec;
+    text-align: left;   
+}
+
+.tabsContent ul li{
+    display:block;
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    /*text-indent: 40px;*/
+    font-size: 14px;
+}
+.tabsContent ul li:hover{
+    background-color: rgb(222, 248, 156);
+}
+.tabsContent{
+    width: 100%;
+    float:left;
+}
+.tabsContentBox{
+    
+    float: left;
+    margin-bottom: 20px;
+    
+    margin-top: 0;
+    
+    width: 100%;
+    font-size: 16px;
+}

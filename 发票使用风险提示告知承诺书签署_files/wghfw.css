@@ -1,0 +1,73 @@
+.top_div {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-indent: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+}
+.panel-body {
+	height: auto !important;
+}
+
+#grid_list {
+	width: auto;
+	bottom: 0;
+	margin-left: 2.5%;
+}
+
+#grid_list .datagrid-sort-desc .datagrid-sort-icon {
+	padding: 0 7px 0 0;
+}
+
+#grid_list .datagrid-sort-asc .datagrid-sort-icon {
+	padding: 0 8px 0 0;
+}
+
+/* 分页条下拉列表隐藏 */
+#grid_list .pagination>table>tbody>tr>td:first-child{
+	display:none;
+}
+/* 分页条 */
+#grid_list .pagination table{
+	margin-left:5%;
+} 
+#grid_list .pagination-info{
+	margin-right:10%;
+	
+}
+.datagrid .panel-title {
+    font-size: 14px;
+    margin-left: 16px;
+    height: 25px;
+    line-height: 25px;
+}
+.datagrid .datagrid-header-row{
+	font-size: 14px;
+    margin-left: 16px;
+    height: 25px;
+    line-height: 25px;
+    color: #0994dc;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+.datagrid-header, .datagrid-toolbar {
+    border-color: #d7e8f9;
+}
+.not_click{
+	pointer-events:none;
+}
+#box_wgh_ecfdxx，#box_wghfdxx {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: 0;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 50px;
+    background-color: #fff;
+    position: fixed;
+}

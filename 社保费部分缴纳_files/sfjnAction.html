@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- saved from url=(0184)https://etax.jiangsu.chinatax.gov.cn/shenbao/sfjnAction.action?sign=index&nsrdzdah=10113204000164699473&new_dlm=91320402791965190J&username=91320402791965190J&djxh=10113204000047917036 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon.js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ <link href="./WdatePicker.css" rel="stylesheet" type="text/css"></head><body style="overflow:auto;"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="./My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div><input type="hidden" name="sbzbstate" id="sbzbstate" value="null">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="./jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./easyui(1).css">
+<script type="text/javascript" src="./jquery-ui.min.js"></script>
+<script type="text/javascript" src="./jquery.messageBox.js"></script>
+<script type="text/javascript" src="./sfjncx.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script>
+<title>税费缴纳信息查询</title>
+<style>
+
+	.datacontent .datatitle,.datatitle td {
+		padding: 0;
+		height: 35px;
+		line-height: 35px;
+		background: #ebebeb;
+		color: #4585eb;
+		font-size: 14px;
+		text-indent: 20px;
+		font-weight: bold;
+		border: 1px solid #CAC7C7;
+		border-bottom: none;
+	}
+	.datatitle td{
+		text-indent: 0;
+	}
+	.table1{
+		width:100%;
+	}
+	.datacontent .table1 td.label {
+		background-color: #F9F9F9;
+		text-align: right;
+		padding-right: 10px;
+		min-width:90px;
+	}
+	.datacontent .table1 td.data {
+		height: 17px;
+		line-height: 16px;
+		padding: 10px 0px;
+		text-align:left;
+	}
+	.datacontent .table1 td {
+		border: 1px solid #CAC7C7;
+		font-size: 12px;
+		min-width: 30px;
+		color: #555;
+	}
+	.table1 td select{
+		
+	}
+	.datacontent .table1 td.data input[type='text'].search-input {
+		width: 97%;
+		max-width: 480px;
+		height: 25px;
+		line-height: 25px;
+		text-indent: 5px;
+	}
+	.combo {
+		border: 1px solid #95B8E7;
+		background-color: #fff;
+		line-height: 20px;
+		outline:none;
+		
+	}
+	.combo-text{
+		text-align:left;
+	}
+	.sure-btn {
+		background: #4585eb;
+		color: #fff;
+		cursor: pointer;
+		width: 85px;
+		height: 30px;
+		line-height: 30px;
+		border: none;
+		border-radius: 3px;
+		text-align:center;
+		margin:10px 0;
+		font-size:14px;
+	}
+	.sure-btn:hover{
+		opacity:0.6;
+		background-color:#4585eb;
+		border:none;
+	}
+	.tb input[type="text"]{
+		width:90%;
+	}
+</style>
+<style type="text/css">
+.panel{
+	display:none;
+}
+.tab_panel{
+	float:left;
+	color:#aaa;
+	padding:10px 16px;
+	list-style:none;
+	margin:0;
+	cursor:pointer;
+	position:relative;
+	bottom:-2px;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	border:1px solid #888;
+	border-bottom:1px solid #888;
+}
+.tab_panel.active{
+	color: #0994dc;
+	border-bottom:1px solid #fff;
+}
+</style>
+
+
+<form method="post" id="sfjnForm" action="https://etax.jiangsu.chinatax.gov.cn/shenbao/sfjnAction.action?sign=queryDetail">
+	<div id="infosearch">
+		<div class="datacontent">
+			<div class="datatitle">税(费)款缴纳查询</div>
+			<table class="table1" align="center" id="tab1" cellpadding="0" cellspacing="0" border="0">
+				<colgroup>
+		    		<col style="width: 18%">
+		    		<col style="width: 25%">
+		    		<col style="width: 18%">
+		    		<col style="width: 25%">
+		    		<col style="width: 12%">
+		    	</colgroup>
+				<tbody><tr>
+					<td class="label">纳税人或扣缴义务人识别号</td>
+					<td><input name="nsrsbh" class="fsrx" readonly="readonly" value="913204027919XXXXXX"></td>
+					<td class="label">纳税人或扣缴义务人名称</td>
+					<td colspan="2"><input name="nsrmc" class="fsrx" readonly="readonly" value="常州XXXX有限公司"></td>
+				</tr>
+				<tr>
+					<td class="label">应征凭证种类</td>
+					<td colspan="2">
+						 <select name="yzpzzl_dm" style="width:100%; height: 25px;">
+				            
+				            	<option value="BDA0610222">BDA0610222 | 《社会保险费缴费申报表（适用单位缴费人）》</option>
+				            
+				            	<option value="BDA0611052">BDA0611052 | 《社会保险费核定通知单（适用特殊缴费）》</option>
+				            
+	                 	</select>
+					</td>
+					<td colspan="2"></td>
+				</tr>
+				<tr>
+					<td class="label">税款属期</td>
+					<td><input type="text" class="srx" name="sssq" id="sssq" onclick="WdatePicker({dateFmt:&#39;yyyy-MM&#39;}); " value="">
+					</td>
+					<td class="label" style="text-align: center;">至</td>
+					<td><input type="text" class="srx" name="sssz" id="sssz" onclick="WdatePicker({dateFmt:&#39;yyyy-MM&#39;});" value="">
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="5" align="right" style="padding-right: 20px;">
+						&nbsp; &nbsp; &nbsp; &nbsp; 
+						<input id="search_bt" type="button" value="查 询" class="sure-btn" rowbtnbz="0" onclick="queryDetail()">
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+						<input id="reset_bt" type="button" value="重 置" class="sure-btn" rowbtnbz="0" onclick="deleteAllInp()">
+					</td>
+				</tr> 
+			</tbody></table>
+			<br>
+			<ul style="height:40px;border-bottom:1px solid #888;width:99.8%;margin:10px auto;">
+				<li class="tab_panel" index="0">
+					<span style="text-align:center; font-family:宋体;font-size:15px;">
+					<b>待缴款信息列表</b> </span>
+				</li>
+				<li class="tab_panel active" index="1">
+					<span style="text-align:center; font-family:宋体;font-size:15px;">
+					<b>待缴款信息列表（社保费）</b> </span>
+				</li>
+			</ul>
+			<div class="panel" index="0" style="display: none;">
+			<table class="table1" align="center" id="tab1" cellpadding="0" cellspacing="0" border="0">
+					 <colgroup>
+			    		<col style="width: 12%">
+			    		<col style="width: 20%">
+			    		<col style="width: 18%">
+			    		<col style="width: 10%">
+			    		<col style="width: 10%">
+			    		<col style="width: 10%">
+			    		<col style="width: 10%">
+			    		<col style="width: 8%">
+			    	</colgroup>
+					<tbody><tr class="datatitle">
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应征凭证序号</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应征凭证种类</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">税款所属期</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应征发生日期</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应（补）退税额</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">税款属性</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">缴款期限</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">操作</td>
+					</tr>
+				</tbody><tbody>
+					
+					
+						<tr style="margin-top: 10px;" align="center">
+							<td colspan="8">未查询到数据</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			</div>
+			<div class="panel" index="1" style="display: block;">
+			<table class="table1" align="center" id="tab1" cellpadding="0" cellspacing="0" border="0">
+					 <colgroup>
+			    		<col style="width: 12%">
+			    		<col style="width: 20%">
+			    		<col style="width: 18%">
+			    		<col style="width: 10%">
+			    		<col style="width: 10%">
+			    		<col style="width: 10%">
+			    		<col style="width: 10%">
+			    		<col style="width: 8%">
+			    	</colgroup>
+					<tbody><tr class="datatitle">
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应征凭证序号</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应征凭证种类</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">税款所属期</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">社保编号</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">应（补）退税额</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">税款属性</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">缴款期限</td>
+						<td style="text-align: center;font-weight: bold;font-size: 14px;font-family: inherit;">操作</td>
+					</tr>
+				</tbody><tbody>
+					
+					
+						<tr style="margin-top: 10px;" align="center">
+							<td colspan="8">未查询到数据</td>
+						</tr>
+					
+				</tbody>
+			</table>
+			</div>
+					
+			</div>
+		</div>
+		</form>
+
+
+</body></html>

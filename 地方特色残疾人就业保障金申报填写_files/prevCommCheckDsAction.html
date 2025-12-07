@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!-- saved from url=(0251)https://etax.jiangsu.chinatax.gov.cn/shenbao/sb10517001_2020Action.action?sign=queryData&lsh=d101132040000479170362301121010517&bb_zlbh=10517001&zt=4&sssq_q=2023-01-01&sssq_z=2023-12-31&sb_zlid=10517&sb_type=46&zsxm_dm=30218&nsqx_dm=10&sbstate=4&xmbm= -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(2).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon(1).js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ <link href="./WdatePicker.css" rel="stylesheet" type="text/css"><link href="./WdatePicker.css" rel="stylesheet" type="text/css"></head><body><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="./My97DatePicker(1).html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div><input type="hidden" name="sbzbstate" id="sbzbstate" value="4">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="./jquery-ui.css">
+<script type="text/javascript" src="./jquery-ui.min.js"></script>
+<script type="text/javascript" src="./jquery.messageBox.js"></script>
+<script type="text/javascript" src="./sb10517001.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script>
+<title>残疾人就业保障金缴费申报表</title>
+
+
+<div class="etaxTBar"><div class="btn_ho" onclick="goBack();" id="goback_btn"><img src="./back.png" alt=""><span>返回</span></div><div class="btn_ho gray" id="save_btn" disabled="disabled"><img src="./action_save.gif" alt=""><span>保存</span></div><div class="btn_ho" id="chooseBB_btn"><img src="./preview.png" alt=""><span>切换报表</span></div></div>
+<div align="center" class="dbt">残疾人就业保障金缴费申报表</div>
+<br>
+<span id="warnLabel1" style="color:red;"></span><span id="warnLabel2" style="color:red;"></span><span id="warnLabel3" style="color:red;"></span>
+
+    <table class="tb" align="center" cellpadding="0" cellspacing="0" border="1">
+    	<tbody><tr>
+    		<td style="text-align: right;padding-right: 10px;">
+    			税款所属期起
+    		</td>
+    		<td style="text-align: left;">
+    		    <input class="fsrx" readonly="readonly" type="text" name="nsrjbxxMap.skssqq" value="2023-01-01">
+    		</td>
+    		<td style="text-align: right;padding-right: 10px;">
+    			税款所属期止
+    		</td>
+    		<td style="text-align: left;">
+    			<input class="fsrx" readonly="readonly" type="text" name="nsrjbxxMap.skssqz" value="2023-12-31">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td style="text-align: right;padding-right: 10px;">
+    			缴费人识别号（统一社会信用代码）
+    		</td>
+    		<td style="text-align: left;">
+    			<input class="fsrx" readonly="readonly" type="text" name="nsrjbxxMap.nsrsbh" value="913204027919XXXXXX">
+    		</td>
+    		<td style="text-align: right;padding-right: 10px;">
+    			缴费人名称
+    		</td>
+    		<td style="text-align: left;">
+    			<input class="fsrx" readonly="readonly" type="text" name="nsrjbxxMap.nsrmc" value="常州XXXX有限公司">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td style="text-align: right;padding-right: 10px;">
+    			<span style="color: red;font-weight: blod;">*</span>联系电话
+    		</td>
+    		<td style="text-align: left;">
+    		    <input class="srx" type="text" name="lxdh">
+    		</td>
+    		<td style="text-align: right;padding-right: 10px;" colspan="2">金额单位：元至角分</td>
+    		
+    	</tr>
+
+
+ 	<input type="hidden" name="nsrjbxxMap.zcdlxdh" value="88019927"> 	
+		<input type="hidden" name="nsrjbxxMap.xzqhsfmc" value="">
+    	<input type="hidden" name="nsrjbxxMap.xzqhsf" value="0">
+    	<input type="hidden" name="nsrjbxxMap.xzqhdsmc" value="">
+    	<input type="hidden" name="nsrjbxxMap.xzqhds" value="0">
+    	<input type="hidden" name="nsrjbxxMap.xzqhqxmc" value="">
+    	<input type="hidden" name="nsrjbxxMap.xzqhqx" value="0">
+    	<input type="hidden" name="nsrjbxxMap.jdxzmc" value="">
+    	<input type="hidden" name="nsrjbxxMap.jdxzDm" value="0">
+    	<input type="hidden" name="nsrjbxxMap.scjydz" value="天宁区XXXX甲单元203室">
+    	</tbody></table>
+    <table width="98%" class="tb" id="tab1" align="center" cellpadding="0" cellspacing="0" border="1">
+    	<colgroup>
+     		<col style="width: 3%">
+    		<col style="width: 9%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    		<col style="width: 8%">
+    	</colgroup>
+        <tbody><tr>
+           <td style="text-align: center;">序号</td>
+           <td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>上年在职职工人数</td>
+           <td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>上年在职职工工资总额</td>
+           <td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>应安排残疾人就业比例</td>
+           <td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>上年实际安排残疾人就业人数</td>
+           <td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>实际安排残疾人就业比例</td>
+           <td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>上年在职职工年平均工资（或当地社会平均工资的2倍）</td>
+           <td style="text-align: center;">本期应纳费额</td>
+           <td style="text-align: center;">征收比例</td>
+           <td style="text-align: center;">减免性质</td>
+           <td style="text-align: center;">本期减免费额</td>
+           <td style="text-align: center;">本期已缴费额</td>
+           <td style="text-align: center;">本期应补（退）费额</td>
+        </tr>
+        <tr>
+            <th style="text-align: center;">1</th>
+            <th style="text-align: center;">2</th>
+            <th style="text-align: center;">3</th>
+            <th style="text-align: center;">4</th>
+            <th style="text-align: center;">5</th>
+            <th style="text-align: center;">6</th>
+            <th style="text-align: center;">7=3/2</th>
+            <th style="text-align: center;">8=（2×4-5）×7</th>
+            <th style="text-align: center;"></th>
+            <th style="text-align: center;"></th>
+            <th style="text-align: center;">9</th>
+            <th style="text-align: center;">10</th>
+            <th style="text-align: center;">11=8-9-10</th>
+        </tr>
+        	<tr id="templateTR" style="display: none;">
+				<td align="center"><input type="checkbox" name="checkFlag">1</td>
+				<input type="hidden" name="sb10517001VO.l2" value="2023-01-01">
+				<input type="hidden" name="sb10517001VO.l3" value="2023-12-31">
+                <td>
+                	<input class="srx" type="text" name="sb10517001VO.l5" cal="true" format="2" negative="false">
+                </td>
+                <td>
+                 	<input class="srx" type="text" name="sb10517001VO.l4" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" name="sb10517001VO.l6" cal="true" type="text" value="0.015" format="3">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" name="sb10517001VO.l7" type="text" cal="true" format="4">
+                     
+                 </td>
+                <td>
+                 	<input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.sjapcjrjybl" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" type="text" readonly="readonly" name="sb10517001VO.l8" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l9" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" type="text" readonly="readonly" name="sb10517001VO.lzsblShow">
+                </td>
+                <input class="fsrx" type="hidden" readonly="readonly" name="sb10517001VO.lzsbl">
+                <td>
+                    <select style="width: 100%;height:30px;" name="sb10517001VO.lnull" onchange="changeJmxzForJs(this)">
+						<option value="">请  选  择</option>
+							
+								
+								
+									<option value="3299011601" hideval="N" title="3299011601 | 自然灾害或其他突发事件残保金减免优惠|《关于取消、调整部分政府性基金有关政策的调整》财税[2017]18号">3299011601 | 自然灾害或其他突发事件残保金减免优惠|《关于取消、调整部分政府性基金有关政策的调整》财税[2017]18号</option>
+								
+							
+								
+								
+									<option value="0035049901" hideval="N" title="0035049901 | 在职职工总数30人（含）以下暂免征收残保金|《国家发展和改革委员会 财政部 民政部 人力资源和社会保障部 国家税务总局 中国残疾人联合会关于印发&lt;关于完善残疾人就业保障金制度更好促进残疾人就业的总体方案&gt;的通知》 发改价格规[2019]2015号附件：第二条第(四)款">0035049901 | 在职职工总数30人（含）以下暂免征收残保金|《国家发展和改革委员会 财政部 民政部 人力资源和社会保障部 国家税务总局 中国残疾人联合会关于印发&lt;关于完善残疾人就业保障金制度更好促进残疾人就业的总体方案&gt;的通知》 发改价格规[2019]2015号附件：第二条第(四)款</option>
+								
+							
+								
+								
+									<option value="0035013601" hideval="N" title="0035013601 | 残保金调整为分档征收|《国家发展和改革委员会 财政部 民政部 人力资源和社会保障部 国家税务总局 中国残疾人联合会关于印发&lt;关于完善残疾人就业保障金制度更好促进残疾人就业的总体方案&gt;的通知》 发改价格规[2019]2015号附件：第二条第(三)款">0035013601 | 残保金调整为分档征收|《国家发展和改革委员会 财政部 民政部 人力资源和社会保障部 国家税务总局 中国残疾人联合会关于印发&lt;关于完善残疾人就业保障金制度更好促进残疾人就业的总体方案&gt;的通知》 发改价格规[2019]2015号附件：第二条第(三)款</option>
+								
+							
+					</select>
+					 <input class="srx" type="hidden" name="sb10517001VO.lnullmc">
+                </td>
+                <td>
+                    <input class="srx" type="text" name="sb10517001VO.l10" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l11" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l12" cal="true" negative="false">
+                </td>
+                </tr>
+        
+				
+				<tr id="voList">
+				<td align="center"><input type="checkbox" name="checkFlag">1</td>
+				<input type="hidden" name="sb10517001VO.l2" value="2023-01-01">
+				<input type="hidden" name="sb10517001VO.l3" value="2023-12-31">
+                <td>
+                    <input class="srx" name="sb10517001VO.l5" value="1.00" type="text" cal="true" format="2">
+                </td>
+                <td>
+                	<input class="srx" name="sb10517001VO.l4" value="0.00" cal="true" type="text">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" name="sb10517001VO.l6" value="0.015" cal="true" type="text" format="3">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" name="sb10517001VO.l7" value="0.0000" type="text" cal="true" format="4">
+                    
+                    
+                </td>
+                <td>
+                 	<input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.sjapcjrjybl" value="0.0000" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l8" value="0.00" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l9" value="0.00" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" type="text" readonly="readonly" name="sb10517001VO.lzsblShow" title="0~500=0.3800,501~1000=0.2280,1001~2000=0.1520,2001~N=0.0760">
+                </td>
+                <input class="fsrx" readonly="readonly" type="hidden" name="sb10517001VO.lzsbl" value="0|500|0.3800">
+                <td>
+                     <select style="width: 100%;height:30px;" name="sb10517001VO.lnull" onchange="changeJmxzForJs(this)">
+						<option value="">请  选  择</option>
+							
+								
+								
+									<option value="3299011601" hideval="N">3299011601 | 自然灾害或其他突发事件残保金减免优惠|《关于取消、调整部分政府性基金有关政策的调整》财税[2017]18号</option>
+								
+							
+								
+								
+									<option value="0035049901" hideval="N">0035049901 | 在职职工总数30人（含）以下暂免征收残保金|《国家发展和改革委员会 财政部 民政部 人力资源和社会保障部 国家税务总局 中国残疾人联合会关于印发&lt;关于完善残疾人就业保障金制度更好促进残疾人就业的总体方案&gt;的通知》 发改价格规[2019]2015号附件：第二条第(四)款</option>
+								
+							
+								
+								
+									<option value="0035013601" hideval="N">0035013601 | 残保金调整为分档征收|《国家发展和改革委员会 财政部 民政部 人力资源和社会保障部 国家税务总局 中国残疾人联合会关于印发&lt;关于完善残疾人就业保障金制度更好促进残疾人就业的总体方案&gt;的通知》 发改价格规[2019]2015号附件：第二条第(三)款</option>
+								
+							
+					</select>
+					<input type="hidden" name="sb10517001VO.lnullmc" value="">
+                </td>
+                <td>
+                    <input class="srx" type="text" name="sb10517001VO.l10" value="0.00" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l11" value="0.00" cal="true" negative="false">
+                </td>
+                <td>
+                    <input class="fsrx" readonly="readonly" type="text" name="sb10517001VO.l12" value="0.00" cal="true" negative="false">
+                </td>
+                </tr>
+				
+			
+				<tr id="nodePos">
+				<td colspan="20"><input type="button" value="增加一行" onclick="addRow(&#39;templateTR&#39;,&#39;sb10517001VO.l5&#39;,&#39;checkFlag&#39;,&#39;nodePos&#39;,&#39;tab1&#39;);"><input type="button" value="删除" onclick="delRow(&#39;tab1&#39;,&#39;checkFlag&#39;);">
+				</td>
+                </tr>
+		</tbody></table>
+  		<table width="98%" class="tb" align="center" cellpadding="0" cellspacing="0" border="1">
+		<tbody><tr>
+			<td style="text-align: left;padding-left: 50px;font-size: 12px;">
+				声明：此表是根据国家有关法律法规及相关规定填写的，本人（单位）对填报内容（及附带资料）的真实性、可靠性、完整性负责。</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;padding-right: 100px;font-size: 12px;">
+				缴费人（签字或者加盖印章）</td>
+		</tr>
+	</tbody></table>
+ 
+
+
+
+
+
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script>
+<script type="text/javascript" src="./layerHandler(2).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon(1).js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script>
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ <input type="hidden" name="sbzbstate" id="sbzbstate" value="4">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+<script type="text/javascript" src="./jbrxxComm.js"></script>
+<title></title>
+
+
+    <table width="98%" class="tb" align="center" id="jbrxxTab" cellpadding="0" cellspacing="0" border="1">
+    <colgroup>
+    		<col style="width: 19%">
+    		<col style="width: 29%">
+    		<col style="width: 19%">
+    		<col style="width: 29%">
+    		<!-- <col style="width: 10%" />
+    		<col style="width: 12%" /> -->
+    	</colgroup>
+           <tbody><tr>
+	            <td style="text-align: right;padding-right: 5px;">经办人:</td>
+	            <td style="text-align:center;">
+	                <input name="sqr" class="srx" value="XXX">
+	            </td>
+	             <td style="text-align: right;padding-right: 5px;">经办人身份证号码:</td>
+	            <td style="text-align:center;">
+	                <input name="dlrsfzjhm" class="srx" value="320402XXXXXXXXXXXX">
+	            </td>
+             </tr>
+              <tr>
+	            <td style="text-align: right;padding-right: 5px;">代理机构:</td>
+	            <td style="text-align:center;">
+	                <input name="dlrmc" class="srx" value="">
+	            </td>
+	             <td style="text-align: right;padding-right: 5px;">代理机构统一社会信用代码:</td>
+	            <td style="text-align:center;">
+	                <input name="smr" class="srx" value="">
+        </td></tr>
+    </tbody></table>
+  
+
+
+ <input type="hidden" name="jsgsData" id="jsgsData" value="{&quot;tab1&quot;:[{&quot;GSLX&quot;:&quot;X&quot;,&quot;GS&quot;:&quot;jsgsl8&quot;,&quot;TYPE&quot;:&quot;99&quot;},{&quot;GSLX&quot;:&quot;X&quot;,&quot;GS&quot;:&quot;jsgsZsbl&quot;,&quot;TYPE&quot;:&quot;99&quot;},{&quot;GSLX&quot;:&quot;X&quot;,&quot;GS&quot;:&quot;jsgsl9&quot;,&quot;TYPE&quot;:&quot;99&quot;},{&quot;GSLX&quot;:&quot;X&quot;,&quot;GS&quot;:&quot;sb10517001VO.l12 = sb10517001VO.l9 - sb10517001VO.l10 - sb10517001VO.l11&quot;,&quot;TYPE&quot;:&quot;0&quot;}]}">
+ <input type="hidden" name="jsonData" id="jsonData" value="null">
+ <input type="hidden" name="rdpzuuid" id="rdpzuuid" value="">
+ <input type="hidden" name="nsqxdm" id="nsqxdm" value="">
+ <input type="hidden" name="sbqxdm" id="sbqxdm" value="">
+ <input type="hidden" name="jkqxdm" id="jkqxdm" value="">
+ <input type="hidden" name="lsh" id="lsh" value="d101132040000479170362301121010517">
+ <input type="hidden" name="sssq_q" id="sssq_q" value="2023-01-01">
+ <input type="hidden" name="sssq_z" id="sssq_z" value="2023-12-31">
+ <input type="hidden" name="sb_zlid" id="sb_zlid" value="10517">
+ <input type="hidden" name="bb_zlbh" id="bb_zlbh" value="10517001">
+ <input type="hidden" name="sb_type" id="sb_type" value="46">
+ <input type="hidden" name="zsxm_dm" id="zsxm_dm" value="30218">
+ <input type="hidden" name="nsqx_dm" id="nsqx_dm" value="10">
+ <input type="hidden" name="nsrsbh" id="nsrsbh" value="91320402791965190J">
+ <input type="hidden" name="initFlag" id="initFlag" value="">
+ <input type="hidden" name="zsxs" id="zsxs" value="">
+ <input type="hidden" name="pjgz" id="pjgz" value="">
+ <input type="hidden" name="xwbz" id="xwbz" value="">
+ <input type="hidden" name="qydjrqFlag" id="qydjrqFlag" value="N">
+ 
+ <input type="hidden" name="zsblStr" id="zsblStr" value="[&quot;0|500|0.3800&quot;,&quot;501|1000|0.2280&quot;,&quot;1001|2000|0.1520&quot;,&quot;2001|N|0.0760&quot;]">
+ <input type="hidden" name="zsblStr2" id="zsblStr2" value="[&quot;0|500|0.3800&quot;,&quot;501|1000|0.2280&quot;,&quot;1001|2000|0.1520&quot;,&quot;2001|N|0.0760&quot;]">
+  <input type="hidden" name="zsblStr3" id="zsblStr3" value="[&quot;0|500|0.2660&quot;,&quot;501|1000|0.1596&quot;,&quot;1001|2000|0.1064&quot;,&quot;2001|N|0.0532&quot;]">
+ 
+  <input type="hidden" name="zsblStr4" id="zsblStr4" value="[&quot;0|500|0.3800&quot;,&quot;501|1000|0.3800&quot;,&quot;1001|2000|0.3800&quot;,&quot;2001|N|0.3800&quot;]">
+  <input type="hidden" name="zsblStr5" id="zsblStr5" value="[&quot;0|500|0.3800&quot;,&quot;501|1000|0.3800&quot;,&quot;1001|2000|0.3800&quot;,&quot;2001|N|0.3800&quot;]">
+  <input type="hidden" name="zsblStr6" id="zsblStr6" value="[&quot;0|500|0.2660&quot;,&quot;501|1000|0.2660&quot;,&quot;1001|2000|0.2660&quot;,&quot;2001|N|0.2660&quot;]">
+ 
+ <input type="hidden" name="pjgzStr" id="pjgzStr" value="97584">
+ <input type="hidden" name="zdgzStr" id="zdgzStr" value="22080">
+ <input type="hidden" name="cjrjyrsStr" id="cjrjyrsStr" value="">
+ <input type="hidden" name="yjseStr" id="yjseStr" value="">
+ <input type="hidden" name="sfwx" id="sfwx" value="N">
+ <input type="hidden" name="sfjyhyx" id="sfjyhyx" value="N">
+ 
+  <input type="hidden" name="sffqydw" id="sffqydw" value="N">
+  <input type="hidden" name="sflyg" id="sflyg" value="N">
+ 
+ 
+ <input type="hidden" name="djzclx" id="djzclx" value="173">
+ <input type="hidden" name="nsrjbxxMap.sbrq" value="2024-06-01">
+ <input type="hidden" name="nsrjbxxMap.slrq" value="2024-06-01">
+ 	<!--申报错误更正-->
+	<input type="hidden" name="sbcwgzbz" id="sbcwgzbz" value="N">
+	<input type="hidden" name="sbcwgzJsonData" id="sbcwgzJsonData" value="null">
+	<input type="hidden" name="pzxh" id="pzxh" value="">
+	<input type="hidden" name="sbuuid" id="sbuuid" value="">	
+	<input type="hidden" name="sbcwgzbblist" id="sbcwgzbblist" value="">
+	<input name="pageload_bz" type="hidden" value="init">
+    <input type="hidden" name="sfkjm" id="sfkjm" value="N">
+
+
+<div id="selectItem" class="selectItemhidden"><div id="selectItemAd" class="selectItemtit bgc_ccc"><h2 id="selectItemTitle" class="selectItemleft">选择切换</h2>  <div id="selectItemClose" class="selectItemright">关闭</div></div>  <div id="selectItemCount" class="selectItemcont"> <div id="selectSub"><table class="bblistTb"><tbody><tr style="background-color:#EBEBEB;font-weight:bold;"><td style="width:18%;">报表编号</td><td style="width:72%;">报表名称</td><td>状态</td></tr><tr onclick="chooseBB(&#39;10517001&#39;,&#39;sb10517001_2020Action.action?sign=queryData&#39;,&#39;101&#39;,&#39;4&#39;)"><td>10517001</td><td>[001]残疾人就业保障金缴费申报表</td><td>已填写</td></tr></tbody></table>  </div></div></div></body></html>

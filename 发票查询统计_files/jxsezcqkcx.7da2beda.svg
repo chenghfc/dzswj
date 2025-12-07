@@ -1,0 +1,19 @@
+<svg id="进项税额转出情况查询" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_313" data-name="Rectangle 313" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_313-2" data-name="Rectangle 313" width="56" height="56" fill="#f17c38" opacity="0"/>
+  <rect id="矩形" width="46" height="46" rx="4" transform="translate(5 5)" fill="#5590e8"/>
+  <g id="组_5" data-name="组 5" transform="translate(-1064 -873)">
+    <path id="路径_22" data-name="路径 22" d="M-86.5,696.949V692.5h-29v7.668a3.97,3.97,0,0,1,2.444,3.665A3.972,3.972,0,0,1-115.5,707.5v8h13.246" transform="translate(1193.5 196.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <g id="组_32" data-name="组 32" transform="translate(-28 -2.354)">
+      <g id="组_31" data-name="组 31" transform="translate(3.5)">
+        <line id="直线_25" data-name="直线 25" x2="4" y2="5" transform="translate(1121.5 900.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+        <line id="直线_26" data-name="直线 26" x1="4" y2="5" transform="translate(1125.5 900.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+      </g>
+      <g id="组_30" data-name="组 30" transform="translate(27.5)">
+        <line id="直线_27" data-name="直线 27" x1="10" transform="translate(1096.5 906.354)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+        <line id="直线_28" data-name="直线 28" x1="10" transform="translate(1096.5 910.354)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+        <line id="直线_29" data-name="直线 29" x1="7" transform="translate(1101.5 907.354) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

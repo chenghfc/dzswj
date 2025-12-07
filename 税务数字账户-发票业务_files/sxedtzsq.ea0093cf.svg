@@ -1,0 +1,12 @@
+<svg id="发票额度调整申请" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_309" data-name="Rectangle 309" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_311" data-name="Rectangle 311" width="46" height="46" rx="4" transform="translate(5 5)" fill="#12b787"/>
+  <g id="组_1" data-name="组 1" transform="translate(185.248 -102.844)">
+    <path id="路径_3" data-name="路径 3" d="M-163.31,142.344h-4.938v-22.5h17.273v5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <line id="直线_1" data-name="直线 1" x1="12.094" y2="15.094" transform="translate(-158.654 127.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <g id="组_20" data-name="组 20" transform="translate(-1443.946 -361.633)">
+      <line id="直线_9" data-name="直线 9" x2="7.794" transform="translate(1279.5 495.157)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+      <path id="路径_16" data-name="路径 16" d="M97.63,227.763s-2.712-.134-2.151-1.82a2.349,2.349,0,0,1,.647-.767,2.59,2.59,0,0,0,1.309-1.9,2.412,2.412,0,0,0-2.586-2.189h-.007a2.412,2.412,0,0,0-2.586,2.189,2.591,2.591,0,0,0,1.309,1.9,2.345,2.345,0,0,1,.647.767c.562,1.686-2.15,1.82-2.15,1.82" transform="translate(1188.55 264.453)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

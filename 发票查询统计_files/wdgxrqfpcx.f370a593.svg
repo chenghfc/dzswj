@@ -1,0 +1,14 @@
+<svg id="未到勾选日期发票查询" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_303" data-name="Rectangle 303" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_303-2" data-name="Rectangle 303" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_304" data-name="Rectangle 304" width="46" height="46" rx="4" transform="translate(5 5)" fill="#5590e8"/>
+  <g id="组_4" data-name="组 4" transform="translate(-754.5 -870.5)">
+    <path id="路径_21" data-name="路径 21" d="M-86.5,696.949V692.5h-29v7.668a3.97,3.97,0,0,1,2.444,3.665A3.972,3.972,0,0,1-115.5,707.5v8h13.246" transform="translate(882 194)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <g id="椭圆_5" data-name="椭圆 5" transform="translate(780 892)" fill="none" stroke="#fff" stroke-width="2.8">
+      <circle cx="9.5" cy="9.5" r="9.5" stroke="none"/>
+      <circle cx="9.5" cy="9.5" r="8.1" fill="none"/>
+    </g>
+    <rect id="矩形_3" data-name="矩形 3" width="3" height="8" rx="1.5" transform="translate(788 897)" fill="#fff"/>
+    <rect id="矩形_4" data-name="矩形 4" width="3" height="7" rx="1.5" transform="translate(795 902) rotate(90)" fill="#fff"/>
+  </g>
+</svg>

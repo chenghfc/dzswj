@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)https://etax.jiangsu.chinatax.gov.cn/shenqing/ywForm/webPage.action?name=fpstxctstx&nsrdzdah=10113204000164688009&new_dlm=91320411MA1MCT53X4&username=91320411MA1MCT53X4&djxh=10113204000051481241 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript" src="./json2(1).js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./help_gy.js"></script>
+<script type="text/javascript">
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--  ca签名实现部分 -->
+<script type="text/javascript">
+var _nsrsbh="91320402791965190J";//当前登录用户的nsrsbh
+var _old_nsrsbh="91320402791965190J";//旧纳税人识别号
+var _djxh="10113204000047917036";//纳税人电子档案号
+var _swrybj="0";//税务员标记
+var _YHXX=_nsrsbh+","+_old_nsrsbh+","+_djxh;
+//申请签名状态，0不需要签名 1需要签名 
+var _sqqm=""; 
+
+</script>
+<link rel="stylesheet" href="./layer(1).css" id="layui_layer_skinlayercss" style=""></head><body><div id="div_calogin" style="display:none"></div>
+<input type="hidden" name="_swrybj" id="_swrybj" value="0">
+
+
+<!-- layer -->
+<script type="text/javascript" src="./layer(2).js"></script>
+<script type="text/javascript" src="./jquery.form.js"></script>
+<script type="text/javascript" src="./ligerui.min.js"></script>
+<script type="text/javascript" src="./help.js"></script>
+<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./ligerui-all.css">
+<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./web.css">
+<script type="text/javascript">
+	var width;
+	$(function() {
+		itemsList();
+		window.onresize = function() {
+			itemsList();
+		};
+		window["f_doLoad"] = function(wsxh, status) {
+			if (status == "0" || status == "1") {
+				window.location.href = '/shenqing'
+					+ "/ywForm/fpstxctstx.action?sign=load&wsxh=" + wsxh;
+			} else if (status == "2") {
+				window.location.href = '/shenqing'
+					+ "/ywForm/fpstxctstx.action?sign=edit&wsxh=" + wsxh;
+			} else {
+				window.location.href = '/shenqing'
+					+ "/ywForm/fpstxctstx.action?sign=view&wsxh=" + wsxh;
+			}
+		};
+		window["f_doView"] = function(wsxh) {
+			window.open('/shenqing'
+				+ "/ywForm/fpstxctstx.action?sign=stampPDF&wsxh=" + wsxh);
+		};
+	});
+
+	//初始化办理中业务列表
+	function itemsList() {
+		width = document.body.clientWidth * 0.93;
+		var columns = [
+			{
+				display : '纳税人识别号',
+				name : 'NSRSBH',
+				width : width * 0.15
+			},
+			{
+				display : '纳税人名称',
+				name : 'NSRMC',
+				width : width * 0.2
+			},
+			{
+				display : '送达日期',
+				name : 'LRRQ',
+				width : width * 0.1
+			},
+			{
+				display : '回函期限',
+				name : 'HHJZRQ',
+				width : width * 0.1
+			},
+			{
+				display : '回函状态信息',
+				name : 'STATUS',
+				width : width * 0.15,
+				render : function(r, i) {
+					var status = r.STATUS;
+					if (status == "0" || status == "1") {
+						return "待处理";
+					} else if (status == "2") {
+						return "已保存";
+					} else if (status == "3" || status == "4") {
+						return "已提交";
+					} else {
+						return "待处理";
+					}
+				}
+			},
+			{
+				display : '电子文书',
+				width : width * 0.15,
+				render : function(r, i) {
+					return "<a href =\"javascript:f_doView('" + r.WSXH + "')\">电子文书</a>";
+
+				}
+			},
+			{
+				display : '回函',
+				width : width * 0.15,
+				render : function(r, i) {
+					return "<a href =\"javascript:f_doLoad('" + r.WSXH + "','" + r.STATUS + "')\">回函</a>";
+
+				}
+			} ];
+		$("#maingrid").ligerGrid(
+			{
+				dataAction : 'local',
+				url : '/shenqing'
+					+ '/ywForm/fpstxctstx.action?sign=init',
+				columns : columns,
+				height : '200',
+				pageSize : 10,
+				width : '100%',
+				enabledSort : true,
+				rownumbers : true,
+				autoFilter : false
+			});
+	}
+</script>
+<title>发票受托协查提示提醒</title>
+
+
+	<div class="mainContent">
+		<div class="welcometouse" style="padding-top: 20px; margin-left: 0px;" align="center">
+			<div class="sq_top">
+				<span class="top_title">业务功能</span>
+			</div>
+			<div class="app_list">
+				<dl>
+					<dt>
+						<a href="javascript:void(0)"> <img width="88" height="94" src="./tb_12.png">
+						</a>
+					</dt>
+					<dd>发票受托协查提示提醒</dd>
+				</dl>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+		<div class="welcometouse" align="center">
+			<div>
+				<div class="sq_top" style="background: none; border: 0">
+					<span class="top_title">办理中业务</span>
+				</div>
+				<div class="top_content">
+					<div id="maingrid" class="l-panel l-frozen" ligeruiid="maingrid" style="width: 100%;">        <div class="l-panel-header" style="display: none;"><span class="l-panel-header-text"></span></div>                    <div class="l-grid-loading" style="display: none;">加载中...</div>                <div class="l-panel-bwarp">            <div class="l-panel-body">                <div class="l-grid" id="maingridgrid" style="height: 168px;">                    <div class="l-grid-dragging-line"></div>                    <div class="l-grid-popup" style="display: none;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="1" ligeruiid="CheckBox1007"></div></td><td class="l-column-right">纳税人识别号</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="2" ligeruiid="CheckBox1008"></div></td><td class="l-column-right">纳税人名称</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="3" ligeruiid="CheckBox1009"></div></td><td class="l-column-right">送达日期</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="4" ligeruiid="CheckBox1010"></div></td><td class="l-column-right">回函期限</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="5" ligeruiid="CheckBox1011"></div></td><td class="l-column-right">回函状态信息</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="6" ligeruiid="CheckBox1012"></div></td><td class="l-column-right">电子文书</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="7" ligeruiid="CheckBox1013"></div></td><td class="l-column-right">回函</td></tr></tbody></table></div>                  <div class="l-grid1" style="width: 27px;">                      <div class="l-grid-header l-grid-header1" style="height: 23px;">                          <div class="l-grid-header-inner"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell l-grid-hd-cell-rownumbers" id="maingrid|hcell|c101" columnindex="0" style="height: 23px; width: 26px;"><div class="l-grid-hd-cell-inner"></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body1" style="height: 128px;"><div class="l-grid-body-inner"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody></tbody></table></div></div>                  </div>                  <div class="l-grid2" style="width: 1382px; left: 27px;">                      <div class="l-grid-header l-grid-header2" style="height: 23px;">                          <div class="l-grid-header-inner" style="width: 1367px;"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell" id="maingrid|hcell|c102" columnindex="1" columnname="NSRSBH" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">纳税人识别号</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c103" columnindex="2" columnname="NSRMC" style="height: 23px; width: 264.678px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">纳税人名称</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c104" columnindex="3" columnname="LRRQ" style="height: 23px; width: 132.339px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">送达日期</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c105" columnindex="4" columnname="HHJZRQ" style="height: 23px; width: 132.339px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">回函期限</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c106" columnindex="5" columnname="STATUS" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">回函状态信息</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c107" columnindex="6" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">电子文书</span></div></td><td class="l-grid-hd-cell l-grid-hd-cell-last" id="maingrid|hcell|c108" columnindex="7" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">回函</span></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body2 l-scroll" style="height: 146px;"><div class="l-grid-body-inner" style="width: 1327px;"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody></tbody></table></div></div>                  </div>                 </div>              </div>         </div>         <div class="l-panel-bar">            <div class="l-panel-bbar-inner">                <div class="l-bar-group  l-bar-message"><span class="l-bar-text">显示从0到0，总 0 条 。每页显示：10</span></div>            <div class="l-bar-group l-bar-selectpagesize"><select name="rp"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option></select></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                    <div class="l-bar-button l-bar-btnfirst"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnprev"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group"><span class="pcontrol"> <input type="text" size="4" value="1" style="width:20px" maxlength="3"> / <span>1</span></span></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnnext"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnlast"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnload"><span class=""></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-clear"></div>            </div>         </div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body></html>

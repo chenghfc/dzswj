@@ -1,0 +1,22 @@
+<svg id="组件_20_2" data-name="组件 20 – 2" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_313" data-name="Rectangle 313" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <path id="矩形" d="M4,0H42a4,4,0,0,1,4,4V42a4,4,0,0,1-4,4H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" transform="translate(5 5)" fill="#5590e8"/>
+  <g id="组_71" data-name="组 71" transform="translate(-1408 -85)">
+    <g id="矩形_19" data-name="矩形 19" transform="translate(1422 99)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="3">
+      <rect width="13" height="13" stroke="none"/>
+      <rect x="1.5" y="1.5" width="10" height="10" fill="none"/>
+    </g>
+    <g id="矩形_23" data-name="矩形 23" transform="translate(1422 114)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="3">
+      <rect width="13" height="13" stroke="none"/>
+      <rect x="1.5" y="1.5" width="10" height="10" fill="none"/>
+    </g>
+    <g id="矩形_20" data-name="矩形 20" transform="translate(1437 99)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="3">
+      <rect width="13" height="13" stroke="none"/>
+      <rect x="1.5" y="1.5" width="10" height="10" fill="none"/>
+    </g>
+    <rect id="矩形_21" data-name="矩形 21" width="3" height="3" transform="translate(1427 104)" fill="#fff"/>
+    <rect id="矩形_30" data-name="矩形 30" width="3" height="3" transform="translate(1427 119)" fill="#fff"/>
+    <path id="联合_1" data-name="联合 1" d="M2116,117v-3h4v-5h3v8Zm-6,0v-3h3v3Zm3-3v-7h3v7Zm7-7v-3h3v3Zm-10,0v-3h3v3Z" transform="translate(-673 10)" fill="#fff"/>
+    <rect id="矩形_22" data-name="矩形 22" width="3" height="3" transform="translate(1442 104)" fill="#fff"/>
+  </g>
+</svg>

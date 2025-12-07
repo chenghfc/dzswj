@@ -1,0 +1,113 @@
+#pj_dialog img {
+	vertical-align: top;
+}
+#pj_dialog .content {
+	padding: 30px 35px;
+}
+#pj_dialog .star{
+	display: none;
+}
+#pj_dialog .star.active{
+	display: block;
+}
+#pj_dialog .line {
+	margin-top: 10px;
+}
+#pj_dialog .cl:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+#pj_dialog .tit_info {
+	border: 1px solid #F5EFAA;
+	padding: 10px;
+	background-color: #FEF7DA;
+}
+#pj_dialog .tit_info img {
+	margin-right: 10px;
+}
+#pj_dialog .tit_left {
+	width: 10%;
+	float: left;
+	line-height: 35px;
+	text-align: right;
+}
+#pj_dialog .con_right {
+	width: 89%;
+	float: left;
+	margin-left: 1%;
+}
+#pj_dialog .pj_type {
+	float: left;
+	width: 19%;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 33px;
+	margin: 0 0.5%;
+	cursor: pointer;
+}
+#pj_dialog .pj_type:hover {
+	background-color: #f2f2f2;
+}
+#pj_dialog .pj_type.active {
+	border-color: #53acf3;
+	color: #53acf3;
+}
+#pj_dialog .con_onlyright {
+	padding-left: 11%;
+}
+#pj_dialog .stars {
+	width: 20px;
+	height: 20px;
+	margin: 7.5px 5px;
+}
+#pj_dialog .input {
+	outline: none;
+	border: 1px solid #aaa;
+	resize: none;
+	line-height: 25px;
+	margin-top: 5px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+#pj_dialog .con_right .input {
+	width: 100%;
+}
+#pj_dialog .sub_btn {
+	color: #fff;
+	background-color: #53ACF3;
+	line-height: 35px;
+	padding: 0 30px;
+	float: left;
+	border-radius: 4px;
+	cursor: pointer;
+ 	margin: 10px 34% 0 44%; 
+}
+#pj_dialog .sub_btn[disabled]{
+	background-color: #aaa;
+	cursor: default;
+}
+#pj_dialog .checkblock{
+	line-height: 28px;
+}
+#pj_dialog .checkblock .con_onlyright{
+	cursor: pointer;
+}
+#pj_dialog .checkbox{
+	width: 14px;
+	height: 14px;
+	margin-top: 7px;
+}
+#pj_dialog .half{
+	width: 50%;
+	float: left;
+}
+#pj_dialog .half .tit_left{
+	width: 20%;
+}
+#pj_dialog .half .con_right{
+	width: 78%;
+	margin-left: 2%;
+}

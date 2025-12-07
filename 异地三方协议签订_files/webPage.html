@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- saved from url=(0195)https://etax.jiangsu.chinatax.gov.cn/shenqing/ywForm/webPage.action?name=mainNewHjxy&nsrdzdah=10113204000164699473&new_dlm=91320402791965190J&username=91320402791965190J&djxh=10113204000047917036 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript" src="./json2(1).js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./help_gy.js"></script>
+<script type="text/javascript">
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--  ca签名实现部分 -->
+<script type="text/javascript">
+var _nsrsbh="91320402791965190J";//当前登录用户的nsrsbh
+var _old_nsrsbh="91320402791965190J";//旧纳税人识别号
+var _djxh="10113204000047917036";//纳税人电子档案号
+var _swrybj="0";//税务员标记
+var _YHXX=_nsrsbh+","+_old_nsrsbh+","+_djxh;
+//申请签名状态，0不需要签名 1需要签名 
+var _sqqm=""; 
+
+</script>
+<link rel="stylesheet" href="./layer(1).css" id="layuicss-layer"></head><body><div id="div_calogin" style="display:none"></div>
+<input type="hidden" name="_swrybj" id="_swrybj" value="0">
+
+
+<!-- layer -->
+<script type="text/javascript" src="./layer(2).js"></script>
+<script type="text/javascript" src="./jquery.form.js"></script>
+<script type="text/javascript" src="./ligerui.min.js"></script>
+<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./ligerui-all.css">
+<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./web.css">
+<script type="text/javascript">
+    var width;
+	var save = "0";
+	var process = "4";//受理中
+	var agree = "2"; //通过
+	var refuse = "1"; //不通过
+	var SUBMITSUCCESS = "3"; //不通过	
+	$(function (){
+		initItemList("hjxyNew");
+		window["f_doEdit"] = function (id) {	 
+			 
+			window.location.href = "/shenqing/ywForm/hjxy.action?sign=openForm_New&type=edit&uuid="+id; 					
+		}
+		window["f_doView"] = function (id) {
+			
+			window.location.href = "/shenqing/ywForm/hjxy.action?sign=openForm_New&type=view&readonly=Y&uuid="+id;
+		}
+		window["f_doremove"] = function (id) {
+			var coverLayer = $('<div class="sq-busy-cover"></div>');
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : "/shenqing/ywForm/hjxy.action",
+				data : {
+					sign : "delete_zrr",
+					id : id
+				},
+				async : false,
+				error : function(response) {
+					layer.alert("删除失败!", {icon : 2}); 						
+				},
+				success : function(obj) {
+					if (obj.RESULT > 0) {
+						layer.alert("删除成功!", { icon : 1, closeBtn : 0 },
+							function(index){
+								layer.close(index);
+								initItemList("hjxyNew");
+						});
+					} else
+						layer.alert("删除失败!", { icon : 2, closeBtn : 0 });
+				}
+			});
+		}
+		window["f_doCancel"] = function (id) {
+			var coverLayer = $('<div class="sq-busy-cover"></div>');
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : "/shenqing/ywForm/hjxy.action",
+				data : {
+					sign : "zfSfxy_zrr",
+					id : id
+				},
+				async : false,
+				error : function(response) {
+					layer.alert("作废失败!", {icon : 2}); 						
+				},
+				success : function(obj) {
+					if (obj.RESULT == "0000") {
+						layer.alert("作废成功!", { icon : 1, closeBtn : 0 }, 
+							function(index){
+								layer.close(index);
+								initItemList("hjxyNew");
+						});
+					} else
+						layer.alert("作废失败!" + obj.Msg, { icon : 2, closeBtn : 0 });
+				}
+			});
+		}
+		window["f_doCallback"] = function (id, yyhyywd_dm) {
+			window.location.href="/shenqing/ywForm/webPage.action?name=maincxhjxy";
+			
+		}
+	});
+	
+	function initItemList (ids) {
+		itemsList(ids);
+		window.onresize = function() {
+			itemsList(ids);
+		}
+		$('.title ul li').click(function() {
+			var cur = $(this), tabul = cur.parent(), cont = cur.parents('.title').next(), i = tabul.children().index(cur);
+			tabul.children().removeClass('on');
+			cur.addClass('on');
+			cont.children().addClass('hide');
+			cont.children().eq(i).removeClass('hide');
+		});
+	}
+	
+	//初始化办理中业务列表
+	function itemsList (ids) {
+		width = document.body.clientWidth*0.93;	
+		var columns = [
+				{
+					display : '三方协议号',
+					name : 'SFXYH',
+					width : width * 0.10,
+					render : function(r, i) {
+						var sfxyh = r.SFXYH;
+						if ("" == sfxyh || null == sfxyh) {
+							return "--";
+						}else{
+							return sfxyh;
+						}
+					}
+				},
+				{
+					display : '签约税务机关',
+					name : 'SWJGMC',
+					width : width * 0.15
+				},
+				{
+					display : '签约银行',
+					name : 'YHYYWDMC',
+					width : width * 0.15
+				},
+				{
+					display : '签约账户',
+					name : 'JKZH',
+					width : width * 0.15
+				},
+				{
+					display : '签订方式',
+					name : 'QDFS',
+					width : width * 0.08,
+					render : function(r, i) {
+						var qdfs = r.QDFS;
+						if ("13200dzswj0" == qdfs) {
+							return "网络签订";
+						} else {
+							return "其他签订"; 
+						}
+					}
+				},
+				{
+					display : '验证通过日期',
+					name : 'YZTGRQ',
+					width : width * 0.10,
+					render : function(r, i) {
+						var yztgrq = r.YZTGRQ;
+						if ("" == yztgrq || null == yztgrq) {
+							return "--";
+						} else {
+							return yztgrq;
+						}
+					}
+				},		
+				{
+					display : '协议状态',
+					name : 'STATUS',
+					width : width * 0.05,
+					render : function(r, i) {
+						var zt = r.ZT;
+						if ("01" == zt) {
+							return "未验证";
+						} else if ("02" == zt) {
+							return "验证通过"; 
+						} else if ("03" == zt) {
+							return "验证失败"; 
+						} else if ("04" == zt) {
+							return "协议终止"; 
+						}else{
+							return "--";
+						}
+					}
+				},
+				{
+					display : '批扣标志',
+					name : 'PKBZ',
+					width : width * 0.05,
+					render : function(r, i) {
+						var pkbz = r.PKBZ;
+						if ("0" == pkbz) {
+							return "所有非批扣";
+						} else if ("1" == pkbz) {
+							return "所有批扣"; 
+						} else if ("2" == pkbz) {
+							return "税批扣"; 
+						} else if ("3" == pkbz) {
+							return "费批扣"; 
+						} else if ("4" == pkbz) {
+							return "税非批扣"; 
+						} else if ("5" == pkbz) {
+							return "费非批扣"; 
+						}else{
+							return "--";
+						}
+					}
+				},
+				{
+					display : '录入日期',
+					name : 'LRRQ',
+					width : width * 0.10
+				},
+				{
+					display : '操作',
+					width : width * 0.10,
+					render : function(r, i) {
+					//ly：1是本地保存，2：本地提交，3：金三带出
+					var ly = r.LY;
+					var zt = r.ZT;
+					if ("3" == ly) {
+						if("04" == zt){
+							return "<a  href =\"javascript:f_doView('" + r.ID
+							+ "')\" >详情</a>";;
+						} else if ("01" == zt || "03" == zt) {
+							return "<a  href =\"javascript:f_doView('" + r.ID
+							+ "')\" >详情</a>"
+							+ "或"
+							+ "<a  href =\"javascript:f_doCancel('" + r.ID 
+							+ "')\" >作废</a>";
+						} else {
+							return "<a  href =\"javascript:f_doView('" + r.ID
+							+ "')\" >详情</a>"
+							+ "或"
+							+ "<a  href =\"javascript:f_doCallback('" + r.ID 
+							+ "','" + r.YHYYWD_DM
+							+ "')\" >撤销</a>";
+						}
+					} else if ("1" == ly) {
+						return "<a  href =\"javascript:f_doEdit('" + r.ID
+						+ "')\" >修改</a>"
+						+ "或"
+						+ "<a  href =\"javascript:f_doremove('"
+						+ r.ID + "')\" >删除</a>";
+					} 
+				}
+			}];
+		$("#maingrid").ligerGrid({
+			dataAction : 'local',
+			url : '/shenqing/ywForm/hjxy.action?sign=init_New&formDefList='+ ids,
+			columns : columns,
+			height : '200',
+			pageSize : 10,
+			width : '100%',
+			enabledSort : true,
+			rownumbers : true,
+			autoFilter : false
+		});
+	}
+	
+	//优惠备案前置校验
+	function yhbaCheck_q (url, formDefId, appType, appid){	
+		var coverLayer = $('<div class="sq-busy-cover"></div>');
+		$('body').append(coverLayer);
+		var queryLite = false;
+		var queryFormDefId = formDefId;
+		 $.ajax({
+			cache : false,
+			type : "POST",
+			url : url+'/bpmForm/bpmFormHandlerAction.action',
+			data : {
+				sign:'getJsgzrz_q',
+				formDefId:formDefId,
+				appType:appType,
+				queryLite:queryLite,
+				queryFormDefId:queryFormDefId
+			},
+			async : false,
+			error : function() {					
+				window.location.href=url+"/ywForm/webPage.action?name=mainNewHjxy";
+				return false;
+			},
+			success : function(obj) {					
+				if(obj.result=="0000"){
+					 coverLayer.detach();						
+					 window.location.href = url+"/ywForm/hjxy.action?sign=openForm_New";				
+				} else {
+					coverLayer.detach();
+					layer.alert(obj.msg, {icon : 0});
+				}
+			}
+		});	
+	 }	  
+</script>
+<title>网签三方协议</title>
+
+
+	<div class="mainContent">
+		<div class="welcometouse" style="padding-top: 20px; margin-left: 0px;" align="center">
+			<div class="sq_top">
+				<span class="top_title">业务功能</span>
+			</div>
+			<div class="app_list">
+				<dl>
+					<dt>
+						<a href="javascript:void(0)" onclick="yhbaCheck_q(&#39;/shenqing&#39;, &#39;hjxyNew&#39;, &#39;sq&#39;, &#39;hjxyNew&#39;)">	
+							<img width="88" height="94" src="./tb_12.png">
+						</a>
+					</dt>
+					<dd>网签三方协议</dd>
+				</dl>					  		 
+				<div style="clear: both"></div>
+			</div>
+		</div>
+		<div class="welcometouse" align="center">   	
+			<div>
+		 		<div class="sq_top" style="background:none;border:0">
+					<span class="top_title">办理中业务</span>
+		 		</div>
+		 		<div class="top_content">
+					<div id="maingrid" class="l-panel l-frozen" ligeruiid="maingrid" style="width: 100%;">        <div class="l-panel-header" style="display: none;"><span class="l-panel-header-text"></span></div>                    <div class="l-grid-loading" style="display: none;">加载中...</div>                <div class="l-panel-bwarp">            <div class="l-panel-body">                <div class="l-grid" id="maingridgrid" style="height: 168px;">                    <div class="l-grid-dragging-line"></div>                    <div class="l-grid-popup"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="1" ligeruiid="CheckBox1010"></div></td><td class="l-column-right">三方协议号</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="2" ligeruiid="CheckBox1011"></div></td><td class="l-column-right">签约税务机关</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="3" ligeruiid="CheckBox1012"></div></td><td class="l-column-right">签约银行</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="4" ligeruiid="CheckBox1013"></div></td><td class="l-column-right">签约账户</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="5" ligeruiid="CheckBox1014"></div></td><td class="l-column-right">签订方式</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="6" ligeruiid="CheckBox1015"></div></td><td class="l-column-right">验证通过日期</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="7" ligeruiid="CheckBox1016"></div></td><td class="l-column-right">协议状态</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="8" ligeruiid="CheckBox1017"></div></td><td class="l-column-right">批扣标志</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="9" ligeruiid="CheckBox1018"></div></td><td class="l-column-right">录入日期</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="10" ligeruiid="CheckBox1019"></div></td><td class="l-column-right">操作</td></tr></tbody></table></div>                  <div class="l-grid1" style="width: 27px;">                      <div class="l-grid-header l-grid-header1" style="height: 23px;">                          <div class="l-grid-header-inner"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell l-grid-hd-cell-rownumbers" id="maingrid|hcell|c101" columnindex="0" style="height: 23px; width: 26px;"><div class="l-grid-hd-cell-inner"></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body1" style="height: 128px;"><div class="l-grid-body-inner"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody><tr id="maingrid|1|r1001" class="l-grid-row"><td id="maingrid|1|r1001|c101" class="l-grid-row-cell l-grid-row-cell-rownumbers" style="width:26px"><div class="l-grid-row-cell-inner" style="height:22px;">1</div></td></tr></tbody></table></div></div>                  </div>                  <div class="l-grid2" style="width: 1365px; left: 27px;">                      <div class="l-grid-header l-grid-header2" style="height: 23px;">                          <div class="l-grid-header-inner" style="width: 1409px;"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell" id="maingrid|hcell|c102" columnindex="1" columnname="SFXYH" style="height: 23px; width: 132.339px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">三方协议号</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c103" columnindex="2" columnname="SWJGMC" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">签约税务机关</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c104" columnindex="3" columnname="YHYYWDMC" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">签约银行</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c105" columnindex="4" columnname="JKZH" style="height: 23px; width: 198.508px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">签约账户</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c106" columnindex="5" columnname="QDFS" style="height: 23px; width: 105.871px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">签订方式</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c107" columnindex="6" columnname="YZTGRQ" style="height: 23px; width: 132.339px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">验证通过日期</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c108" columnindex="7" columnname="STATUS" style="height: 23px; width: 66.1695px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">协议状态</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c109" columnindex="8" columnname="PKBZ" style="height: 23px; width: 66.1695px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">批扣标志</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c110" columnindex="9" columnname="LRRQ" style="height: 23px; width: 132.339px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">录入日期</span></div></td><td class="l-grid-hd-cell l-grid-hd-cell-last" id="maingrid|hcell|c111" columnindex="10" style="height: 23px; width: 132.339px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">操作</span></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body2 l-scroll" style="height: 146px;"><div class="l-grid-body-inner" style="width: 1369px;"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody><tr id="maingrid|2|r1001" class="l-grid-row"><td id="maingrid|2|r1001|c102" class="l-grid-row-cell " style="width:132.33900000000003px;  "><div class="l-grid-row-cell-inner" style="width:124px;height:22px;min-height:22px; ">1320402XXXXXX</div></td><td id="maingrid|2|r1001|c103" class="l-grid-row-cell " style="width:198.5085px;  "><div class="l-grid-row-cell-inner" style="width:190px;height:22px;min-height:22px; ">国家税务总局常州市税务局第三税务分局（办税服务厅）</div></td><td id="maingrid|2|r1001|c104" class="l-grid-row-cell " style="width:198.5085px;  "><div class="l-grid-row-cell-inner" style="width:190px;height:22px;min-height:22px; ">江苏银行</div></td><td id="maingrid|2|r1001|c105" class="l-grid-row-cell " style="width:198.5085px;  "><div class="l-grid-row-cell-inner" style="width:190px;height:22px;min-height:22px; ">81900120030XXXXXX</div></td><td id="maingrid|2|r1001|c106" class="l-grid-row-cell " style="width:105.87120000000002px;  "><div class="l-grid-row-cell-inner" style="width:97px;height:22px;min-height:22px; ">其他签订</div></td><td id="maingrid|2|r1001|c107" class="l-grid-row-cell " style="width:132.33900000000003px;  "><div class="l-grid-row-cell-inner" style="width:124px;height:22px;min-height:22px; ">2018-11-03 18:59:12</div></td><td id="maingrid|2|r1001|c108" class="l-grid-row-cell " style="width:66.16950000000001px;  "><div class="l-grid-row-cell-inner" style="width:58px;height:22px;min-height:22px; ">验证通过</div></td><td id="maingrid|2|r1001|c109" class="l-grid-row-cell " style="width:66.16950000000001px;  "><div class="l-grid-row-cell-inner" style="width:58px;height:22px;min-height:22px; ">所有批扣</div></td><td id="maingrid|2|r1001|c110" class="l-grid-row-cell " style="width:132.33900000000003px;  "><div class="l-grid-row-cell-inner" style="width:124px;height:22px;min-height:22px; ">2013-11-13 00:00:00</div></td><td id="maingrid|2|r1001|c111" class="l-grid-row-cell l-grid-row-cell-last " style="width:132.33900000000003px;  "><div class="l-grid-row-cell-inner" style="width:124px;height:22px;min-height:22px; "><a href="javascript:f_doView(&#39;3D6C128B5DD20008E0534D59151F9A36&#39;)">详情</a>或<a href="javascript:f_doCallback(&#39;3D6C128B5DD20008E0534D59151F9A36&#39;,&#39;1313304008190&#39;)">撤销</a></div></td></tr></tbody></table></div></div>                  </div>                 </div>              </div>         </div>         <div class="l-panel-bar">            <div class="l-panel-bbar-inner">                <div class="l-bar-group  l-bar-message"><span class="l-bar-text">显示从1到1，总 1 条 。每页显示：10</span></div>            <div class="l-bar-group l-bar-selectpagesize"><select name="rp"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option></select></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                    <div class="l-bar-button l-bar-btnfirst"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnprev"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group"><span class="pcontrol"> <input type="text" size="4" value="1" style="width:20px" maxlength="3"> / <span>1</span></span></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnnext"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnlast"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnload"><span class=""></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-clear"></div>            </div>         </div></div>    	
+		 		</div>
+			</div>
+            <div>
+    			<div class="sq_top" style="background:none;border:0;margin: 20px 0 0 1%;">
+					<span class="top_title">准备资料（标注<span style="color:red">*</span>的为必报项）</span>
+				</div>
+				<div class="content_news">
+					<div class="title">
+						<ul>
+							<li class="title_left on">网签三方协议</li>
+						</ul>	
+						<input type="hidden" id="ylbz" value="yhba">				
+					</div>
+					<div class="content_li">
+						 <ul class="">
+						 	<li></li>					  
+						 </ul>
+					</div>
+				</div>
+    		 </div>
+         </div>
+	</div>
+ 
+
+ 
+</body></html>

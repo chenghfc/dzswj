@@ -1,0 +1,57 @@
+.dl-popup * {
+	margin: 0;
+	padding: 0;
+}
+
+.dl-popup a {
+	text-decoration: none;
+}
+
+.dl-popup em {
+	font-style: normal;
+}
+
+.dl-popup .content .yj-description {
+	text-indent: 2em;
+	font-size: 14px;
+	text-align: left;
+	margin-left: 3px;
+	padding-bottom: 5px;
+}
+
+.dl-popup .popup-head .tixing {
+	margin: 10px auto;
+	font-family: \"initial\" !important;
+	font-size: 22px;
+}
+
+.dl-popup .footer span {
+	margin-right: 10px;
+	padding-bottom: 20px;
+}
+
+.dl-popup .footer {
+	text-align: center;
+	margin: 20px auto;
+}
+
+.dl-popup .footer span a.sure_btn {
+	background: url(../../images/btn1.png) no-repeat;
+	border: medium-none;
+	color: #fff !important;
+}
+
+.dl-popup .footer span a.cancel_btn {
+	background: url(../../images/btn2.png) no-repeat;
+	color: #666666;
+}
+
+.dl-popup .footer span a.base_btn {
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 85px;
+}

@@ -1,0 +1,10 @@
+<svg id="注销勾选" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_313" data-name="Rectangle 313" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="矩形" width="46" height="46" rx="4" transform="translate(5 5)" fill="#12b787"/>
+  <g id="组_27" data-name="组 27" transform="translate(-1140 -1079.576)">
+    <path id="路径_35" data-name="路径 35" d="M208.9,286.508h-9.453V260.917h23.025V270.1" transform="translate(953.557 832.659)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="路径_36" data-name="路径 36" d="M244.147,309.313a7.011,7.011,0,1,0,9,0" transform="translate(926.363 800.652)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <line id="直线_24" data-name="直线 24" y1="7.991" transform="translate(1175.011 1109)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="路径_37" data-name="路径 37" d="M216.591,290.681l3.137,2.918,8.863-8" transform="translate(942.14 814.44)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+</svg>

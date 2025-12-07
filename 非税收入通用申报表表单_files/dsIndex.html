@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<!-- saved from url=(0209)https://etax.jiangsu.chinatax.gov.cn/shenbao/dsIndex.action?sign=index&sb_type=53&menu_show_type=0&nsrdzdah=10113204000164688009&new_dlm=91320411MA1MCT53X4&username=91320411MA1MCT53X4&djxh=10113204000051481241 -->
+<html class="panel-fit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<title>网络电子税局</title>
+
+<link rel="stylesheet" type="text/css" href="./easyui(1).css">
+<link rel="stylesheet" type="text/css" href="./icon.css">
+<link rel="stylesheet" type="text/css" href="./global.css">
+<link rel="stylesheet" type="text/css" href="./smartMenu(1).css">
+<link rel="stylesheet" type="text/css" href="./sbbase.css">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+
+<script type="text/javascript" src="./jquery.easyui(1).min.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./jquery-smartMenu-min.js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function resizewidth() {
+		var the_width = document.body.clientWidth;
+		var center_width = the_width - 455;
+		var flag = true;
+
+		$("#right_button").click(function() {
+			if (flag == true) {
+				var change_width = the_width - 210;
+				var change_width1 = the_width - 23;
+				$(".layout-panel-center").css("width", change_width);
+				$("#mainPanle").css("width", change_width);
+				$(".layout-panel-east").css({
+					"right" : "-245px",
+					"left" : change_width1
+				});
+			}
+			if (flag == false) {
+				var center_width1 = the_width - 455;
+				var center_width2 = the_width - 275;
+				$(".layout-panel-center").css("width", center_width1);
+				$("#mainPanle").css("width", center_width1);
+				$(".layout-panel-east").css({
+					"right" : "0",
+					"left" : center_width2
+				});
+				$(".mainbox .date .days span").css("margin-right", "4px");
+			}
+			if ($(".layout-panel-center").width() > center_width) {
+				flag = false;
+			} else {
+				flag = true;
+			}
+			;
+			$('#mainPanle').tabs('resize');
+		});
+	}
+	$(window).resize(function() {
+		resizewidth();
+		$("#mianPanle").tabs('resize');
+
+	});
+	/*右侧快捷菜单right*/
+	function rightCollapse() {
+		var flag1 = true;
+		$(".ftool p").on('click', function() {
+			if (flag1) {
+				$(this).parent().find("ul").slideToggle();
+				$(this).addClass("active");
+				flag1 = false;
+			} else {
+				$(this).parent().find("ul").slideToggle();
+				$(this).removeClass("active");
+				flag1 = true;
+			}
+			;
+		});
+		var flag2 = true;
+		$(".policy p dl").hide(); /*   border:1px dashed #999999;*/
+		$(".policy p").on('click', function() {
+			if (flag2) {
+				$(this).parent().find("dl").slideToggle();
+				$(this).addClass("active");
+				flag2 = false;
+			} else {
+				$(this).parent().find("dl").slideToggle();
+				$(this).removeClass("active");
+				flag2 = true;
+			}
+			;
+		});
+	}
+	$(document)
+			.ready(
+					function() {
+					    addEventForAdvise();
+						resizewidth();/*右侧快捷菜单点击*/
+						rightCollapse(); /*右侧快捷菜单折叠*/
+						var the_top = document.documentElement.clientHeight;
+						var wintop = the_top;
+						$("#mainPanle").css({
+							height : wintop
+						});
+						$("#left").css({
+							height : wintop
+						});
+
+						$("#mainPanle").tabs({
+							fit : true
+						});
+						var tree_menu = {
+
+							menus : [
+									{
+										title : "纳税申报",
+										icon : "icon-sb-1",
+										menus : [
+												{
+													title : "一般申报",
+													icon : "icon-itemblue",
+													url : "ybsbInitBaseAction.action?sbzl=&sb_type=53&zsxm_dm="
+												}, {
+													title : "特殊申报",
+													icon : "icon-itemblue",
+													url : "developing.html"
+												} ]
+									},
+									{
+										title : "税款缴纳",
+										icon : "icon-sb-2",
+										menus : [ {
+											title : "完税凭证",
+											icon : "icon-itemblue",
+											url : "queryReportPayMoney.action?sign=queryReportPayMoneyJump"//完税凭证查询
+										} ]
+									},
+									{
+										title : "信息查询",
+										icon : "icon-sb-3",
+										menus : [
+												{
+													title : "申报查询",
+													icon : "icon-itemblue",
+													url : "sbcxAction.action?sign=index"
+												},
+												{
+													title : "进出口报表XML导入",
+													icon : "icon-itemblue",
+													url : "indexMenuJump.action?sign=outinReportXMLImport"//developing.html
+												} ]
+									} ]
+						};
+						f_menu_initial(tree_menu);
+						addTabs(
+								"主页",
+								"indexDsMenuJump.action?sign=iframesbindex_ds&sb_type=53&sssq_q=&sssq_z=&sbqxq=&sbqxz=&sbzlState=&nsqx_dm=&yqsbqx=&sb_zlbh=&zsxm_dm=&requestMode=0&sbzt_dm=&yqsbbz=&yqts=&xmbm=&sbcxtzfjssbbz=&appkgbz=");
+
+						$(".easyui-accordion li a")
+								.click(
+										function() {
+											var atitle = $(this).html();
+											var src = $(this).attr("src");
+											$(".easyui-accordion li a")
+													.removeClass("selected");
+											$(this).addClass("selected");
+											addTabs($(this).html(), $(this)
+													.attr("src"));
+										});
+
+						$("#mainPanle").tabs({
+							onSelect : function(title, index) {
+								selectAtitle(title);
+							}
+						});
+						$("#right_button").trigger("click");
+
+					});
+					
+	function addEventForAdvise(){
+	   $('#adviseBtn').click(function(){
+	      var _src=$(this).attr('src');
+	      if(_src=='./leftAdvise/hide.png'){
+	      $(this).attr('src','./leftAdvise/expand.png').css('marginLeft','88px');
+	      $('#adviseBody').hide();
+	      }else{
+	       $(this).attr('src','./leftAdvise/hide.png').css('marginLeft','95px');
+	          $('#adviseBody').show();
+	      }
+	   });
+	   
+	   $('#adviseBody').click(function(){
+		    $.etaxAjax('DzswjAdviseAction.action',{'open_type':'package','code':'100209','app_client_id':''},function(data){
+				var a=$("<a href='"+data["url"]+"'  target='_blank'>链接</a>").get(0);
+	 		    var e;
+				if($.browser.msie){
+				  window.open(data["url"]);
+				}else{
+				 e=document.createEvent('MouseEvents');
+				 e.initEvent('click',true,true);
+				 a.dispatchEvent(e);
+				} 
+			},false);
+	   });
+	}
+	function addTabs(_aTitle, url) {
+	debugger;
+	    var aTitle=$.trim(_aTitle);
+		if ($.trim(aTitle) == "纳税申报") {
+			debugger;
+			var sb_type = '53';
+			var sbzl = $("input[name = 'sb_zlbh']").val();
+			var nsqx_dm = $("input[name = 'nsqx_dm']").val();
+			var zsxm_dm = $("input[name = 'zsxm_dm']").val();
+			var xmbm = $("input[name = 'xmbm']").val();
+			var sbzlState = $("input[name = 'sbzlState']").val();
+			var sjlybz = $("input[name = 'sjlybz']").val();
+
+			//获取子页面属期
+			var skssqqTrue = window.$("#sssq_q").val();
+			var skssqzTrue = window.$("#sssq_z").val();
+			if (skssqqTrue == "" || skssqzTrue == "" || 
+						skssqqTrue == undefined || skssqzTrue == undefined) {
+				layerHandler.alertauto("税款所属期起和税款所属期止不能为空!", '提示信息','300', '160', null);
+				return false;
+			}
+			/*if (sb_type == "51") {
+					layerHandler.alertauto("尊敬的缴费人： 该功能正在升级维护，由此给您带来不便，敬请谅解!", '提示信息',
+							'300', '160', null);
+					return;
+			}*/
+			url = 'prevCommCheckDsAction.action?sb_zlbh='+ sbzl+ '&sb_type=53&zsxm_dm='+ zsxm_dm +'&nsqx_dm= '+ nsqx_dm +'&sssq_q='
+						+ skssqqTrue + '&sssq_z=' + skssqzTrue + '&xmbm='+xmbm + '&sbzlState='+sbzlState+'&sjlybz='+sjlybz;
+			if (typeof window.zpwan === "function") {
+				var obj = $.trim(window.zpwan());
+				if (obj == "") {
+					layerHandler.alertauto("您企业没有有效的税种认定信息，不能够进行申报!", '提示信息',
+							'300', '160', null);
+					return;
+				}
+			}
+		}else if($.trim(aTitle) == "再次申报" || $.trim(aTitle) == "税费申报"){
+			var skssqqTrue = window.$("#sssq_q").val();
+			var skssqzTrue = window.$("#sssq_z").val();
+			if (skssqqTrue == "" || skssqzTrue == "" || 
+						skssqqTrue == undefined || skssqzTrue == undefined) {
+				layerHandler.alertauto("税款所属期起和税款所属期止不能为空!", '提示信息','300', '160', null);
+				return false;
+			}
+		}
+		var striframe = "";
+		if (aTitle == "主页") {
+			striframe = "<div id='maincontainer_noiframe' name='mainIframe'  class='tabiframe' style=''><div>";
+
+		} else {
+			striframe = "<iframe id='mainIframe' name='mainIframe'  class='tabiframe'  scrolling='auto' frameborder='0' src=";
+			striframe += "'" + url + "'";
+			striframe += "style='width:100%;height:100%;'></iframe>";
+		}
+    debugger;
+		if ($("#mainPanle").tabs('exists', aTitle)) {
+			$("#mainPanle").tabs('select', aTitle);
+			var tab = $('#mainPanle').tabs('getSelected'); // get selected panel
+			$('#mainPanle').tabs('update', {
+				tab : tab,
+				options : {
+					title : aTitle,
+					content : striframe
+				}
+			});
+
+		} else {
+			if (aTitle == "主页") {
+				$('#mainPanle').tabs('add', {
+					title : aTitle,
+					content : striframe,
+					closable : false,
+					cache : true
+				});
+				$("#maincontainer_noiframe").load(url);
+			} else {
+				$('#mainPanle').tabs('add', {
+					title : aTitle,
+					content : striframe,
+					closable : true,
+					cache : true
+				});
+			}
+
+			var imageMenuData = [ [ {
+				text : "关闭",
+				func : function() {
+					$(this).find(".tabs-close").trigger("click");
+				}
+			}, {
+				text : "关闭其他",
+				func : function() {
+					$(this).siblings().find(".tabs-close").trigger("click");
+					$(this).trigger("click");
+				}
+			}, {
+				text : "关闭所有",
+				func : function() {
+					$(this).siblings().find(".tabs-close").trigger("click");
+					$(this).find(".tabs-close").trigger("click");
+				}
+			} ] ];
+			$("#mainPanle ul.tabs li").each(function() {
+				if ($(this).find(".tabs-close").length > 0) {
+					$(this).smartMenu(imageMenuData, {
+						name : "tabMenu"
+					});
+				}
+			});
+
+		}
+		;
+		resizewidth();
+		$("#right_button").trigger("click");
+
+	}
+	function selectAtitle(title) {
+		$("#tree_menu ul.ltree li a").each(
+				function() {
+					if ($(this).text() == title) {
+						$("#tree_menu").accordion('select',
+								$(this).parents(".panel").index() - 1);
+						$(".easyui-accordion li a").removeClass('selected');
+						$(this).addClass('selected');
+					}
+					;
+					if (title == "主页") {
+						$("#tree_menu").accordion('select', 0);
+						$(".easyui-accordion li a").removeClass('selected');
+					}
+				});
+
+	}
+
+	function reflash() {
+		$("#tree_menu ul.ltree:eq(0) li a:eq(0)").trigger("click");
+	}
+	function f_menu_initial(jsonData) {
+		var menus = jsonData.menus;
+		var _menus_str = "";
+		for ( var i = 0; i < menus.length; i++) {
+			_menus_str += _accordion_add(menus[i]);
+		}
+		$("#tree_menu").addClass("easyui-accordion");
+		$.parser.parse($('#tree_menu').parent());
+
+		function _accordion_add(menu) {
+			var _title = menu["title"];
+			var icon = menu["icon"];
+			var url = menu["url"];
+
+			var child_menus = null;
+			if (menu["menus"]) {
+				child_menus = menu["menus"];
+
+				var _li = "";
+				for ( var i = 0; i < child_menus.length; i++) {
+					_li += "<li><a href='javascript:void(0);'  src="
+							+ child_menus[i]["url"] + ">"
+							+ child_menus[i]["title"] + "</a></li>";
+				}
+
+				var _str = "<div title='" + _title + "' data-options=iconCls:'"+icon+"'>";
+				_str += "<ul class='ltree'>";
+				_str += _li;
+				_str += "</ul>";
+				_str += "</div>";
+				return _str;
+			} else {
+				var _str = "<div  title='" + _title +"'>";
+				_str += "<a>asdfadsf;";
+				_str += "</a></div>";
+				return _str;
+			}
+
+		}
+		;
+	};
+
+	function szyx() {
+		$.ajax({
+			type : 'post',
+			url : 'indexMenuJump.action?sign=queryszyx',
+			cache : false,
+			dataType : 'json',
+			success : function(result) {
+				if (result.SbYxFalg != '0000') {
+					$.messager.alert('提示信息', "该税种未核定", 'info');
+					return;
+				}
+			},
+			error : function(result) {
+				$.messager.alert('提示信息', "该税种未核定", 'error');
+				return;
+			}
+		});
+	}
+	function checkCwbbSssq(ssqq_date, ssqz_date) {
+		if (ssqq_date.substring(8) != "01") {
+			alert("所属时期起应为当月第一天！");
+			return false;
+		}
+		var month = ssqz_date.substring(5, 7);
+		var day = ssqz_date.substring(8);
+		if (month == "02") {
+			if (day != "28" || day != "29") {
+				alert("所属时期止应为当月最后一天！");
+				return false;
+			}
+		}
+		if (month == "01" || month == "03" || month == "05" || month == "07"
+				|| month == "08" || month == "10" || month == "12") {
+			if (day != "31") {
+				alert("所属时期止应为当月最后一天！");
+				return false;
+			}
+		}
+		if (month == "04" || month == "06" || month == "09" || month == "11") {
+			if (day != "30") {
+				alert("所属时期止应为当月最后一天！");
+				return false;
+			}
+		}
+		var date_ssqz = new Date(ssqz_date);
+		var date_ssqq = new Date(ssqq_date);
+		if (date_ssqz <= date_ssqq) {
+			alert("所属时期起应小于所属时期止！");
+			return false;
+		}
+		return true;
+	}
+</script>
+</head><body class="easyui-layout layout panel-noscroll"><div style="position: absolute; z-index: 19700; top: 86px; left: 501px; display: none;"><iframe src="./My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
+	<div class="panel layout-panel layout-panel-west" style="left: 0px; top: 0px; width: 180px;"><div id="left" data-options="region:&#39;west&#39;,border:false" title="" class="panel-body panel-body-noheader panel-body-noborder layout-body" style="width: 180px; height: 617px;">
+		<div id="tree_menu" fit="false" border="false" class="easyui-accordion accordion accordion-noborder">
+			
+				
+					<div class="panel" style="width: 180px;"><div class="panel-header accordion-header accordion-header-selected" style="height: 30px; width: 180px;"><div class="panel-title panel-with-icon">申报缴纳</div><div class="panel-icon icon-sb-1"></div><div class="panel-tool"><a class="panel-tool-collapse" href="javascript:void(0)" style="display: none;"></a><a href="javascript:void(0)" class="accordion-collapse"></a></div></div><div title="" data-options="iconCls:&#39;icon-sb-1&#39;" class="panel-body accordion-body" style="display: block; width: 180px; height: auto;">
+						<ul class="ltree">
+							
+								
+							
+								
+									<li><a href="javascript:void(0);" src="indexDsMenuJumpaction?sign=querysbzl&amp;sb_type=53&amp;zsxm_dm=null&amp;sbqx_bm=null" class="selected">纳税申报 </a></li>
+								
+							
+								
+									<li><a href="javascript:void(0);" src="sbcxAction.action?sign=index&amp;sb_type=53&amp;zsxm_dm=null&amp;sbqx_bm=null">涉税查询 </a></li>
+								
+							
+								
+									<li><a href="javascript:void(0);" src="wspzdyAction.action?sign=index&amp;sb_type=53&amp;zsxm_dm=null&amp;sbqx_bm=null">完税凭证 </a></li>
+								
+							
+								
+							
+								
+							
+						</ul>
+					</div></div>
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</div><!--
+		<div style="position:fixed;left:30px;top:250px;display:none;" id="leftFww">
+			<div style="width: 120px;cursor: pointer;">
+			 <img src="./leftAdvise/hide.png" style="margin-left: 95px;" id="adviseBtn"/>
+			 </div>
+			 <div style="width:120px;height: 280px;cursor: pointer;" id="adviseBody">
+			 <img src="./leftAdvise/left_advise.gif" />
+			 </div>
+		</div>
+	--></div></div>
+
+	<div class="panel layout-panel layout-panel-center panel-noscroll" style="left: 180px; top: 0px; width: 1243px;"><div id="mainPanle" region="center" overflow-y="hidden" border="false" title="" class="panel-body panel-body-noheader panel-body-noborder layout-body tabs-container" style="width: 1243px; height: 617px;">
+	<div class="tabs-header tabs-header-noborder" style="width: 1243px;"><div class="tabs-scroller-left" style="display: none;"></div><div class="tabs-scroller-right" style="display: none;"></div><div class="tabs-wrap" style="margin-left: 0px; margin-right: 0px; width: 1243px;"><ul class="tabs" style="height: 26px;"><li class=""><a href="javascript:void(0)" class="tabs-inner" style="height: 25px; line-height: 25px;"><span class="tabs-title">主页</span><span class="tabs-icon"></span></a></li><li class="tabs-selected"><a href="javascript:void(0)" class="tabs-inner" style="height: 25px; line-height: 25px;"><span class="tabs-title tabs-closable">纳税申报</span><span class="tabs-icon"></span></a><a href="javascript:void(0)" class="tabs-close"></a></li></ul></div></div><div class="tabs-panels tabs-panels-noborder" style="height: 587px; width: 1243px;"><div class="panel" style="display: none; width: 1243px;"><div title="" class="panel-body panel-body-noheader panel-body-noborder" style="width: 1243px; height: 587px;"><div id="maincontainer_noiframe" name="mainIframe" class="tabiframe" style="">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+
+<title>网络电子税局</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<link type="text/css" rel="stylesheet" href="./base(1).css">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./layer.min.js"></script>
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon.js"></script>
+<script type="text/javascript" src="./sbindex_ds_dcsb.js"></script>
+<script type="text/javascript" src="./sbDateUtilComm.js"></script>
+<style type="text/css">
+.Wdate { /*datePicker 日历*/
+	background: #fff
+		url(https://etax.jiangsu.chinatax.gov.cn/shenbao/styles/default/images/datePicker.gif)
+		no-repeat right;
+}
+#advLink a{
+ font-weight:bold;
+ color:black;
+ text-decoration: none;
+ cursor: pointer;
+}
+#advLink a:hover{
+  text-decoration: underline;
+}
+
+#vLink a{
+ font-weight:bold;
+ color:black;
+ text-decoration: none;
+ cursor: pointer;
+}
+#vLink a:hover{
+  text-decoration: underline;
+}
+
+</style>
+<script type="text/javascript">
+$(function(){
+ 		$('#advLink').find('a').click(function(){
+   		  $.etaxAjax('DzswjAdviseAction.action',{'open_type':'appkey','code':$(this).attr('code')},function(data){
+            dynamicTriggerATag(data["url"]);
+		  },false);
+ 		});
+ 		
+ 		$('#vLink').find('a').click(function(){
+   		  $.etaxAjax('DzswjAdviseAction.action',{'open_type':'appcst','code':$(this).attr('code')},function(data){
+            dynamicTriggerATag(data["url"]);
+		  },false);
+ 		});
+});
+</script>
+
+
+	<div class="mainbox">
+		<div class="inafter" style="">
+		<div><span id="xmmJzzybnsrMess" style="color:red;font-size:14px;font-family:宋体;font-style:inherit"></span></div>
+			<div class="second">
+				<div class="processbox zengzhi">
+					<div class="title ">
+						<span class="binfo"> <span> 税款所属期：
+						 <input type="text" id="sssq_q" onclick="WdatePicker()" onchange="changessqq()" style="border:1px solid green" value="" realvalue="2024-07-05"> 至 
+							<input type="text" id="sssq_z" onclick="WdatePicker()" onchange="changessqz()" style="border:1px solid green" value="" realvalue="2024-07-05"> 
+							</span>
+							<span class="ente_home" id="ente_home">进入申报 </span><br> 
+								
+									
+						</span> 
+						<span><input type="hidden" id="sb_type" name="sb_type" value="53"> </span>
+						<span><input type="hidden" id="nsqx_dm" value=""> </span>
+ 						<span><input type="hidden" id="sqwsbbz" name="sqwsbbz" value=""> </span>
+						<span><input type="hidden" id="xmbm" name="xmbm" value=""> </span>
+						<span><input type="hidden" id="sbcxtzfjssbbz" name="sbcxtzfjssbbz" value=""> </span>
+					</div>
+					<div class="state_sb">
+					非税收入通用申报表 状态：
+					</div>
+					<div class="process">
+						<ul>
+							<li class="state1" style="display: block;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">未填表</span> <span class="p2">未提交</span> <span class="p3">未受理</span> <span class="p4">未申报</span> <span class="p5">未完税</span></li>
+							<li class="state2" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">草稿</span> <span class="p2">未提交</span> <span class="p3">未受理</span> <span class="p4">未申报</span> <span class="p5">未完税</span></li>
+							<li class="state3" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">未提交</span> <span class="p3">未受理</span> <span class="p4">未申报</span> <span class="p5">未完税</span></li>
+							<li class="state4" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">已提交</span> <span class="p3">未受理</span> <span class="p4">未申报</span> <span class="p5">未完税</span></li>
+							<li class="state5" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">已提交</span> <span class="p3">已受理</span> <span class="p4">未申报</span> <span class="p5">未完税</span></li>
+							<li class="state6" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">已提交</span> <span class="p3">已受理</span> <span class="p4">申报失败</span> <span class="p5">未完税</span></li>
+							<li class="state7" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">已提交</span> <span class="p3">已受理</span> <span class="p4">已申报</span> <span class="p5">未完税</span></li>
+							<li class="state8" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">已提交</span> <span class="p3">已受理</span> <span class="p4">已申报</span> <span class="p5">扣款失败</span></li>
+							<li class="state9" style="display: none;">
+								<div class="flag">
+									<img src="./flag.png" alt="">
+								</div> <span class="p1">已填表</span> <span class="p2">已提交</span> <span class="p3">已受理</span> <span class="p4">已申报</span> <span class="p5">已完税</span></li>
+						</ul>
+					</div>
+					<div class="money" style="text-align:left">
+						<span id="ynse"></span>
+					</div>
+				</div>
+			</div>
+			<div class="Calendar">
+				<table cellspacing="0">
+					<thead>
+						<tr>
+							<td style="color:#e84c3d;position:relative"><a class="sunday"></a>星期日</td>
+							<td>星期一</td>
+							<td>星期二</td>
+							<td>星期三</td>
+							<td>星期四</td>
+							<td>星期五</td>
+							<td style="color:#e84c3d;position:relative"><a class="satuday"></a>星期六</td>
+						</tr>
+					</thead>
+					<tbody id="idCalendar"><tr><td><em>&nbsp;</em></td><td><em>&nbsp;</em></td><td><em>&nbsp;</em></td><td><em>&nbsp;</em></td><td><em><a id="day1" class="thisday">1</a></em></td><td><em><a id="day2" class="thisday">2</a></em></td><td><em><a id="day3" class="thisday">3</a></em></td></tr><tr><td><em><a id="day4" class="thisday">4</a></em></td><td><em class="onToday"><a id="day5" class="thisday">5</a></em></td><td><em><a id="day6" class="thisday">6</a></em></td><td><em><a id="day7" class="thisday">7</a></em></td><td><em><a id="day8" class="thisday">8</a></em></td><td><em><a id="day9" class="thisday">9</a></em></td><td><em><a id="day10" class="thisday">10</a></em></td></tr><tr><td><em><a id="day11" class="thisday">11</a></em></td><td><em><a id="day12" class="thisday">12</a></em></td><td><em><a id="day13" class="thisday">13</a></em></td><td><em><a id="day14" class="thisday">14</a></em></td><td><em><a id="day15" class="thisday">15</a></em></td><td><em>16</em></td><td><em>17</em></td></tr><tr><td><em>18</em></td><td><em>19</em></td><td><em>20</em></td><td><em>21</em></td><td><em>22</em></td><td><em>23</em></td><td><em>24</em></td></tr><tr><td><em>25</em></td><td><em>26</em></td><td><em>27</em></td><td><em>28</em></td><td><em>29</em></td><td><em>30</em></td><td><em>31</em></td></tr></tbody>
+				</table>
+				<div class="Calendar_top" style="min-height: 344px; height: 405px;">
+					<div style="height:40px;text-align:center;margin-top:20px;margin-right:30px;">
+
+						<div class="Calendar_input Calendar_update">
+							<span class="Calendar_year"><span id="idCalendarYear">2024</span> 年
+							</span> <span class="Calendar_month"><span id="idCalendarMonth">7</span> 月</span>
+							<span class="Calendar_date"><span id="idCalendarDate">5</span> 日</span>
+						</div>
+
+						<div style="clear:both"></div>
+					</div>
+					<div id="sbqxDiv" style="text-align:left;margin-top:40px;margin-left:40px;font-size:18px;">
+						<span class="point"> <img src="./point.png" width="8" height="8"> </span> 申报期限 <i id="sbqxq">2024-08-01</i>至<i id="sbqxz">2024-08-15</i>
+					</div>
+
+					<div style="text-align:left;margin-top:40px;margin-left:40px;font-size:18px;" class="sb_distance">
+						<span class="point" id="point" style="display: none;"> <img src="./point.png" width="8" height="8"> </span> <span class="distance" id="distance">离申报期申报结束还有<span id="day">42</span>天</span>
+					</div>
+					<div style="text-align:left;margin:40px 5px 0 40px;font-size:18px;">
+						<span class="point"> <img src="./point.png" width="8" height="8"> </span> 友情提醒 ：<font style="font-size:16px;color:#fff102">此处只显示在本系统申报状态，可在一户式查询中查询其他所有系统申报信息！</font>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+
+			<input type="hidden" value="" id="sbqx">
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var sssq_q_cs;
+	var sssq_z_cs;
+	var nsqx_dm_cs;
+	$(function(){
+	debugger;
+	var sb_zlbh = $("input[name='sb_zlbh']").val();
+     sbztReflesh('','53');
+     $("#ente_home").click(function(){ 
+     	checkMoreSb();
+     });
+     if(sb_zlbh == "10516"){
+   		var sbcxtzfjssbbz = $("input[name='sbcxtzfjssbbz']").val();
+   		if(sbcxtzfjssbbz != null && sbcxtzfjssbbz != "" && sbcxtzfjssbbz == "1"){
+		   		//如果是附加税非APP进入 自动触发
+		   		$("#ente_home").trigger("click");
+   		}
+   	}
+	nsqx_dm_cs = '';
+	sssq_q_cs=$("#sssq_q").val();
+	sssq_z_cs=$("#sssq_z").val();
+	var appkgbz = '';
+     if(appkgbz == "N"){
+     	$("#sssq_q").attr("disabled",true);
+     	$("#sssq_z").attr("disabled",true);
+     	if(sb_zlbh=="10523"){
+     	  $("#sssq_q").attr("disabled",false);
+     	  $("#sssq_z").attr("disabled",false);
+     	}else if(sb_zlbh=="10524"){
+     	  $("#sssq_q").val("");
+     	  $("#sssq_z").val("");
+     	  $("#sssq_q").attr("disabled",false);
+     	  $("#sssq_z").attr("disabled",false);
+     	}else if(sb_zlbh=="10517"){
+			if(nsqx_dm_cs=="10" ){
+				$("#sssq_q").attr("disabled",false);
+			}
+		}
+     }else{
+     	$("#sssq_q").attr("disabled",false);
+     	$("#sssq_z").attr("disabled",false);
+     }
+});
+function sbztReflesh(sbzlState,sb_type){
+debugger;
+	var ul=$(".processbox .process ul").eq(0);
+		ul.find('li').hide();
+    switch(sbzlState){
+    	case'100':ul.find('.state1').show();break;
+    	case'101' :ul.find('.state2').show();break;
+    	case'102' :ul.find('.state3').show();break;
+    	case'0' :ul.find('.state4').show();break;
+    	case'1' :ul.find('.state5').show();break;
+    	case'2' :ul.find('.state5').show();break;
+		case'3' :ul.find('.state6').show();break;
+		case'4' :ul.find('.state7').show();break;
+		case'6' :ul.find('.state8').show();break;
+		case'7' :ul.find('.state9').show();break;
+    };
+    $(".inafter").show();
+    $(".outafter").hide();
+}
+</script>
+<script type="text/javascript">
+function zpwan(){
+	var zp = $("#sssq_q").val();
+	return zp;
+}
+function cwbbSsq(){
+	var ssqq_date = $("#ssqq_date").val();
+	var ssqz_date = $("#ssqz_date").val();
+	var ssqStr=ssqq_date+","+ssqz_date;
+	if(","==ssqStr){
+		return "kong";
+	}else if(ssqq_date==""){
+		return "ssqq_datekong";
+	}else if(ssqz_date==""){
+		return "ssqz_datekong";
+	}
+	return ssqStr;
+}	
+//申报期限
+$(function(){
+	debugger;
+	var sb_type = '53';
+	debugger;
+	var sbzlState = '';
+	if(sbzlState != null && sbzlState != undefined && sbzlState != "" && sbzlState != '4' && sbzlState != '5' && sbzlState != '6' && sbzlState != '7'){
+		var yqsbbz = '';
+		if(yqsbbz != null && yqsbbz != undefined && yqsbbz != "" && yqsbbz == "Y"){
+			var yqts = '';
+		 	//提示纳税人当前为逾期申报,请于次日再进行
+	 		//layerHandler.alertauto("您企业当前为逾期申报,（逾期天数"+ yqts +"),可以正常填写申报表,不予申报,如有应补税额将按征管法规定加收滞纳金。","提示","320px","190px",null);
+		}
+	}
+	var sbqxz='';
+	var sbqxq='';
+	initZqrl(sbqxz,sbqxq,'','');
+});
+	function yesBtn(){
+		flag = true;
+		layer.closeAll();
+	}
+function initZqrl(sbqxz,sbqxq,yqsbbz,yqts){
+	var sb_type = '53';
+
+	var timenow='2024-07-05'; 
+	var urodz= new Date(Date.parse(sbqxz.replace(/-/g, "/")));  
+	var urodq= new Date(Date.parse(sbqxq.replace(/-/g, "/"))); 
+	var timeq= new Date(Date.parse(timenow.replace(/-/g, "/")));
+	var ssqTime = urodz.getTime() - urodq.getTime(); 
+	var ssqNum = Math.floor(ssqTime / (24 * 3600 * 1000));
+	debugger;
+	var chooseYear = sbqxq.substr(0,4);
+	var chooseMonth = sbqxq.substr(5,2);
+	
+	
+	debugger;
+	 var s = "申报期申报结束"; 
+	 var sbyf=urodq.getMonth()+1;
+     $("#sbyf").html(sbyf);
+	var ile = urodz.getTime() - timeq.getTime(); 
+	var dni = Math.floor(ile / (24 * 3600 * 1000));
+	var days=Number(dni)+1;
+	if(days<0){
+		days=0;
+	}
+	if (typeof(days) == "undefined"||isNaN(days)){
+	    $("#point").hide();
+		$("#distance").html("");
+	}else if(days==0){
+		var yqts_init = 0;
+		if(yqsbbz != null && yqsbbz != undefined && yqsbbz != "" && yqsbbz == "Y"){
+			yqts_init = yqts;
+		}
+	  	$("#distance").html("申报期已结束");
+	}else{
+		$("#distance").html("离申报期申报结束还有<span id='day'>"+days+"</span>天");
+	}
+	if ($(".Calendar table #idCalendar tr").length==6) {
+		$(".Calendar_top").css("height",405);
+	}else{
+		 $(".Calendar_top").css("height",345);
+	}
+	
+	var $1= function (id) {
+	    return "string" == typeof id ? document.getElementById(id) : id;
+	};
+	var Class = {
+	  create: function() {
+	    return function() {
+	      this.initialize.apply(this, arguments);
+	    };
+	  }
+	};
+	var Extend = function(destination, source) {
+	    for (var property in source) {
+	        destination[property] = source[property];
+	    }
+	    return destination;
+	};
+	var Calendar = Class.create();
+	Calendar.prototype = {
+	  initialize: function(container, options) {
+		this.Container = $1(container);//容器(table结构)
+		this.Days = [];//日期对象列表
+		this.SetOptions(options);
+		this.Year = this.options.Year || new Date().getFullYear();
+		this.Month = this.options.Month || new Date().getMonth() + 1;
+		this.Date = this.options.Date|| new Date().getDate();
+		this.SelectDay = this.options.SelectDay ? new Date(this.options.SelectDay) : null;
+		this.onSelectDay = this.options.onSelectDay;
+		this.onToday = this.options.onToday;
+		this.onFinish = this.options.onFinish;	
+		this.Draw();
+	  },
+	  //设置默认属性
+	  SetOptions: function(options) {
+		this.options = {//默认值
+			Year:			0,//显示年
+			Month:			0,//显示月
+			SelectDay:		null,//选择日期
+			onSelectDay:	function(){},//在选择日期触发
+			onToday:		function(){},//在当天日期触发
+			onFinish:		function(){
+				}//日历画完后触发
+		};
+		Extend(this.options, options || {});
+	  },
+	  //当前月
+	  NowMonth: function() {
+		this.PreDraw(new Date());
+	  },
+	  //上一月
+	  PreMonth: function() {
+		this.PreDraw(new Date(this.Year, this.Month - 2, 1));
+	
+	  },
+	  //下一月
+	  NextMonth: function() {
+		this.PreDraw(new Date(this.Year, this.Month, 1));
+	
+	  },
+	  //上一年
+	  PreYear: function() {
+		this.PreDraw(new Date(this.Year - 1, this.Month - 1, 1));
+	  },
+	  //下一年
+	  NextYear: function() {
+		this.PreDraw(new Date(this.Year + 1, this.Month - 1, 1));
+	  },
+	  //根据日期画日历
+	  PreDraw: function(date) {
+		//再设置属性
+		this.Year = date.getFullYear(); this.Month = date.getMonth() + 1;
+		//重新画日历
+		this.Draw();
+	  },
+	  //画日历
+	  Draw: function() {
+		//用来保存日期列表
+		var arr = [];
+		//用当月第一天在一周中的日期值作为当月离第一天的天数
+		for(var i = 1, firstDay = new Date(chooseYear, chooseMonth - 1, 1).getDay(); i <= firstDay; i++){ arr.push(0); }
+		//用当月最后一天在一个月中的日期值作为当月的天数
+		for(var i = 1, monthDay = new Date(chooseYear, chooseMonth, 0).getDate(); i <= monthDay; i++){ arr.push(i); }
+		//清空原来的日期对象列表
+		this.Days = [];
+		//插入日期
+		var frag = document.createDocumentFragment();
+		while(arr.length){
+			//每个星期插入一个tr
+			var row = document.createElement("tr");
+			//每个星期有7天
+			for(var i = 1; i <= 7; i++){
+				var cell1 = document.createElement("td"); 
+				var cell = document.createElement("em"); 
+				cell.innerHTML = "&nbsp;";
+				if(arr.length){
+					var d = arr.shift();
+					if(d){
+						cell.innerHTML = d;
+						this.Days[d] = cell;
+						var on = new Date(this.Year, this.Month - 1, d);
+						//判断是否今日
+						this.IsSame(on, new Date()) && this.onToday(cell);
+						//判断是否选择日期
+						this.SelectDay && this.IsSame(on, this.SelectDay) && this.onSelectDay(cell);
+					}
+				}
+				row.appendChild(cell1);
+				cell1.appendChild(cell);
+			}
+			frag.appendChild(row);
+		}
+		//先清空内容再插入(ie的table不能用innerHTML)
+		while(this.Container.hasChildNodes()){ this.Container.removeChild(this.Container.firstChild); }
+		this.Container.appendChild(frag);
+		//附加程序
+		this.onFinish();
+	  },
+	  //判断是否同一日
+	  IsSame: function(d1, d2) {
+		return (d1.getFullYear() == d2.getFullYear() && d1.getMonth() == d2.getMonth() && d1.getDate() == d2.getDate());
+	  } 
+	}
+	var cale = new Calendar("idCalendar", {
+		onToday: function(o){ 
+			o.className = "onToday";
+			
+			},
+		onFinish: function(){
+			$1("idCalendarYear").innerHTML = this.Year;
+			 $1("idCalendarMonth").innerHTML = this.Month;
+			 $1("idCalendarDate").innerHTML = this.Date;
+			 debugger;
+		    	if(sb_type != null && (sb_type == "30" || sb_type == "18" 
+		    	|| sb_type == "26" || sb_type == "20" || sb_type == "46" || sb_type == "48")){
+			    var year = this.Year;
+			    var month = this.Month;
+			 	var feb = (year % 4 == 0)? 29:28; 
+				var monthDay = new Array(31, feb , 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+				ssqNum = monthDay[month-1] - 1;
+			 }
+			 for(var i=1;i<=(ssqNum+1);i++){
+				this.Days[i].innerHTML="<a id='day"+i+"' class='thisday'>"+i+"</a>";
+			}
+		}
+	});
+}
+/** 
+ * add by houkai at 2016-08-05 pm 12:35 
+ * 属期改变触发事件
+ */
+function changessqq(){
+	debugger;
+	//不允許提前申報
+	var skssqq = $("#sssq_q").val(); 
+	var curDate = getNowFormatDate(true);
+	var flag = compareDate(skssqq,curDate);
+	/*if(flag){
+		layerHandler.alertauto("【提前申报】适用于注销、迁移登记等情况而需征期内申报的情形，填报前请与主管税务机关确认!","提示","320px","190px",null);
+		$("#sssq_q").val("");
+		$("#sssq_q").focus();
+		return;
+	}*/
+	loadingInfo();
+	//获取初始化获取的纳税期限代码
+	var sb_type = '53';
+	if(isAcsbQs(sb_type)){
+		//契税和耕地占用税 修改属期起时 自动修改属期止为当天 
+		clickSssq();
+	}else{
+		removeLoadingInfo();
+		//属期止情况 由修改属期止控制
+		$("#sssq_z").val("");
+		$("#sssq_z").focus();
+	}
+	var sb_zlbh = $("input[name='sb_zlbh']").val();
+	if(sb_zlbh=="10517"){
+		if(nsqx_dm_cs=="10"){
+			var qDates = splitStr(skssqq);
+			if(parseInt(qDates[1],10)!=1 && parseInt(qDates[2],10)!=1){
+				showAlertMess('按年申报，税款所属期起必须是年初，请重新选择！');
+				return false;
+			}
+			var qDates_cs = splitStr(sssq_q_cs);
+			if(parseInt(qDates[0],10)<parseInt(qDates_cs[0],10)-1){
+				showAlertMess('目前电子税务局仅支持残保金上一年度属期的往期申报，请重新选择！');
+				return false;
+			}
+			if(parseInt(qDates[0],10)>=parseInt(new Date().getFullYear(),10)){
+				showAlertMess('税款所属期不得在当前年度属期之后，请重新选择！');
+				return false;
+			}
+			$("#sssq_z").val(qDates[0]+"-12-31").trigger("onchange");
+		}
+
+
+	}
+}
+function clickSssq(){
+	var sb_type = '53';
+	var nsqx_dm = $("input[name = 'nsqx_dm']").val();
+	var skssqq = $("#sssq_q").val();
+	var skssqz = $("#sssq_z").val();
+	var zsxm_dm = $("input[name = 'zsxm_dm']").val();
+	var sb_zlbh = $("input[name='sb_zlbh']").val();
+		$.ajax({
+			 type:"post",
+			 url:"dsIndex.action?sign=changeSkssqq&nsqx_dm="+nsqx_dm+"&sssq_q="+skssqq+"&sssq_z="+skssqz+"&sb_type="+sb_type,
+			 dataType:"json",
+			 data:{
+				 'sb_zlbh' : sb_zlbh
+			 },
+			 success:function(data){
+				 //获取返回的税款所属期止 回填页面
+				debugger;
+				removeLoadingInfo();
+				var returnSkssqq = data.skssqq_new;
+				 var returnSkssqz = data.skssqz_new;
+				 $("#sssq_q").val(returnSkssqq);
+				 $("#sssq_z").val(returnSkssqz);
+				 var sb_zlbh_true = data.sb_zlbh;
+				 if(sb_zlbh_true != null && sb_zlbh_true != undefined && sb_zlbh_true != ""){
+				 	$("input[name='sb_zlbh']").val(sb_zlbh_true);
+				 }
+				 var sbzt = data.sbzt;
+				 sbztReflesh(sbzt,sb_type);
+			 }
+		}); 
+}
+var all_nsqx_dm = "";
+function changessqz(){
+debugger;
+	var nsqx_dm = '';
+	var skssqq = $("#sssq_q").val();
+	var skssqz = $("#sssq_z").val();
+	var sb_type = '53';
+	if(isAcsbQs(sb_type)){
+		var msg = isAcsbCheck(skssqq,skssqz);
+		if(msg!="ok"){
+			showAlertMess(msg);
+			$("#sssq_z").val('');
+			$("#sssq_z").focus();
+			return false;
+		}
+	}else if(sb_type == "42"){//环保税B单独处理
+		debugger;
+		if(!qzDateCheckForHbsB(skssqq,skssqz)){
+			$("#sssq_z").val('');
+			$("#sssq_z").focus();
+			return false;
+		}
+	}else if(sb_type == "41"){//环保A
+		if(!qzDateCheckForHbsA(skssqq,skssqz)){
+			$("#sssq_z").val('');
+			$("#sssq_z").focus();
+			return false;
+		}
+	}else if(sb_type == "31"){//增值税预缴
+		if(!qzDateCheckForZzsyj(skssqq,skssqz)){
+			$("#sssq_z").val('');
+			$("#sssq_z").focus();
+			return false;
+		}
+	}else{
+		if(!qzDateCheckSqz(skssqq,skssqz)){
+			$("#sssq_z").val('');
+			$("#sssq_z").focus();
+			return false;
+		}
+	}
+	querySqJbxx();
+}
+function querySqJbxx(){
+	var sb_type = '53';
+	var skssqq = $("#sssq_q").val();
+	var skssqz = $("#sssq_z").val();
+	var zsxm_dm = $("input[name = 'zsxm_dm']").val();
+	var sb_zlbh = $("input[name='sb_zlbh']").val();
+	//var sb_zlbhs = "42016";
+	$.ajax({
+			 type:"post",
+			 url:"dsIndex.action?sign=changeSkssqz&nsqx_dm="+all_nsqx_dm+"&sssq_q="+skssqq+"&sssq_z="+skssqz+"&sb_type="+sb_type,
+			 dataType:"json",
+			 data:{
+				 'sb_zlbh' : sb_zlbh
+			 },
+			 success:function(data){
+				 //获取返回的税款所属期止 回填页面
+				debugger;
+				removeLoadingInfo();
+				var hbsxxcjbz = data.hbsxxcjbz;
+				 var sb_zlbh_true = data.sb_zlbh_true;
+				 if(sb_zlbh_true != null && sb_zlbh_true != undefined && sb_zlbh_true != ""){
+				 	$("input[name='sb_zlbh']").val(sb_zlbh_true);
+				 }
+				if(sb_zlbh_true == "10513" || sb_type == "42"){
+					if(hbsxxcjbz != null && hbsxxcjbz != undefined && hbsxxcjbz == "N"){
+						layerHandler.alertauto("纳税人未进行环境保护税基础信息采集或采集时未选择采用抽样测算法计算，只能按次申报!","提示","320px","190px",null);
+				 		$("#sssq_z").val("");
+						$("#sssq_z").focus();
+				 		return;
+					}
+				}
+				var sfzrdbz = data.sfzrdbz;
+				if(sfzrdbz == "N"/* && sb_zlbhs.indexOf(sb_zlbh) < 0*/){
+				 	layerHandler.alertauto("您企业当前没有有效的税(费)种认定信息,请联系税务局进行税(费)种认定。","提示","320px","190px",null);
+				 	$("#sssq_z").val("");
+				 	return;
+				}
+				 var sbzt = data.sbzt;
+				 sbztReflesh(sbzt,sb_type);
+				 //添加提示信息：提示纳税人当前为逾期申报 申报成功 缴款成功 不提示
+				 if(sbzt != null && sbzt != "" && sbzt != '4' && sbzt != '5' && sbzt != '6' && sbzt != '7'){
+					 var yqsbbz = data.yqsbbz; 
+					 if(yqsbbz != null && yqsbbz != undefined && yqsbbz != "" && yqsbbz == "Y"){
+					 	 var yqts = data.yqts;
+						 //提示纳税人当前为逾期申报,请于次日再进行
+						 layerHandler.alertauto("您企业当前为逾期申报,（逾期天数"+ yqts +"),可以正常填写申报表,不予申报,如有应补税额将按征管法规定加收滞纳金。","提示","320px","190px",null);
+					 }
+				 }
+				  var sbqxq = data.sbqxq;
+				 var sbqxz = data.sbqxz;
+				 $("i[id='sbqxq']").html(sbqxq);
+				 $("i[id='sbqxz']").html(sbqxz);
+				 //重新刷新页面申报期限
+				 initZqrl(sbqxz,sbqxq,data.yqsbbz,data.yqts);
+			 }
+		}); 
+}
+function isAcsbQs(sb_type){
+	if(sb_type == "33" || sb_type == "40"){
+		return true;
+	}
+	return false;
+}
+function qzDateCheckForHbsA(skssqq,skssqz){
+debugger;
+	var msg = isAcsbCheck(skssqq,skssqz);
+	if(msg!="ok"){
+		showAlertMess(msg);
+		$("#sssq_z").val('');
+		$("#sssq_z").focus();
+		return false;
+	}
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	if(!isAjsb(skssqq,skssqz)){
+		showAlertMess('环境保护税申报(A)类，所属期起必须为按季申报！');
+			return false;
+	}
+	//校验环保A属期是否为季初季末
+	if(((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 3)
+			|| (parseInt(qDates[1], 10) == 4 && parseInt(zDates[1], 10) == 6)
+			|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 9) 
+			|| (parseInt(qDates[1], 10) == 10 && parseInt(zDates[1], 10) == 12))){
+		if (parseInt(qDates[2], 10) != 1) {
+			showAlertMess('按季申报，所属期起必须为季初！');
+			return false;
+		}
+		if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2], 10)) {
+			showAlertMess('按季申报，所属期止必须为为季末！');
+			return false;
+		}
+	}
+	return true;
+}
+function qzDateCheckForHbsB(skssqq,skssqz){
+debugger;
+	var msg = isAcsbCheck(skssqq,skssqz);
+	if(msg!="ok"){
+		showAlertMess(msg);
+		$("#sssq_z").val('');
+		$("#sssq_z").focus();
+		return false;
+	}
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	if(!(parseInt(qDates[0], 10) == parseInt(zDates[0], 10)
+	&&  parseInt(qDates[1], 10) == parseInt(zDates[1], 10)
+	&& parseInt(qDates[2], 10) == parseInt(zDates[2], 10))
+	&& !isAjsb(skssqq,skssqz)){
+		showAlertMess('环境保护税申报(B)类，所属期起必须为按次或者按季申报！');
+			return false;
+	}
+	if(isAjsb(skssqq,skssqz)){
+		if(((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 3)
+			|| (parseInt(qDates[1], 10) == 4 && parseInt(zDates[1], 10) == 6)
+			|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 9) || (parseInt(
+			qDates[1], 10) == 10 && parseInt(zDates[1], 10) == 12))){
+		if (parseInt(qDates[2], 10) != 1) {
+			showAlertMess('按季申报，所属期起必须为季初！');
+			return false;
+		}
+		if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2], 10)) {
+			showAlertMess('按季申报，所属期止必须为为季末！');
+			return false;
+		}
+		}
+	}
+	return true;
+}
+//增值税预缴属期放开时  必须为按月或者按季申报
+function qzDateCheckForZzsyj(skssqq,skssqz){
+debugger;
+	var msg = isAcsbCheck(skssqq,skssqz);
+	if(msg!="ok"){
+		showAlertMess(msg);
+		$("#sssq_z").val('');
+		$("#sssq_z").focus();
+		return false;
+	}
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	if(!isAysb(skssqq,skssqz) && !isAjsb(skssqq,skssqz)){
+		showAlertMess('增值税预缴申报，所属期起必须为按月或者按季申报！');
+			return false;
+	}
+	if(isAysb(skssqq,skssqz)){
+		//按月申报情况
+		if(parseInt(qDates[1], 10) == parseInt(zDates[1], 10)){
+		    if(parseInt(qDates[2], 10) != 1) {
+		    	showAlertMess('按月申报，所属期起必须为某月的第一天！');
+				return false;
+			  }
+			 if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2],10)) {
+				showAlertMess('按月申报，所属期止必须为某月的最后一天！');
+				return false;
+			 }
+		}
+	}
+	if(isAjsb(skssqq,skssqz)){
+		if(((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 3)
+			|| (parseInt(qDates[1], 10) == 4 && parseInt(zDates[1], 10) == 6)
+			|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 9) || (parseInt(
+			qDates[1], 10) == 10 && parseInt(zDates[1], 10) == 12))){
+			if (parseInt(qDates[2], 10) != 1) {
+				showAlertMess('按季申报，所属期起必须为季初！');
+				return false;
+			}
+			if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2], 10)) {
+				showAlertMess('按季申报，所属期止必须为为季末！');
+				return false;
+			}
+		}
+	}
+	return true;
+}
+function isAjsb(skssqq,skssqz){
+	debugger;
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	if(!((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 3)
+		|| (parseInt(qDates[1], 10) == 4 && parseInt(zDates[1], 10) == 6)
+		|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 9) || 
+		(parseInt(qDates[1], 10) == 10 && parseInt(zDates[1], 10) == 12))){
+		return false;
+	}
+	return true;
+}
+function isAysb(skssqq,skssqz){
+	debugger;
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	if(parseInt(qDates[0], 10) == parseInt(zDates[0], 10)
+	 && parseInt(qDates[1], 10) == parseInt(zDates[1], 10)){
+		return true;
+	}
+	return false;
+}
+function isAcsbCheck(skssqq,skssqz){
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	var succMsg = "ok";	
+	if(skssqq == undefined || skssqq == ""){
+		return "所属期起不能为空!";
+	}
+	if(skssqz == undefined || skssqz == ""){
+		return "所属期止不能为空!";
+	}
+	if(skssqq.substring(0,10) > skssqz.substring(0,10)){
+		return "所属期起不能大于所属期止!";
+	} 
+	if(qDates[0] != zDates[0]){// return值开头为0
+		return "所属期起和所属期止必须在同一年!";
+	}
+	return succMsg;
+}
+function qzDateCheckSqz(skssqq,skssqz){
+debugger;
+	var qDates = splitStr(skssqq);
+	var zDates = splitStr(skssqz);
+	var msg = isAcsbCheck(skssqq,skssqz);
+	if(msg!="ok"){
+		showAlertMess(msg);
+		$("#sssq_z").val('');
+		$("#sssq_z").focus();
+		return false;
+	}
+	//如果属期修改按次 前台不校验
+	if(skssqq.substring(0,10) ==  skssqz.substring(0,10)){
+		return true; 
+	} 
+	if (!((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 3)
+			|| (parseInt(qDates[1], 10) == 4 && parseInt(zDates[1], 10) == 6)
+			|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 9) 
+			|| (parseInt(qDates[1], 10) == 10 && parseInt(zDates[1], 10) == 12))
+			&& !((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 6) 
+			|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 12))
+			&& !((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 12))
+			&& parseInt(qDates[1], 10) != parseInt(zDates[1], 10)) {
+		showAlertMess('所属期不合法，必须为整年、半年、季或月！');
+		all_nsqx_dm ="";
+		return false;
+	}
+	//按月申报情况
+	if(parseInt(qDates[1], 10) == parseInt(zDates[1], 10)){
+	    if(parseInt(qDates[2], 10) != 1) {
+	    	showAlertMess('按月申报，所属期起必须为某月的第一天！');
+			all_nsqx_dm ="";
+			return false;
+		  }
+		 if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2],10)) {
+			showAlertMess('按月申报，所属期止必须为某月的最后一天！');
+			all_nsqx_dm="";
+			return false;
+		 }
+		 all_nsqx_dm="06";
+		 return true; 
+	}
+	//按季申报
+	if(((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 3)
+			|| (parseInt(qDates[1], 10) == 4 && parseInt(zDates[1], 10) == 6)
+			|| (parseInt(qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 9) || (parseInt(
+			qDates[1], 10) == 10 && parseInt(zDates[1], 10) == 12))){
+		if (parseInt(qDates[2], 10) != 1) {
+			showAlertMess('按季申报，所属期起必须为季初！');
+			all_nsqx_dm="";
+			return false;
+		}
+		if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2], 10)) {
+			showAlertMess('按季申报，所属期止必须为为季末！');
+			all_nsqx_dm="";
+			return false;
+		}
+		all_nsqx_dm="08";
+		return true;
+	}
+	//按半年申报
+	if((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 6) || (parseInt(
+			qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 12)){
+		if (!(parseInt(qDates[2], 10) == 1)) {
+			showAlertMess('按半年申报，所属期起必须为某半年的第一天！');
+			all_nsqx_dm="";
+			return false;
+		}
+		if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2], 10)) {
+			showAlertMess('按半年申报，所属期起必须为某半年的最后一天！');
+			all_nsqx_dm="";
+			return false;
+		}
+		all_nsqx_dm="09";
+		return true;
+	}
+	//按年申报
+	if((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 12)){
+		if (parseInt(qDates[2], 10) != 1) {
+			showAlertMess('按年申报，所属期起必须为年初！');
+			all_nsqx_dm="";
+			return false;
+		}
+		if (monthDay(zDates[0], parseInt(zDates[1], 10)) != parseInt(zDates[2], 10)) {
+			showAlertMess('按年申报，所属期止必须为年末！');
+			all_nsqx_dm="";
+			return false;
+		}
+		all_nsqx_dm="10";
+		return true;
+	}
+}
+
+function showAlertMess(mess){
+	layerHandler.alertauto(mess, '提示信息','280', '160', null);
+}
+/**
+ * 根据年月返回该月天数
+ * add by houkai at 2015-12-02 am 10:10
+ * @param {Object}
+ *            year
+ * @param {Object}
+ *            month
+ */
+var monthDay = function(year,month){
+	var feb = (year % 4 == 0)? 29:28; 
+	var monthDay = new Array(31, feb , 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+	return monthDay[month-1];
+};
+/**
+ * 截取日期，以数组形式返回年月日
+ * add by houkai at 2015-12-02 am 9:45
+ * @param {Object}
+ *            dataStr
+ */
+var splitStr = function(dataStr){
+	// 截取前面年月日
+	var dateStr = splitStrToChar(dataStr," ")[0];
+	// 分割字符
+	var splitChar = dateStr.indexOf("-")!=-1?"-":"/";
+	
+	return splitStrToChar(dateStr,splitChar);
+};
+ /**
+  * 根据相应字符截取字符串
+  * add by houkai at 2015-12-02 am 9:45
+  * @param {Object}
+  *            dateStr
+  * @param {Object}
+  *            chars
+  * @return {TypeName}
+  */
+ function splitStrToChar(dateStr,splitChar){
+ 	return trimStr(dateStr).split(splitChar);
+ }
+  /**
+   * 截取前后空格
+   */
+  function trimStr(str){
+  	return str.replace(/(^\s*)|(\s*$)/g, "");
+  }
+</script>
+</div></div></div><div class="panel" style="display: block; width: 1243px;"><div title="" class="panel-body panel-body-noheader panel-body-noborder" style="width: 1243px; height: 587px;"><iframe id="mainIframe" name="mainIframe" class="tabiframe" scrolling="auto" frameborder="0" src="./prevCommCheckDsAction.html" style="width:100%;height:100%;"></iframe></div></div></div></div></div>
+	<div>
+		<input type="hidden" name="nsqx_dm" value="">
+		<input type="hidden" name="zsxm_dm" value="">
+		<input type="hidden" name="more_sb" value="">
+		<input type="hidden" name="moresbxxJson" value="">
+		<input type="hidden" name="sbcxtzfjssbbz" value="">
+		<input type="hidden" name="ghjf_special_bz" value="">
+		<input type="hidden" name="ghjflistJson" value="">
+		<input type="hidden" name="sb_zlbh" value="10524">
+		<input type="hidden" name="xmbm" value="">
+		<input type="hidden" name="message" value="">
+		<input type="hidden" name="sbzlState" value="">
+ 		<input type="hidden" id="bbListData" name="bbListData" value="[{&quot;bb_zlmc&quot;:&quot;[001]非税收入通用申报表(按次申报)&quot;,&quot;ztmc&quot;:&quot;未填写&quot;,&quot;zt&quot;:&quot;100&quot;,&quot;bb_zlid&quot;:&quot;10524001&quot;,&quot;url&quot;:&quot;sb10524001Action.action?sign=initPage&quot;}]">
+		<input type="hidden" id="glywData" name="glywData">
+		<input type="hidden" name="sjlybz" value="">
+	</div>
+	
+
+
+<!-- YQQ loading css_begin-->
+<style type="text/css">
+.mask{
+  position:absolute;
+  top:0px;
+  filter:alpha(opacity=60);
+  background: #777;
+  z-index:1002;
+  left:0px;
+  opacity:0.5;
+  -moz-opacity:0.5;
+  }
+.model{
+  position:absolute;
+   z-index:1002;
+   width:50px;
+   height:50px;
+   text-align:center;
+   background-color: #777;
+   display:none;
+  }
+  .fail_detialcontent{margin-left:20px;}
+  .fail_detial{padding:10px 0;clear:both;color:#448aca}
+</style>
+<script type="text/javascript">
+var iosOverlayObj;
+function loading(){
+	var opts = {
+		lines: 13, // The number of lines to draw
+		length: 11, // The length of each line
+		width: 5, // The line thickness
+		radius: 17, // The radius of the inner circle
+		corners: 1, // Corner roundness (0..1)
+		rotate: 0, // The rotation offset
+		color: '#FFF', // #rgb or #rrggbb
+		speed: 1, // Rounds per second
+		trail: 60, // Afterglow percentage
+		shadow: false, // Whether to render a shadow
+		hwaccel: false, // Whether to use hardware acceleration
+		className: 'spinnerr', // The CSS class to assign to the spinner
+		zIndex: 2e9, // The z-index (defaults to 2000000000)
+		top: 'auto', // Top position relative to parent in px
+		left: 'auto' // Left position relative to parent in px
+	};
+	showMask('loadMask');
+	var target = document.createElement("div");
+	document.body.appendChild(target);
+	var spinner = new Spinner(opts).spin(target);
+	iosOverlayObj = iosOverlay({
+		text: "",
+		duration: 100,
+		spinner: spinner,
+		icon:null
+	});
+	return false;
+}
+function hide(){
+	iosOverlayObj.hide();
+	$("#loadMask").hide();
+}
+function showMask(maskId){
+	$("#"+maskId).css('height',$(document).height());
+	$("#"+maskId).css('width',$(document).width());
+	$("#"+maskId).show();
+}
+//loading();
+</script>
+
+<!-- YQQ div loading_begin -->
+<div id="loadMask" class="mask"></div>
+<div id="loadDiv" class="model"></div>
+<!-- YQQ div loading_end -->
+
+
+<div class="layout-split-proxy-h"></div><div class="layout-split-proxy-v"></div></body></html>

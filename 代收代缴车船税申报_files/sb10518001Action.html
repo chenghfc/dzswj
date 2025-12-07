@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- saved from url=(0210)https://etax.jiangsu.chinatax.gov.cn/shenbao/sb10518001Action.action?sign=initPage&sb_type=49&sssq_q=2024-06-01&sssq_z=2024-06-30&sbqxq=2024-07-01&sbqxz=2024-07-15&nsqx_dm=06&yqsbqx=&sb_zlbh=10518&zsxm_dm=10114 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon.js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ </head><body><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="./My97DatePicker(1).html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div><input type="hidden" name="sbzbstate" id="sbzbstate" value="null">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+<link href="./pagination.css" rel="stylesheet">
+<link href="./dkdjccs.css" rel="stylesheet">
+
+<script type="text/javascript" src="./sb10518001.js"></script>
+
+
+<script type="text/javascript" src="./dsComm.js"></script>
+<script type="text/javascript" src="./pagination.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+.wdate {
+	background: #fff url(https://etax.jiangsu.chinatax.gov.cn/shenbao/img/datePicker.gif) no-repeat
+		right;
+}
+
+th {background-color: #fff;}
+.tb {overflow: auto;}
+
+</style>
+
+
+	<div class="etaxTBar"><div class="btn_ho_zn" onclick="yjsb();" id="yjsb_btn"><img src="./application_view_list.png" alt=""><span>一键申报</span></div><div class="btn_ho_zn" onclick="yjjk();" id="yjsb_btn"><img src="./application_view_list.png" alt=""><span>一键缴款</span></div><div class="btn_ho_zn" onclick="refreshPage();" id="refreshPage_btn"><img src="./application_view_list.png" alt=""><span>刷新</span></div></div>
+	<div align="center" class="dbt">代收代缴车船税依计划</div>
+	<br>
+	
+	<table class="tb" id="tab" style="width:98%;margin-left:1%" border="0" cellpadding="2" cellspacing="0">
+		<thead>
+			<tr>
+				<td align="left" style="padding: 6px;"><span style="text-align:center; font-family:宋体;font-size:13px"><b>选择申报地区:</b></span>
+					<div class="select_area" id="dqdm">
+						<input type="hidden" name="dqdm" class="select_val" onchange="pageGetData()" value="13204">
+						<input type="hidden" name="" class="select_text" value="常州">
+						<div class="select_div">常州</div>
+						<div class="select_ul" style="display: none;">
+							
+								
+								
+									<div val="13201">南京</div>
+								
+							
+								
+								
+									<div val="13202">无锡</div>
+								
+							
+								
+								
+									<div val="13203">徐州</div>
+								
+							
+								
+								
+									<div val="13204" selected="selected">常州</div>
+								
+							
+								
+								
+									<div val="13205">苏州</div>
+								
+							
+								
+								
+									<div val="13206">南通</div>
+								
+							
+								
+								
+									<div val="13207">连云港</div>
+								
+							
+								
+								
+									<div val="13208">淮安</div>
+								
+							
+								
+								
+									<div val="13209">盐城</div>
+								
+							
+								
+								
+									<div val="13210">扬州</div>
+								
+							
+								
+								
+									<div val="13211">镇江</div>
+								
+							
+								
+								
+									<div val="13212">泰州</div>
+								
+							
+								
+								
+									<div val="13213">宿迁</div>
+								
+							
+								
+								
+									<div val="13216">张家港保税区</div>
+								
+							
+								
+								
+									<div val="13217">苏州工业园区</div>
+								
+							
+						</div>
+					</div>
+					<!-- <div style='float:right;'>
+						<button class='apply_btn'>一键申报</button>
+						<button class='pay_btn'>一键缴款</button>
+					</div> -->
+				</td>
+			</tr>
+		</thead>
+	</table>
+
+	<div class="outer" style="height: auto;">
+		<table class="tb" id="tab1" border="1" cellpadding="2" cellspacing="0">
+			<thead>
+				<tr>
+					<th colspan="6" align="left"><span style="text-align:center; font-family:宋体;font-size:13px">代收代缴车船税依计划申报列表</span></th>
+				</tr>
+				<tr>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">序号</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">分支机构识别号</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">分支机构名称</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">主管税务机关</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">申报金额</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">操作</span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="templateTRCarShip" style="display: none;">
+					<td align="center"><input type="checkbox" name="checkFlagCarShip">1</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%; text-align:center;" cal="false" name="kjywrdm"
+						class="fsrx" readonly="readonly" /> --> <input type="hidden" style="width: 100%; text-align:center;" name="kjywrdjxh" class="srx">
+					</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%;text-align:center;" cal="false" name="bxgsmc"
+						class="fsrx" readonly="readonly" /> -->
+						<input type="hidden" name="sbbh" class="srx"> 
+					</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%; text-align:center;" cal="false" name="swjgmc"
+						class="fsrx" readonly="readonly" /> --> <input type="hidden" style="width: 100%; text-align:center;" name="swjgdm" class="srx">
+					</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%; text-align:center;" cal="true"
+						name="sjjnskznjzj" class="fsrx" readonly="readonly" /> -->
+					</td>
+					<td align="center">
+						<a href="javascript:void(0);" onclick="jumpSb(this)">申报</a>
+						<a href="javascript:void(0);" onclick="downloadSb(this)">下载</a>
+					</td>
+				</tr>
+				<tr id="nodePosCarShip" style="display: none;"></tr>
+				<tr>
+					<!-- <td align="center">——</td>
+					<td align="center">——</td>
+					<td align="center">——</td> -->
+					<td align="center" colspan="4">
+						<span style="text-align:center; font-family:宋体;font-size:13px">
+							<b>申报金额合计</b>
+						</span>
+					</td>
+					<td align="center" class="sub_sjhj">0.00</td>
+					<td align="center">——</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="M-box m-style" id="wsbcol" style="width: 98%; margin: 10px 1%; display: none;"><input type="text" class="jump-ipt"><a href="javascript:;" class="jump-btn">跳转</a></div>
+	<hr style="margin:35px 1%;color: red">
+	
+	<table class="tb" id="tab3" style="width:98%;margin-left:1%" border="0" cellpadding="2" cellspacing="0">
+		<tbody>
+			<tr>
+
+				<td align="left" class="fl">
+					<span style="text-align:center; font-family:宋体;font-size:13px"><b>选择申报地区:</b></span>
+					<div class="select_area" id="dqdm_ysb">
+						<input type="hidden" name="dqdm_ysb" class="select_val" onchange="pageQueryData()" value="13204"> <input type="hidden" name="" class="select_text" value="常州">
+						<div class="select_div">常州</div>
+						<div class="select_ul" style="display: none;">
+							
+								
+								
+									<div val="132">全部</div>
+								
+							
+								
+								
+									<div val="13201">南京</div>
+								
+							
+								
+								
+									<div val="13202">无锡</div>
+								
+							
+								
+								
+									<div val="13203">徐州</div>
+								
+							
+								
+								
+									<div val="13204" selected="selected">常州</div>
+								
+							
+								
+								
+									<div val="13205">苏州</div>
+								
+							
+								
+								
+									<div val="13206">南通</div>
+								
+							
+								
+								
+									<div val="13207">连云港</div>
+								
+							
+								
+								
+									<div val="13208">淮安</div>
+								
+							
+								
+								
+									<div val="13209">盐城</div>
+								
+							
+								
+								
+									<div val="13210">扬州</div>
+								
+							
+								
+								
+									<div val="13211">镇江</div>
+								
+							
+								
+								
+									<div val="13212">泰州</div>
+								
+							
+								
+								
+									<div val="13213">宿迁</div>
+								
+							
+								
+								
+									<div val="13216">张家港保税区</div>
+								
+							
+								
+								
+									<div val="13217">苏州工业园区</div>
+								
+							
+						</div>
+					</div></td>
+				<td align="left" class="fl"><span style="text-align:center; font-family:宋体;font-size:13px">申报状态</span></td>
+				<td align="left" width="200px" class="fl">
+					<select name="zt" class="srx" onchange="pageQueryData()">
+						<!-- 默认为1 -->
+						<option value="1">全部</option>
+						<option value="2">已提交金三处理中</option>
+						<option value="3">申报失败</option>
+						<option value="4">申报成功</option>
+						<option value="6">缴款失败</option>
+						<option value="7">缴款成功</option>
+					</select>
+				</td>	
+				<td class="clear"></td>
+							
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="outer2" style="height: auto;">
+		<table class="tb" id="tab2" border="1" cellpadding="2" cellspacing="0">
+			<thead>
+				<tr>
+					<th colspan="7" align="left">
+						<span style="text-align:center; font-family:宋体;font-size:13px">代收代缴车船税依计划已申报列表</span>
+					</th>
+				</tr>
+				<tr>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">序号</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">分支机构识别号</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">分支机构名称</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">主管税务机关</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">申报状态</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">申报金额</span>
+					</th>
+					<th style="text-align:center; word-break:break-all" class="formTitle"><span style="text-align:center; font-family:宋体;font-size:13px">操作</span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="templateTRCarShip2" style="display: none;">
+					<td align="center"><input type="checkbox" name="checkFlagCarShip2">1</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%; text-align:center;" cal="false" name="kjywrdm"
+						class="fsrx" readonly="readonly" /> --> <input type="hidden" style="width: 100%; text-align:center;" name="kjywrdjxh" class="srx">
+					</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%;text-align:center;" cal="false" name="bxgsmc"
+						class="fsrx" readonly="readonly" /> -->
+					</td>
+					<td align="center">
+						<!-- <input type="text"
+						style="width: 100%; text-align:center;" cal="false" name="swjgmc"
+						class="fsrx" readonly="readonly" /> --> <input type="hidden" style="width: 100%; text-align:center;" name="swjgdm" class="srx">
+					</td>
+					<td align="center">
+						<div type="text" style="width: 100%; text-align:center;" name="sbztmc" class="cwxx" readonly="readonly" onclick="showCwxx(this)"></div>
+						
+						<input type="hidden" style="width: 100%; text-align:center;" name="sbztdm" class="srx">
+						<input type="hidden" name="sbcwxx" class="srx">
+					</td>
+					<td align="center"><!-- <input type="text"
+						style="width: 100%; text-align:center;" cal="false"
+						name="ybtse" class="fsrx" readonly="readonly" /> -->
+					</td>
+					<td align="center">
+						<div class="panel" index="0">
+							<a href="javascript:void(0);" onclick="jumpSb(this)"> <span style="text-align:center; font-family:宋体;font-size:13px">申报</span>
+							</a> <a href="javascript:void(0);" onclick="downloadSb(this)"><span style="text-align:center; font-family:宋体;font-size:13px">下载</span>
+							</a>
+						</div>
+
+						<div class="panel" index="1">
+							<a href="javascript:void(0);" onclick="sbcx(this)"><span style="text-align:center; font-family:宋体;font-size:13px">查看</span>
+							</a> <a href="javascript:void(0);" onclick="downloadSb(this)"><span style="text-align:center; font-family:宋体;font-size:13px">下载</span>
+							</a>
+						</div>
+
+						<div class="panel" index="2">
+							<a href="javascript:void(0);" onclick="sbcx(this)"><span style="text-align:center; font-family:宋体;font-size:13px">查看</span>
+							</a> <a href="javascript:void(0);" onclick="downloadSb(this)"><span style="text-align:center; font-family:宋体;font-size:13px">下载</span>
+							</a> <a href="javascript:void(0);" onclick="sbCancel(this)"><span style="text-align:center; font-family:宋体;font-size:13px">作废</span>
+							</a>
+						</div> <!-- <input type="hidden" name="sbcwxx" class="srx" /> -->
+						<input type="hidden" name="sbbh" class="srx">
+						<input type="hidden" name="yzpzzldm" class="srx">
+						<input type="hidden" name="yzpzxh" class="srx">
+						<input type="hidden" name="sbzl_id" class="srx">
+						<input type="hidden" name="skssq_q" class="srx">
+						<input type="hidden" name="skssq_z" class="srx">
+						<input type="hidden" name="gzlxdm" class="srx">
+						<input type="hidden" name="tbrq" class="srx">
+						<input type="hidden" name="pdfinfo" class="srx">
+						<input type="hidden" name="sbxhq" class="srx"> 
+						<input type="hidden" name="sbxhz" class="srx"> 
+					</td>
+				</tr>
+				<tr id="nodePosCarShip2" style="display: none;"></tr>
+				<tr>
+					<td align="center" colspan="5">
+						<span style="text-align:center; font-family:宋体;font-size:13px">
+							<b>申报金额合计</b>
+						</span>
+					</td>
+					<td align="center" class="sub_hj">0.00</td>
+					<td align="center">——</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="M-box m-style" id="ysbcol" style="width: 98%; margin: 10px 1%; display: none;"><input type="text" class="jump-ipt"><a href="javascript:;" class="jump-btn">跳转</a></div>
+	
+	<div style="display: none;">
+		<input type="hidden" name="nsrxxvo.fddbrxm" value="俞鏖龙">
+		<input type="hidden" name="nsrxxvo.bsrxm" value="李忠">
+		<input type="hidden" name="nsrxxvo.tbrq" value="2024-07-04">
+		<input type="hidden" name="nsrxxvo.sfdwgt" value="0">
+		<input type="hidden" name="nsrxxvo.djzclxdm" value="173">
+		<input type="hidden" name="nsrxxvo.hydm" value="7212">
+		<input type="hidden" name="nsrxxvo.sfzjlxdm" value="201">
+		<input type="hidden" name="nsrxxvo.sfzjhm" value="320411196412240653">
+		<input type="hidden" name="nsrxxvo.lxdh" value="15906120918">
+		<input type="hidden" name="nsrxxvo.dwlsgx" value="63">
+		<input type="hidden" name="nsrxxvo.zgswskfjdm" value="13204020400">
+		<input type="hidden" name="nsrxxvo.zcdz" value="天宁区江南佳园1幢甲单元203室">
+		<input type="hidden" name="nsrxxvo.zcdyzbm" value="213000">
+		<input type="hidden" name="nsrxxvo.zcdlxdh" value="88019927">
+	</div>
+
+	<input type="hidden" name="jsgsData" id="jsgsData" value="">
+	<input type="hidden" name="lsh" id="lsh" value="">
+	<input type="hidden" name="sssq_q" id="sssq_q" value="2024-06-01">
+	<input type="hidden" name="sssq_z" id="sssq_z" value="2024-06-30">
+	<input type="hidden" name="sb_zlbh" id="sb_zlbh" value="10518">
+	<input type="hidden" name="sb_type" id="sb_type" value="49">
+	<input type="hidden" name="nsrsbh" id="nsrsbh" value="91320402791965190J">
+	<input type="hidden" name="nsrmc" id="nsrmc" value="常州大道投资管理咨询有限公司">
+	<input type="hidden" name="ssdabh" id="ssdabh" value="10113204000164699473">
+	<input type="hidden" name="djxh" id="djxh">
+	<input type="hidden" name="sign" id="sign" value="initPage">
+	<input type="hidden" tabindex="-1" id="smzmStr" name="smzmStr" value="">
+	<input type="hidden" name="kqccsztdjbz" id="kqccsztdjbz" value="N">
+	
+	<!-- 第一部分 申报地区  START-->
+	<script>
+		/* $("#tab1").freezeHeader({
+			height:"350px"
+		});
+		$("#tab2").freezeHeader({
+			height:"350px"
+		}); */
+		$('.select_div').on('click',function(){
+			if($(this).parents(".select_area").hasClass("disabled"))return;
+			$(this).siblings('.select_ul').toggle();
+		})
+		$(".select_div").each(function(){
+			var selectOpt = $(this).siblings(".select_ul").find("[selected]")
+			if(!selectOpt.length){
+				selectOpt = $(this).siblings(".select_ul").find("div").eq(0);
+				selectOpt.attr("selected","true")
+			}
+			$(this).text(selectOpt.text());
+			var value = selectOpt.attr("val");
+			$(this).parents(".select_area").find(".select_val").val(value || "");
+			$(this).parents(".select_area").find(".select_text").val(selectOpt.text() || "");
+			/* if($(this).parents(".select_area").attr("change")){
+				this.onclick = window[$(this).parents(".select_area").attr("change")]
+				//window[$(this).parents(".select_area").attr("change")]();
+			} */
+			//$('.select_ul').on('click','div',window[$(this).parents(".select_area").attr("change")])
+		})
+		
+	$('.select_ul').on('click','div',function(){
+		$(this).parents(".select_area").find('.select_ul').find("div").removeAttr("selected");
+		$(this).attr("selected","true");
+		var selectOpt = $(this);
+		$(this).parents(".select_area").find(".select_div").text(selectOpt.text());
+		var value = selectOpt.attr("val");
+		$(this).parents(".select_area").find(".select_val").val(value || "").change();
+		$(this).parents(".select_area").find(".select_text").val(selectOpt.text() || "");
+		$(this).parents('.select_ul').hide();
+	})
+	</script>
+	<!-- 第一部分 申报地区  END-->
+
+
+</body></html>

@@ -1,0 +1,46 @@
+ #nextgrid .l-grid-header {
+	    background: #cdcdcd;
+	    border-bottom: 0;
+	    height: 57px !important;
+	    line-height: 30px;
+	    overflow: hidden;
+	    width: 100%; 
+	    }
+	    
+	#nextgrid .l-grid-body.l-grid-body2.l-scroll{
+	       height:167px !important;
+	   } 
+	   
+    #nextgrid .l-grid {
+	      height:215px !important;
+	   }
+	#nextgrid .l-grid-body.l-grid-body1{
+	      height:147px !important;
+	}   
+	ul{list-style-type:none;}	  
+	.star{position:relative;width:95%;margin:0px auto;overflow:hidden;height:40px;margin:20px auto 0 auto;}
+	.star ul,.star span{float:left;display:inline;height:19px;line-height:19px;}
+	.star ul{margin:0 10px;}
+	.star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(../../images/star.png) no-repeat;}	
+	.star strong{color:#f60;padding-left:10px;}
+	.star li.on{background-position:0 -28px;}
+	.star p em{color:#f60;font-style:normal;}
+	.star p{clear: both;text-indent:1em;margin-left: 60px;margin-top: 24px;}
+	input[type="button"].link{
+	    background: url(../../indeximg/btnsmall1_1.png) no-repeat;
+	    border: none;
+	    color: #fff;
+	    width: 51px;
+	    height: 25px;
+	    line-height: 17px;
+	    cursor: pointer;
+	}
+	input[type="button"].other{
+	    background: url(../../indeximg/btnsmall1_2.png) no-repeat;
+	    border: none;
+	    color: #fff;
+	    width: 100px;
+	    height: 25px;
+	    line-height: 17px;
+	    cursor: pointer;
+	}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/index.html?ywlx=sb&ywbm=fssrtysb&vueYwbm=fssrtysb&SssqQ=2024-06-27&SssqZ=2024-06-27 -->
+<html style="overflow:hidden"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <title>电子税务局</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../../static/_res_/css/abacus/main.css">
+    <link rel="stylesheet" type="text/css" href="../../static/_res_/css/message/message_solid.css">
+    <link rel="stylesheet" type="text/css" href="../../static/_res_/js/message/skin/default/Message.css"/> -->
+    <link rel="stylesheet" type="text/css" href="./layui.css">
+    <link rel="stylesheet" type="text/css" href="./iconfont.css">
+
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./layui.js"></script>
+    <!-- <script type="text/javascript" src="../../static/_res_/js/ywbm.js"></script> -->
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "微软雅黑";
+            list-style-type: none;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        iframe {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            border-spacing: 0;
+        }
+    </style>
+    <script type="text/javascript" src="./frame.js"></script>
+    <script type="text/javascript">
+        var layer;
+        layui.use('layer', function () {
+            //独立版的layer无需执行这一句
+            layer = layui.layer;
+        });
+
+        var makeTypeDefualt = '';
+        var signType = '';
+        var hideBtns = '';
+        var showBtns = '';
+        var sbzsBtnTitle = '{}';
+        var sxsqBtnTitle = '{}';
+        var sbzxBtnTitle = '{}';
+        var sbzsWebContextPath = "";
+        var queryString = window.location.href.substr(window.location.href.indexOf("?") + 1);
+        var urlParams = function () {
+            var href = window.location.href;
+            var searchList = href && href.substring(href.indexOf('?') + 1).split('&');
+            var urlParams = {};
+            searchList.forEach(function (item) {
+                var key = item.split('=')[0];
+                var value = item.split('=')[1];
+                urlParams[key] = value;
+            });
+            return urlParams;
+        }();
+
+        var ywlx = urlParams.ywlx;
+        var ywbm = urlParams.ywbm;
+        var ywlc = urlParams.ywlc ? urlParams.ywlc : "form";
+        // TODO 模拟token
+        var token = sessionStorage.getItem("token");
+        // TODO 获取配置中心
+        var qddm = "51";
+
+        var vueYwbm = urlParams.vueYwbm;
+
+        // vue父页面的url参数
+        var parentUrlParams = queryString2Obj(parent.window.location.href.substr(parent.window.location.href.indexOf('?') + 1));
+        // 子会话获取：url中有GT4_DZSWJ_SUBSESSION_ID或者sessionStorage中有GT4_DZSWJ_SUBSESSION_ID
+        var subCookie = parentUrlParams.GT4_DZSWJ_SUBSESSION_ID || sessionStorage.getItem('GT4_DZSWJ_SUBSESSION_ID') || '';
+        subCookie && sessionStorage.setItem('GT4_DZSWJ_SUBSESSION_ID', subCookie);
+        // ajax请求headers设置
+        var ajaxHeaders = { "AuthorizationMock": token, "contentType": "application/json" };
+        if (subCookie) {
+            ajaxHeaders["GT4_DZSWJ_SUBSESSION_ID"] = subCookie;
+        };
+
+        // 获取环境变量
+        var envConfig = parent.STATIC_ENV_CONFIG || {};
+        var pathRoot = envConfig.ROUTER_PREFIX || '/sbzx/view/sdsfsgjssb';
+        var apiPrefix = envConfig.API_PREFIX || "/sbzx/api/sdsfsgjssb";
+
+        // ctrl层上下文
+        var ctrl = apiPrefix ;
+        // 微服务名称
+        var sev = "/qysdssb";
+        if (ywbm.indexOf("qysds") === -1 && ywbm.indexOf("cwbb") === -1 && ywbm !== 'glywwlndbgsb') {
+            sev = "/fsgjssb";
+        }
+        // 接口前缀
+        var urlPrefix = ctrl + sev + "/" + vueYwbm + "/v1/";
+
+        // 定义填表也所需的数据
+        var sheets, formulas, formData, otherParams, ysqxxid, flagNoExecuteFormula, ysData;
+        // 用于重置时初始化bsms入参和要素页保持一致
+        var bsms;
+
+        // 上报行为采集任务处理
+        var xwcjTaskReportHandle = function (type) {
+            var iframe = document.getElementById('frmMain');
+            var iframeWindow = iframe.contentWindow;
+            if (!iframeWindow.formulaEngine || !iframeWindow.formulaEngine.idxVariable2NoPass) return
+            // 获取去重后的不通过的公式 id
+            var idxFormulaId2Flag = {};
+            $.each(iframeWindow.formulaEngine.idxVariable2NoPass, function(jpath, formulas) {
+                Object.keys(formulas).forEach(function(id) {
+                    !idxFormulaId2Flag[id] && (idxFormulaId2Flag[id] = true);
+                });
+            });
+            // 业务根据不通过的公式 id 进行行为采集处理
+            iframeWindow.loadXwcjJsThenGetTasks(Object.keys(idxFormulaId2Flag), type).done(function(xwcjTasks) {
+                if (xwcjTasks && xwcjTasks.length > 0) {
+                    // 存在需要触发采集的数据
+                    var message = { type: 'xwcj', ywbm: ywbm, jsonArr: xwcjTasks };
+                    postMessage2Vue(message);
+                }
+            }); 
+        }
+        
+        // 校验函数
+        var validateFunction = function(e) {
+            var iframe = document.getElementById('frmMain');
+            var iframeWindow = iframe.contentWindow;
+
+            // 接受vue外壳发起的申报提交请求
+            if (iframeWindow.formulaEngine.initialNoExecuteVerifyFormula) {
+                // 如果初始化不执行校验公式，则此时需要执行全量校验公式
+                iframeWindow.formulaEngine.applyImportFormulasBytypes(['12', '02']);
+                iframeWindow.formEngine.formApply();
+            }
+            // 阻断校验提示场景行为采集对接
+            xwcjTaskReportHandle('ZDJYTSCJ')
+            // 获取校验不通过结果
+            var tips = iframeWindow.regEvent.verifyAllNoAlertEx2();
+            if (JSON.stringify(tips[0]) !== "{}") {
+                // 关闭所有弹框
+                iframeWindow.layer.closeAll("tips");
+                // 校验不通过，发送不通过信息给vue外壳
+                var message = { "type": "tips", "ywbm": ywbm, "showError": true, "tips": tips[0] };
+                postMessage2Vue(message, e);
+            } else {
+                if (ywbm === "qysds_a_yjd" || ywbm === "qysds_b_18yjd") {
+                    // 校验通过，直接调用申报提交方法
+                    iframeWindow.verifyPrepareMake();
+                } else {
+                    // 校验通过，直接调用申报提交方法
+                    iframeWindow.prepareMake();
+                }
+            }
+        }
+
+        // 监听vue外壳发送的事件
+        window.addEventListener("message", function (e) {
+            var iframe = document.getElementById('frmMain');
+            var iframeWindow = iframe.contentWindow;
+
+            var data = e.data;
+            var type = data.type;
+            var importData = data.importData;
+
+            if (type === "validatorForm") {
+                // 填表页正常校验的前置校验
+                // 业务阻断性前置逻辑
+                if (typeof iframeWindow.beforeValidatorForm == 'function' && !iframeWindow.beforeValidatorForm()) return;
+                validateFunction(e);
+            } else if (type === "cancelSubmit") {
+                // 取消提交申报
+                iframeWindow.doCancelSubmit();
+            } else if (type === "submitForm") {
+                // 真实责任框确认采集
+                xwcjTaskReportHandle('ZSZRKQRCJ')
+                // 提交申报
+                iframeWindow.doSubmitForm();
+            } else if (type === "findError") {
+                // 接受vue外壳发起的定位错误元素请求
+                iframeWindow.findError(data.dzbdbm, data.jpath);
+            } else if (type === "submitXbsz") {
+                iframeWindow.prepareForms();
+            } else if (type === 'goBack') {
+                formData = iframeWindow.formData;
+                var message = { "type": "pushRouter", "ywbm": ywbm, "formData": formData, "sbms": urlParams.sbms ? urlParams.sbms : 'tb' };
+                postMessage2Vue(message, e);
+            } else if (type === 'setFrmData') {
+                setFrmData();
+            } else if (type === 'getImportData') {
+                // 后端版导入
+                iframeWindow.getImportData(data.fileKey, importData);
+            } else if (type === 'setExcelData') {
+                // 前端版导入
+                iframeWindow.afterExcelImport(data.excelData);
+            }
+        }, false);
+
+        // 与外壳vue交互的统一入口方法
+        function postMessage2Vue(message, e) {
+            if (e) {
+                e.source.postMessage(message, e.origin);
+            } else {
+                parent.postMessage(message, "*");
+            }
+        }
+        // 未获取formData前加载loading，获取后关闭loading
+        // var closeLoadingCount = 5;
+        // top.$vue.$loading(true);
+        // function closeLoading() {
+        // setTimeout(function(){
+        //     if (!formData || closeLoadingCount === 0) {
+        //     closeLoading();
+        // } else {
+        //     top.$vue.$loading(false);
+        // }
+        // closeLoadingCount--;
+        // }, 500);
+        // }
+        // closeLoading();
+    </script>
+<link id="layuicss-layer" rel="stylesheet" href="./layer.css" media="all"></head>
+
+<body onresize="resizeFrame()" onload="initFrame()" style="height: 560px;">
+    <table width="100%" height="100%">
+        <tbody><tr>
+            <td>
+                <div class="TopHead" style="display: none">
+                    <div class="LeftPadding">
+                        <table class="topHeadTab" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody><tr>
+                                <td>
+                                    <div class="HeadTitle">
+                                        <span class="spanbm" id="sbbName"></span>
+                                    </div>
+                                </td>
+                                <td class="areaHeadBtn" align="right">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr height="100%">
+            <td valign="top"><iframe id="frmMain" name="frmMain" width="100%" height="100%" src="./index(1).html" frameborder="0" scrolling="auto" style="height: 561px;"></iframe></td>
+        </tr>
+    </tbody></table>
+
+
+</body></html>

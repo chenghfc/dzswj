@@ -1,0 +1,10 @@
+<svg id="组件_57_1" data-name="组件 57 – 1" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_313" data-name="Rectangle 313" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_313-2" data-name="Rectangle 313" width="56" height="56" fill="#f17c38" opacity="0"/>
+  <path id="矩形" d="M4,0H42a4,4,0,0,1,4,4V42a4,4,0,0,1-4,4H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" transform="translate(5 5)" fill="#5590e8"/>
+  <g id="组_69" data-name="组 69" transform="translate(-0.208 0.013)">
+    <circle id="椭圆_20" data-name="椭圆 20" cx="5" cy="5" r="5" transform="translate(29.479 26.581)" fill="none" stroke="#fff" stroke-width="3"/>
+    <line id="直线_73" data-name="直线 73" x2="3.316" y2="3.316" transform="translate(40.691 38.346)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <path id="路径_85" data-name="路径 85" d="M34.694,17.2h4.242L22.572,6.987,6.208,17.2l6.324,3.949L6.208,25.1l12.846,8.022V30.476L10.45,25.1l4.2-2.624,4.4,2.747V22.578l-2.279-1.424L14.653,19.83,10.45,17.2,22.572,9.636Z" transform="translate(6 7)" fill="#fff"/>
+  </g>
+</svg>

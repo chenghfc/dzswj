@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0186)https://etax.jiangsu.chinatax.gov.cn/shenbao/wspzdyAction.action?sign=index&nsrdzdah=10113204000164688009&new_dlm=91320411MA1MCT53X4&username=91320411MA1MCT53X4&djxh=10113204000051481241 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>完税凭证打印</title>
+	
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon.js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ </head><body><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="./My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div><input type="hidden" name="sbzbstate" id="sbzbstate" value="null">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+	<script type="text/javascript" src="./wspzdy.js"></script>
+
+
+	<div class="etaxTBar"><div class="btn_ho" onclick="queryData();" id="query_btn"><img src="./application_form_magnify.png" alt=""><span>查询</span></div><div class="btn_ho" onclick="previewData();" id="preview_btn"><img src="./preview.png" alt=""><span>预览打印</span></div></div>
+	<form method="post" id="wspzForm">
+	<div class="commontb-box">
+
+		<table class="commontb-search">
+			<tbody><tr>
+				<td style="width: 15%;" class="label">缴款日期</td>
+				<td style="width: 20%"><input type="text" class="srx" name="begin_jkrq" id="begin_jkrq" onfocus="WdatePicker({maxDate:&#39;#F{$dp.$D(\&#39;end_jkrq\&#39;)}&#39;,minDate:&#39;#F{$dp.$D(\&#39;end_jkrq\&#39;,{M:-1})}&#39;}) " onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;}) " value="">
+				</td>
+				<td style="width: 5%;" class="label">至</td>
+				<td style="width: 20%"><input type="text" name="end_jkrq" class="srx" id="end_jkrq" onfocus="WdatePicker({maxDate:&#39;#F{$dp.$D(\&#39;begin_jkrq\&#39;,{M:1})}&#39;,minDate:&#39;#F{$dp.$D(\&#39;begin_jkrq\&#39;)}&#39;}) " onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})" value="">
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="label">完税凭证号</td>
+				<td><input type="text" name="sphm_par" id="sphm_par" class="srx" value=""></td>
+				<td colspan="3"></td>
+			</tr>
+		</tbody></table>
+		<table class="commontb">
+		  <thead>
+			<tr>
+				<td>选择</td>
+				<td>序号</td>
+				<td>系统税票号</td>
+				<td>税种</td>
+				<td>预算科目</td>
+				<td>税款种类</td>
+				<td>税款属期</td>
+				<td>税款</td>
+				<td>缴款日期</td>
+			</tr>
+			</thead>
+			<tbody class="resultcontent">
+					
+			
+				
+				<tr><td colspan="9" style="text-align:center">未查询到完税相关数据</td>
+				
+			</tr></tbody>	
+		</table>
+	</div>
+	</form>
+
+
+</body></html>

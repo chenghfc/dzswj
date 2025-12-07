@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0244)https://etax.jiangsu.chinatax.gov.cn/shenbao/sb10551001Action.action?sign=initPage&sb_type=66&sssq_q=2024-07-05&sssq_z=2024-07-05&sbqxq=2024-08-01&sbqxz=2024-08-15&nsqx_dm=11&yqsbqx=&sb_zlbh=10551&zsxm_dm=&lsh=d91320402791965190J240707111055101 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon.js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ <link href="./WdatePicker.css" rel="stylesheet" type="text/css"></head><body onkeydown="enterTab()"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="./My97DatePicker(1).html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div><input type="hidden" name="sbzbstate" id="sbzbstate" value="null">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+
+<script type="text/javascript" src="./dsComm.js"></script>
+<link rel="stylesheet" type="text/css" href="./jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./sbbase.css">
+<script type="text/javascript" src="./jquery-ui.min.js"></script>
+<script type="text/javascript" src="./sbCommSsqqAndSsqzCheck.js"></script>
+<script type="text/javascript" src="./jquery.autocompleter.js"></script>
+<script type="text/javascript" src="./sb10551001.js"></script>
+<script type="text/javascript" src="./jbrxxComm.js"></script>
+<title>非税收入通用申报表</title>
+
+<script type="text/javascript" src="./WdatePicker.js"></script>
+
+<style type="text/css">
+.wdate {
+	background: #fff url(https://etax.jiangsu.chinatax.gov.cn/shenbao/img/datePicker.gif) no-repeat
+		right;
+}
+
+</style>
+
+<style>
+	/**
+	 * autocompleter
+	 */
+	.field-autocomplete{
+		position: relative;
+	}
+	.searchtext{
+		line-height: 20px;
+		line-height: 400px;
+	}
+	.autocompleter {
+	    background: #fff;
+	    position: absolute;
+	    top: 30px;
+	    left: 0;
+	    z-index: 100;
+	}
+	.autocompleter,
+	.autocompleter-hint {
+	    position: absolute;
+	}
+
+	.autocompleter-list {
+	    border:1px solid #ebebeb;
+	    list-style: none;
+	    margin: 0;
+	    padding: 0;
+	    text-align: left;
+	    -webkit-box-sizing: border-box;
+	    box-sizing: border-box;
+	    max-height:200px;
+	    max-width:900px;
+	    overflow-y:auto;
+	    overflow-x:hidden;
+	}
+
+	.autocompleter-item-selected {
+	    background: #ffffff;
+	}
+
+	.autocompleter-item {
+	    padding: 0px 0px;
+	    color: #444444;
+	    font-size: 12px;
+	    cursor: pointer;
+	}
+
+	.autocompleter-item:hover {
+	    background: #dbed8a;
+	}
+
+	.autocompleter-item strong {
+	    background: #f9de8f;
+	    text-shadow: 0 1px 0 #ffffff;
+	}
+
+	.autocompleter-item span.gray {
+	    color: #bbbbbb;
+	}
+
+	.autocompleter-hint {
+	    color: #ccc;
+	    text-align: left;
+	    top: -44px;
+	    font-weight: 400;
+	    left: 0;
+	    width: 100%;
+	    padding: 0px;
+	    font-size: 12px;
+	    display: none;
+	}
+
+	.autocompleter-hint span {
+	    color: transparent;
+	}
+
+	.autocompleter-hint-show {
+	    display: block;
+	}
+
+	.autocompleter-closed {
+	    display: none;
+	}
+	.field-autocomplete.orl-top .autocompleter{
+		top:auto;
+		bottom:20px;
+	}
+</style>
+
+
+	<div class="etaxTBar"><div class="btn_ho" onclick="yjsb();" id="yjsb_btn"><img src="./application_view_list.png" alt=""><span>一键申报</span></div></div>
+	<div align="center" class="dbt">非税收入通用申报表</div>
+	<br>
+	<table width="98%" class="tb" align="center" id="tab2" cellpadding="0" cellspacing="0" border="0">
+	 <colgroup>
+    		<col style="width: 30%">
+    		<col style="width: 12%">
+    		<col style="width: 8%">
+    		<col style="width: 12%">
+    		<col style="width: 12%">
+    		<col style="width: 24%">
+    	</colgroup>
+	 <tbody><tr>
+	 	<td style="text-align: right;padding-right: 5px;"><span style="color: red;font-weight: blod;">*</span>税款所属期限:</td>
+	 	<td style="text-align: left;"><input type="text" name="nsrxxvo.skssqq" class="fsrx" readonly="readonly" value="2024-07-05"></td>
+	 	<td style="text-align: center;">至</td>
+	 	<td style="text-align: left;"><input type="text" name="nsrxxvo.skssqz" class="fsrx" readonly="readonly" value="2024-07-05"></td>
+	 	<td style="text-align: right;padding-right: 5px;"><span style="color: red;font-weight: blod;">*</span>填表日期</td>
+	 	<td style="text-align: left;"><input type="text" style="width: 100%; text-align: center;" cal="false" name="nsrxxvo.tbrq" value="2024-07-05" class="fsrx" readonly="readonly"></td>
+	 </tr>
+	 <tr>
+	 	<td style="text-align: right;padding-right: 5px;"><span style="color: red;font-weight: blod;">*</span>纳税人识别号（统一社会信用代码）:</td>
+	 	<td colspan="3" style="text-align: left;"><input type="text" name="nsrxxvo.nsrsbh" class="fsrx" readonly="readonly" value="913204027919XXXXXX"></td>
+	 	<td colspan="2"></td>
+	 </tr>
+	 <tr>
+	 	<td style="text-align: right;padding-right: 5px;">纳税人名称:</td>
+	 	<td colspan="3" style="text-align: left;"><input type="text" name="nsrxxvo.nsrmc" class="fsrx" readonly="readonly" value="常州XXXX有限公司"></td>
+	 	<td colspan="2" style="text-align: right;">金额单位:人民币元(列至角分)</td>
+	 	
+	 	<input type="hidden" name="nsrxxvo.sfdwgt" value="0">
+	 	<input type="hidden" name="nsrxxvo.djzclxdm" value="173">
+	 	<input type="hidden" name="nsrxxvo.hydm" value="7212">
+	 	<input type="hidden" name="nsrxxvo.sfzjlxdm" value="201">
+	 	<input type="hidden" name="nsrxxvo.sfzjhm" value="320411196412240653">
+	 	<input type="hidden" name="nsrxxvo.lxdh" value="15906120918">
+	 	<input type="hidden" name="nsrxxvo.zgswskfjdm" value="13204020400">
+	 </tr>
+	 </tbody></table>
+    <table width="98%" class="tb" align="center" id="tab1" cellpadding="0" cellspacing="0" border="1">
+        <colgroup>
+     		<col style="width: 3%">
+    		<col style="width: 7%">
+    		<col style="width: 7%">
+    		<col style="width: 12%">
+    		<col style="width: 6%">
+    		<col style="width: 6%">
+    		<col style="width: 5%">
+    		<col style="width: 7%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 5%">
+    		<col style="width: 7%">
+    	</colgroup>
+   			<tbody><tr align="center">
+   				<td style="text-align: center;" rowspan="2">序号</td>
+	   			<td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>征收项目</td>
+	   			<td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>征收品目</td>
+	   			<td style="text-align: center;">征收子目</td>
+	   			<td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>费款所属期起</td>
+	   			<td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>费款所属期止</td>
+	   			<td style="text-align: center;"><span style="color: red;font-weight: blod;">*</span>应缴费基数</td>
+	   			<td style="text-align: center;">应缴费基数减除额</td>
+	   			<td style="text-align: center;">计费依据</td>
+	   			<td style="text-align: center;">征收标准</td>
+	   			<td style="text-align: center;">扣除数</td>
+	   			<td style="text-align: center;">征收比例</td>
+	   			<td style="text-align: center;">本期应纳费额</td>
+	   			<td style="text-align: center;">减免费额</td>
+	   			<td style="text-align: center;">减免性质</td>
+	   			<td style="text-align: center;">本期已缴费额</td>
+	   			<td style="text-align: center;">本期应补（退）费额 </td>
+   			</tr>
+   			<tr align="center">
+	   			<th style="text-align: center;">1</th>
+	   			<th style="text-align: center;">2</th>
+	   			<th style="text-align: center;">3</th>
+	   			<th style="text-align: center;">4</th>
+	   			<th style="text-align: center;">5</th>
+	   			<th style="text-align: center;">6</th>
+	   			<th style="text-align: center;">7</th>
+	   			<th style="text-align: center;">8=6-7</th>
+	   			<th style="text-align: center;">9</th>
+	   			<th style="text-align: center;">10</th>
+	   			<th style="text-align: center;">11</th>
+	   			<th style="text-align: center;">12=(8*9-10)*11 </th>
+	   			<th style="text-align: center;">13</th>
+	   			<th style="text-align: center;">14</th>
+	   			<th style="text-align: center;">15</th>
+	   			<th style="text-align: center;">16=12-13-15 </th>
+   			</tr>
+   			
+						
+		
+		<tr>
+			<th style="text-align: center;">合计</th>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+			    ——
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				<input type="text" style="width: 100%;" name="yjfjs_hj" readonly="readonly" class="fsrx" format="4" cal="true" value="">
+			</td>
+			<td style="text-align: center;">
+			    <input type="text" style="width: 100%;" name="yjfjsjce_hj" readonly="readonly" class="fsrx" format="4" cal="true" value="">
+			</td>
+			<td style="text-align: center;">
+				<input type="text" style="width: 100%;" name="jfyj_hj" readonly="readonly" class="fsrx" format="4" cal="true" value="">
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				<input type="text" style="width: 100%;" name="bqynfe_hj" readonly="readonly" class="fsrx" cal="true" value="">
+			</td>
+			<td style="text-align: center;">
+				<input type="text" style="width: 100%;" name="jmfe_hj" readonly="readonly" class="fsrx" cal="true" value="">
+			</td>
+			<td style="text-align: center;">
+				——
+			</td>
+			<td style="text-align: center;">
+				<input type="text" style="width: 100%;" name="bqyjfe_hj" readonly="readonly" class="fsrx" cal="true" value="">
+			</td>
+			<td style="text-align: center;">
+				<input type="text" style="width: 100%;" name="bqybtfe_hj" readonly="readonly" class="fsrx" cal="true" value="">
+			</td>
+		</tr>
+		</tbody></table>
+		<table width="98%" class="tb" align="center" cellpadding="0" cellspacing="0" border="1">
+		<tbody><tr>
+        	<th colspan="9" style="text-align: left;padding-left: 50px;">以下由纳税人填写：</th>
+        </tr>
+			<tr>
+				<th align="center" colspan="3">谨声明</th>
+				<td colspan="6" style="text-align: left;padding-left: 50px;font-size: 12px;"> 本纳税申报表是根据国家税收法律法规及相关规定填报的，是真实的、可靠的、完整的。</td>
+			</tr>
+		    <tr>
+	            <td colspan="2" style="text-align: right;padding-right: 5px;">经办人:</td>
+	            <td colspan="3" style="text-align:center;">
+	                <input name="sqr" class="srx" value="陈XX">
+	            </td>
+	             <td colspan="2" style="text-align: right;padding-right: 5px;">经办人身份证号码:</td>
+	            <td colspan="2" style="text-align:center;">
+	                <input name="dlrsfzjhm" class="srx" value="320402XXXXXXXXXXXX">
+	            </td>
+             </tr>
+              <tr>
+	            <td colspan="2" style="text-align: right;padding-right: 5px;">代理机构:</td>
+	            <td colspan="3" style="text-align:center;">
+	                <input name="dlrmc" class="srx" value="">
+	            </td>
+	             <td colspan="2" style="text-align: right;padding-right: 5px;">代理机构统一社会信用代码:</td>
+	            <td colspan="2" style="text-align:center;">
+	                <input name="smr" class="srx" value="">
+	            </td>
+        </tr>
+    </tbody></table>
+	
+
+
+<!-- YQQ loading css_begin-->
+<style type="text/css">
+.mask{
+  position:absolute;
+  top:0px;
+  filter:alpha(opacity=60);
+  background: #777;
+  z-index:1002;
+  left:0px;
+  opacity:0.5;
+  -moz-opacity:0.5;
+  }
+.model{
+  position:absolute;
+   z-index:1002;
+   width:50px;
+   height:50px;
+   text-align:center;
+   background-color: #777;
+   display:none;
+  }
+  .fail_detialcontent{margin-left:20px;}
+  .fail_detial{padding:10px 0;clear:both;color:#448aca}
+</style>
+<script type="text/javascript">
+var iosOverlayObj;
+function loading(){
+	var opts = {
+		lines: 13, // The number of lines to draw
+		length: 11, // The length of each line
+		width: 5, // The line thickness
+		radius: 17, // The radius of the inner circle
+		corners: 1, // Corner roundness (0..1)
+		rotate: 0, // The rotation offset
+		color: '#FFF', // #rgb or #rrggbb
+		speed: 1, // Rounds per second
+		trail: 60, // Afterglow percentage
+		shadow: false, // Whether to render a shadow
+		hwaccel: false, // Whether to use hardware acceleration
+		className: 'spinnerr', // The CSS class to assign to the spinner
+		zIndex: 2e9, // The z-index (defaults to 2000000000)
+		top: 'auto', // Top position relative to parent in px
+		left: 'auto' // Left position relative to parent in px
+	};
+	showMask('loadMask');
+	var target = document.createElement("div");
+	document.body.appendChild(target);
+	var spinner = new Spinner(opts).spin(target);
+	iosOverlayObj = iosOverlay({
+		text: "",
+		duration: 100,
+		spinner: spinner,
+		icon:null
+	});
+	return false;
+}
+function hide(){
+	iosOverlayObj.hide();
+	$("#loadMask").hide();
+}
+function showMask(maskId){
+	$("#"+maskId).css('height',$(document).height());
+	$("#"+maskId).css('width',$(document).width());
+	$("#"+maskId).show();
+}
+//loading();
+</script>
+
+<!-- YQQ div loading_begin -->
+<div id="loadMask" class="mask"></div>
+<div id="loadDiv" class="model"></div>
+<!-- YQQ div loading_end -->
+
+    <input type="hidden" tabindex="-1" id="jsgsData" name="jsgsData" value="{&quot;tab1&quot;:[{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;yjfjs_hj = yjfjs&quot;,&quot;TYPE&quot;:&quot;0&quot;},{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;yjfjsjce_hj = yjfjsjce&quot;,&quot;TYPE&quot;:&quot;0&quot;},{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;jfyj_hj = jfyj&quot;,&quot;TYPE&quot;:&quot;0&quot;},{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;bqynfe_hj = bqynfe&quot;,&quot;TYPE&quot;:&quot;0&quot;},{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;jmfe_hj = jmfe&quot;,&quot;TYPE&quot;:&quot;0&quot;},{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;bqyjfe_hj = bqyjfe&quot;,&quot;TYPE&quot;:&quot;0&quot;},{&quot;GSLX&quot;:&quot;Y&quot;,&quot;GS&quot;:&quot;bqybtfe_hj = bqybtfe&quot;,&quot;TYPE&quot;:&quot;0&quot;}]}">
+	<input type="hidden" tabindex="-1" id="sign" name="sign" value="initPage">
+	<input type="hidden" tabindex="-1" id="lsh" name="lsh" value="d91320402791965190J240707111055101">
+	<input type="hidden" tabindex="-1" name="sssq_q" id="sssq_q" value="2024-07-05">
+	<input type="hidden" tabindex="-1" name="sssq_z" id="sssq_z" value="2024-07-05">
+	<input type="hidden" tabindex="-1" name="sb_zlid" id="sb_zlid" value="">
+	<input type="hidden" tabindex="-1" name="bb_zlbh" id="bb_zlbh" value="">
+	<input type="hidden" tabindex="-1" name="sb_type" id="sb_type" value="66">
+	<input type="hidden" tabindex="-1" name="zsxm_dm" id="zsxm_dm" value="">
+	<input type="hidden" tabindex="-1" name="nsqx_dm" id="nsqx_dm" value="">
+  
+
+</body></html>

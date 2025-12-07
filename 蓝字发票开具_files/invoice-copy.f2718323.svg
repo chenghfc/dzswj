@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>复制开票</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="46" height="46"></rect>
+    </defs>
+    <g id="金四" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="金四icon（bw）" transform="translate(-1012.000000, -976.000000)">
+            <g id="纳税人端" transform="translate(70.000000, 100.000000)">
+                <g id="复制开票" transform="translate(910.000000, 844.000000)">
+                    <g transform="translate(32.000000, 32.000000)">
+                        <rect id="切片" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="56" height="56"></rect>
+                        <g id="Grid" opacity="0" transform="translate(5.000000, 5.000000)">
+                            <rect id="背景" fill="#EFEFEF" x="0" y="0" width="46" height="46"></rect>
+                            <g id="Vector-183-+-Vector-185-+-Vector-187-+-Vector-184-+-Vector-186-+-Vector-188-蒙版">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="蒙版"></g>
+                                <line x1="23.3866748" y1="-91.5481887" x2="23.3866748" y2="137.451811" id="Vector-183" stroke="#558AFF" opacity="0.5" stroke-linejoin="round" stroke-dasharray="0,0" mask="url(#mask-2)" transform="translate(23.886675, 22.951811) rotate(45.000000) translate(-23.886675, -22.951811) "></line>
+                                <line x1="23.2279457" y1="-91.3068092" x2="23.2279457" y2="137.693191" id="Vector-185" stroke="#558AFF" opacity="0.5" stroke-linejoin="round" stroke-dasharray="0,0" mask="url(#mask-2)" transform="translate(23.727946, 23.193191) rotate(75.000002) translate(-23.727946, -23.193191) "></line>
+                                <line x1="23.2279157" y1="-91.2892608" x2="23.2279157" y2="137.710739" id="Vector-187" stroke="#558AFF" opacity="0.5" stroke-linejoin="round" stroke-dasharray="0,0" mask="url(#mask-2)" transform="translate(23.727916, 23.210739) rotate(105.000002) translate(-23.727916, -23.210739) "></line>
+                                <line x1="22.3260592" y1="-91.194884" x2="22.3260592" y2="137.805116" id="Vector-184" stroke="#558AFF" opacity="0.5" stroke-linejoin="round" stroke-dasharray="0,0" mask="url(#mask-2)" transform="translate(22.826059, 23.305116) rotate(135.000005) translate(-22.826059, -23.305116) "></line>
+                                <line x1="22.132043" y1="-91.5308523" x2="22.132043" y2="137.469148" id="Vector-186" stroke="#558AFF" opacity="0.5" stroke-linejoin="round" stroke-dasharray="0,0" mask="url(#mask-2)" transform="translate(22.632043, 22.969148) rotate(165.000005) translate(-22.632043, -22.969148) "></line>
+                                <line x1="22.1975024" y1="-91.7720864" x2="22.1975024" y2="137.227914" id="Vector-188" stroke="#558AFF" opacity="0.5" stroke-linejoin="round" stroke-dasharray="0,0" mask="url(#mask-2)" transform="translate(22.697502, 22.727914) rotate(-164.999994) translate(-22.697502, -22.727914) "></line>
+                            </g>
+                            <circle id="椭圆形" stroke="#979797" cx="23" cy="23" r="16.5"></circle>
+                            <rect id="1" stroke="#D4D4D4" x="8.5" y="5.5" width="29" height="35"></rect>
+                            <rect id="1" stroke="#D4D4D4" x="5.5" y="6.5" width="35" height="33"></rect>
+                            <rect id="1" stroke="#979797" x="6.5" y="6.5" width="33" height="33"></rect>
+                            <rect id="1" stroke="#6B6B6B" x="8.5" y="6.5" width="29" height="33"></rect>
+                            <rect id="1" stroke="#6B6B6B" x="6.5" y="8.5" width="33" height="29"></rect>
+                        </g>
+                        <path d="M9,5 L47,5 C49.209139,5 51,6.790861 51,9 L51,47 C51,49.209139 49.209139,51 47,51 L9,51 C6.790861,51 5,49.209139 5,47 L5,9 C5,6.790861 6.790861,5 9,5 Z" id="背景" fill="#5590E8"></path>
+                        <path d="M42,21 C43.1045695,21 44,21.8954305 44,23 L44,28 C42.3431458,28 41,29.3431458 41,31 C41,32.6568542 42.3431458,34 44,34 L44,39 C44,40.1045695 43.1045695,41 42,41 L20,41 C18.8954305,41 18,40.1045695 18,39 L18,34 C19.6568542,34 21,32.6568542 21,31 C21,29.3431458 19.6568542,28 18,28 L18,23 C18,21.8954305 18.8954305,21 20,21 L42,21 Z M41,24 L21,24 L21.0004757,25.8029684 C22.7936175,26.8404643 24,28.7793493 24,31 C24,33.1352411 22.8846315,35.0099739 21.2047374,36.0733556 L21.0004757,36.1970316 L21,38 L41,38 L41.0000394,36.1973296 C39.2066136,35.159907 38,33.2208633 38,31 C38,28.8645545 39.1155821,26.9896671 40.7957451,25.926339 L41.0000394,25.8026704 L41,24 Z M31,26.3284271 C31.8284271,26.3284271 32.5,27 32.5,27.8284271 L32.5,29.8274271 L34.5,29.8284271 C35.3284271,29.8284271 36,30.5 36,31.3284271 C36,32.1568542 35.3284271,32.8284271 34.5,32.8284271 L32.499,32.8274271 L32.5,34.8284271 C32.5,35.6568542 31.8284271,36.3284271 31,36.3284271 C30.1715729,36.3284271 29.5,35.6568542 29.5,34.8284271 L29.499,32.8274271 L27.5,32.8284271 C26.6715729,32.8284271 26,32.1568542 26,31.3284271 C26,30.5 26.6715729,29.8284271 27.5,29.8284271 L29.5,29.8274271 L29.5,27.8284271 C29.5,27 30.1715729,26.3284271 31,26.3284271 Z M36,15 C37.1045695,15 38,15.8954305 38,17 L38,18 L15,18 L15,35 L14,35 C12.8954305,35 12,34.1045695 12,33 L12,17 C12,15.8954305 12.8954305,15 14,15 L36,15 Z" id="形状结合" fill="#FFFFFF" transform="translate(28.000000, 28.000000) scale(-1, 1) translate(-28.000000, -28.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

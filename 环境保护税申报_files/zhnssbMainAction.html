@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!-- saved from url=(0137)https://etax.jiangsu.chinatax.gov.cn/shenbao/zhnssbMainAction.action?sign=indexMain&flag=4&sssq_q=&sssq_z=&sbqx=&nsqx_dm=&nd=&yf=&sjlybz= -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+<link href="./etax.css" type="text/css" rel="stylesheet">
+<link href="./etaxtoolbar.css" type="text/css" rel="stylesheet">
+<link href="./loadbar.css" type="text/css" rel="stylesheet">
+<link href="./bblist.css" type="text/css" rel="stylesheet">
+<link href="./layer(1).css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./jquery-1.9.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./jquery.json.min.js"></script>
+<script type="text/javascript" src="./jquery.cookie.js"></script>
+<script type="text/javascript" src="./layer.min.js"></script><link type="text/css" rel="stylesheet" href="./layer(1).css" id="skinlayercss">
+<script type="text/javascript" src="./layerHandler(1).js"></script>
+<script type="text/javascript" src="./ajaxPlugin.js"></script>
+<script type="text/javascript" src="./etaxCal.js"></script>
+<script type="text/javascript" src="./etaxAjaxTool.js"></script>
+<script type="text/javascript" src="./etaxCommon.js"></script>
+<script type="text/javascript" src="./jquery.bblist.js"></script>
+<script type="text/javascript" src="./etaxToolbar.js"></script>
+<script type="text/javascript" src="./etaxMoneyCal.js"></script>
+<script type="text/javascript" src="./decimal.js"></script>
+<script type="text/javascript" src="./etaxUtils.js"></script>
+<script type="text/javascript" src="./sfzjRegexCommCheck.js"></script>
+<script type="text/javascript" src="./WdatePicker.js"></script><link href="./WdatePicker.css" rel="stylesheet" type="text/css">
+<!-- è´¢å¡æ¥è¡¨é¡µé¢åå§åæ¶å¢å å¬å±æç¤ºä¿¡æ¯ -->
+<script type="text/javascript" src="./cwbbPrompt.js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+ <link href="./WdatePicker.css" rel="stylesheet" type="text/css"></head><body><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px;"><iframe src="./My97DatePicker(1).html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div><input type="hidden" name="sbzbstate" id="sbzbstate" value="null">
+ <input type="hidden" name="sjly" id="sjly" value="null">
+
+
+
+
+
+<title>主页-财产行为税企业所得税综合申报套餐</title>
+<meta name="robots" content="all">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-touch-fullscreen" content="yes">
+
+<script type="text/javascript" src="./zhnssbMain.js"></script>
+<script type="text/javascript" src="./jbrxxComm.js"></script>
+<script type="text/javascript" src="./sbDateUtilComm.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./base(1).css">
+<link rel="stylesheet" type="text/css" href="./yhscx.css">
+<link rel="stylesheet" type="text/css" href="./zhnssbMain.css">
+
+<script type="text/javascript" src="./WdatePicker.js"></script>
+
+<style type="text/css">
+.wdate {
+	background: #fff url(https://etax.jiangsu.chinatax.gov.cn/shenbao/img/datePicker.gif) no-repeat
+		right;
+}
+div.gray{
+	background-size: 100% 100%!important;
+}
+</style>
+
+
+
+	<div class="etaxTBar"><div class="btn_ho_zn" onclick="doTempSave();" id="save_btn"><img src="./action_save.gif" alt=""><span>保存</span></div><div class="btn_ho_zn" onclick="submitData();" id="submit_btn"><img src="./sumbit.gif" alt=""><span>申报</span></div><div class="btn_ho_zn" onclick="zhnssbjms();" id="zhnssbjms_btn"><img src="./application_view_list.png" alt=""><span>减免税表</span></div><div class="btn_ho_zn" onclick="zhnssbcsh();" id="zhnssbcsh_btn"><img src="./application_view_list.png" alt=""><span>税源信息同步</span></div></div>
+	<div align="center" class="dbt">财产行为税企业所得税综合申报套餐</div>
+	<br>
+	<div id="center">
+		<table class="tb" id="tab" style="width:98%;margin-left:1%" border="0" cellpadding="2" cellspacing="0">
+			<colgroup>
+	    		<col style="width: 10%">
+	    		<col style="width: 10%">
+	    		<col style="width: 10%">
+	    		<col style="width: 10%">
+    		</colgroup>
+    		<tbody><tr class="datatitle" style="font-weight: bold;font-size: 15px;font-family: inherit;width: 98%;">
+		    	<td colspan="4" style="padding-left: 15px;">纳税人基本信息</td>
+		    </tr>
+			<tr class="">
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center; font-family:宋体;font-size:13px;font-weight: normal;">纳税人识别号</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" style="text-align: left;" class="fsrx" readonly="readonly" name="cxstysbbVO.nsrsbh" id="cxstysbbVO.nsrsbh" value="913204027919XXXXXX"> </span>
+				</td>
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">纳税人名称</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" style="text-align: left;" class="fsrx" readonly="readonly" name="cxstysbbVO.nsrmc" id="cxstysbbVO.nsrmc" value="常州XXXX有限公司"> </span>
+				</td>
+			</tr>
+			
+			<tr class="">
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center; right;font-family:宋体;font-size:13px;font-weight: normal;">申报日期</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" name="cxstysbbVO.sbrq1" id="cxstysbbVO.sbrq1" disabled="disabled" class="fsrx wdate" style="text-align: left; width: 100%" value="2024-07-04" onclick="WdatePicker()"> </span>
+				</td>
+				
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">申报类型</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">正常申报</span>
+					<input type="hidden" name="cxstysbbVO.sbsxdm1" id="cxstysbbVO.sbsxdm1" value="11">
+				</td>
+			</tr>
+			
+			<tr class="">
+				<td style="text-align: right;padding-right: 5px;">
+					<!-- <span
+					style="text-align:center; right;font-family:宋体;font-size:13px;font-weight: normal;">本期是否适用增值税小规模纳税人减征政策</span> -->
+					<span style="text-align:center; right;font-family:宋体;font-size:13px;font-weight: normal;">本期是否适用小微企业“六税两费”减征政策</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<select name="cxstysbbVO.bqsfsyzzsxgmnsrjzzc" class="fsrx" onchange="changeSfsyjzzc(this)" id="cxstysbbVO.bqsfsyzzsxgmnsrjzzc" style="width:100%;height: 30px;" disabled="disabled">
+							<option value=""></option>
+							<option value="Y">是</option>
+							<option value="N">否</option>
+					</select> </span>
+				</td>
+
+				<!-- 减征政策适用主体 -->
+				<td style="text-align: right;padding-right: 5px;">
+					<span style="text-align:center; right;font-family:宋体;font-size:13px;font-weight: normal;">减征政策适用主体</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<select name="cxstysbbVO.jzzcsyztdm" onchange="changeJzzcsyzt(this)" style="width: 100%;height: 30px;" class="fsrx" disabled="disabled">
+							<option value=""></option>
+							
+								
+								
+									<option value="11">增值税小规模纳税人</option>
+								
+							
+								
+								
+									<option value="21">小型微利企业(增值税一般纳税人)</option>
+								
+							
+								
+								
+									<option value="22">个体工商户(增值税一般纳税人)</option>
+								
+							
+					</select> </span>
+				</td>
+				
+				<input type="hidden" name="cxstysbbVO.sfgth" value="">
+				<input type="hidden" name="cxstysbbVO.xxwlqybz" value="">
+				<input type="hidden" name="cxstysbbVO.zzsybnsrbz" value="">
+			</tr>
+
+			<!-- 局方要求隐藏 -->
+			<tr class="" style="display: none;">
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税款属期起</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" name="cxstysbbVO.skssqq" id="cxstysbbVO.skssqq" class="fsrx wdate" style="text-align: left; width: 100%" value="" onclick="WdatePicker()" disabled="disabled"> </span>
+				</td>
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税款属期止</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" name="cxstysbbVO.skssqz" id="cxstysbbVO.skssqz" class="fsrx wdate" style="text-align: left; width: 100%" value="" onclick="WdatePicker()" disabled="disabled"> </span>
+				</td>
+			</tr>
+
+			<tr class="" style="display: none;">
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">减征政策起始时间</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" name="cxstysbbVO.xgmjzzcqssj" id="cxstysbbVO.xgmjzzcqssj" class="fsrx wdate" style="text-align: left; width: 100%" value="" onclick="WdatePicker()" disabled="disabled"> </span>
+				</td>
+				<td style="text-align: right;padding-right: 5px;"><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">减征政策终止时间</span>
+				</td>
+				<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">
+						<input type="text" name="cxstysbbVO.xgmjzzczzsj" id="cxstysbbVO.xgmjzzczzsj" class="fsrx wdate" style="text-align: left; width: 100%" value="" onclick="WdatePicker()" disabled="disabled"> </span>
+				</td>
+				
+				<input type="hidden" name="cxstysbbVO.djxh" value="10113204000047917036">
+				<input type="hidden" name="cxstysbbVO.hydm" value="7212">
+				<input type="hidden" name="cxstysbbVO.jdxzdm" value="320402006">
+				<input type="hidden" name="cxstysbbVO.zgswskfjdm" value="13204020400">
+				<input type="hidden" name="cxstysbbVO.cxstysbuuid" value="z10113204000047917036240704CXSSB001">
+				<input type="hidden" name="cxstysbbVO.phbl" value="">
+				<input type="hidden" name="cxstysbbVO.xzqhszdm" value="320402">
+			</tr>
+		</tbody></table>
+		
+		<!-- 必报 -->
+		
+		
+		<!-- 长三角跨区申报 -->
+		
+		<!-- 特定区域房产税城镇土地使用税申报-- 属期可修改 -->
+		
+		
+		<!-- 新版电局特色业务专区  START-->
+		
+			<!-- 财产和行为税  入口-->
+			<table class="tb" id="tab1" style="width:98%;margin-left:1%" border="0" cellpadding="2" cellspacing="0">
+				<colgroup>
+		    		<col style="width: 5%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 15%">
+	    		</colgroup>
+	    		<tbody><tr class="datatitle" style="font-weight: bold;font-size: 15px;font-family: inherit;width: 98%;">
+			    	<td colspan="9" style="padding-left: 15px;">本月需要申报的财产行为税报表（必报部分,依认定）</td>
+			    </tr>
+				<tr align="center" class="">
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">选择</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税种</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税款所属期起</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税款所属期止</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">应纳税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">减免税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">已缴税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">应补（退）税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">操作</span>
+					</td>
+				</tr>
+				
+				
+					
+				
+			</tbody></table>
+		
+			<!-- 选报 -->
+			<table class="tb" id="tab2" style="width:98%;margin-left:1%" border="0" cellpadding="2" cellspacing="0">
+				<colgroup>
+		    		<col style="width: 5%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+		    		<col style="width: 10%">
+	    			<col style="width: 15%">
+	    		</colgroup>
+	    		<tbody><tr class="datatitle" style="font-weight: bold;font-size: 15px;font-family: inherit;width: 98%;">
+			    	<td colspan="9" style="padding-left: 15px;">本月可以申报的财产行为税报表（选报部分,依发生）</td>
+			    </tr>
+				<tr align="center" class="">
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">选择</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税种</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税款所属期起</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">税款所属期止</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">应纳税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">减免税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">已缴税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">应补（退）税额</span>
+					</td>
+					<td><span style="text-align:center;font-family:宋体;font-size:13px;font-weight: normal;">操作</span>
+					</td>
+				</tr>
+				
+					
+						<tr>
+							<td style="text-align: center;">
+								<div type="checkbox" class="checkbox" onclick="changeCheckboxEvent(this)" name="checkFlagSfsb"></div>
+							</td>
+							<td align="center" class="label"><span style="text-align:center; font-family:宋体;font-size:13px">环境保护税</span>
+								<input type="hidden" name="zsxmmc" value="环境保护税">
+							</td>
+							
+							
+							
+								<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="skssqq" class="fsrx" readonly="readonly" value="2024-04-01">
+								</td>
+								<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="skssqz" class="fsrx" readonly="readonly" value="2024-06-30">
+								</td>
+							
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="ynse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="jmse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="yjse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="ybtse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center" style="display:none;">
+								
+									<span style="text-align:center; font-family:宋体;font-size:13px">未申报</span>
+								
+								
+								
+								
+								
+								<input type="hidden" name="sbztdm" value="100">
+								<input type="hidden" name="sbcwxx" value="">
+							</td>
+							<td align="center">
+								<a href="javascript:void(0);" onclick="jumpToSycj(this)">税源采集</a>
+								<a href="javascript:void(0);" onclick="jumpToSbb(this)">申报明细</a>
+							
+								<input type="hidden" style="width: 100%;" name="sbzl_bh" value="10512">
+								<input type="hidden" style="width: 100%;" name="sycjurl" value="https://etax.jiangsu.chinatax.gov.cn/portal/zj/include.do?app_bh=0101210">
+								<input type="hidden" style="width: 100%;" name="sburl" value="zhnssbSbmxAction.action?sign=initPage">
+								<input type="hidden" style="width: 100%;" name="lsh" value="z1011320400004791703624040610512001">
+								<input type="hidden" style="width: 100%;" name="cxstysbuuid" value="z10113204000047917036240704CXSSB001">
+								<input type="hidden" style="width: 100%;" name="sbztdm" value="100">
+								<input type="hidden" style="width: 100%;" id="sbstate" name="sbstate" value="100">
+								<input type="hidden" style="width: 100%;" id="zsxm_dm" name="zsxm_dm" value="10121">
+								<input type="hidden" style="width: 100%;" name="jmsurl" value="zhnssbJmsAction.action?sign=initPage">
+								<input type="hidden" style="width: 100%;" name="xbbbbz" value="2">
+								<input type="hidden" style="width: 100%;" name="syuuid" value="">
+								<input type="hidden" style="width: 100%;" name="zspmdm" value="">
+								<input type="hidden" style="width: 100%;" name="zszmdm" value="">
+								<input type="hidden" style="width: 100%;" name="yzpzzldm" value="">
+								<input type="hidden" style="width: 100%;" name="sl1" value="">
+								<input type="hidden" style="width: 100%;" name="jsyj" value="">	
+								<input type="hidden" style="width: 100%;" name="nsqx_dm" value="08">
+							</td>
+						</tr>
+					
+						<tr>
+							<td style="text-align: center;">
+								<div type="checkbox" class="checkbox" onclick="changeCheckboxEvent(this)" name="checkFlagSfsb"></div>
+							</td>
+							<td align="center" class="label"><span style="text-align:center; font-family:宋体;font-size:13px">环境保护税（按次）</span>
+								<input type="hidden" name="zsxmmc" value="环境保护税（按次）">
+							</td>
+							
+							
+							
+								<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="skssqq" class="fsrx" readonly="readonly" value="2024-07-04">
+								</td>
+								<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="skssqz" class="fsrx" readonly="readonly" value="2024-07-04">
+								</td>
+							
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="ynse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="jmse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="yjse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center"><input type="text" style="width: 100%;text-align: center;font-family:宋体;font-size:13px" name="ybtse" class="fsrx" readonly="readonly" value="">
+							</td>
+							<td align="center" style="display:none;">
+								
+									<span style="text-align:center; font-family:宋体;font-size:13px">未申报</span>
+								
+								
+								
+								
+								
+								<input type="hidden" name="sbztdm" value="100">
+								<input type="hidden" name="sbcwxx" value="">
+							</td>
+							<td align="center">
+								<a href="javascript:void(0);" onclick="jumpToSycj(this)">税源采集</a>
+								<a href="javascript:void(0);" onclick="jumpToSbb(this)">申报明细</a>
+							
+								<input type="hidden" style="width: 100%;" name="sbzl_bh" value="10513">
+								<input type="hidden" style="width: 100%;" name="sycjurl" value="https://etax.jiangsu.chinatax.gov.cn/portal/zj/include.do?app_bh=0101210">
+								<input type="hidden" style="width: 100%;" name="sburl" value="zhnssbSbmxAction.action?sign=initPage">
+								<input type="hidden" style="width: 100%;" name="lsh" value="z1011320400004791703624070710513001">
+								<input type="hidden" style="width: 100%;" name="cxstysbuuid" value="z10113204000047917036240704CXSSB001">
+								<input type="hidden" style="width: 100%;" name="sbztdm" value="100">
+								<input type="hidden" style="width: 100%;" id="sbstate" name="sbstate" value="100">
+								<input type="hidden" style="width: 100%;" id="zsxm_dm" name="zsxm_dm" value="10121">
+								<input type="hidden" style="width: 100%;" name="jmsurl" value="zhnssbJmsAction.action?sign=initPage">
+								<input type="hidden" style="width: 100%;" name="xbbbbz" value="2">
+								<input type="hidden" style="width: 100%;" name="syuuid" value="">
+								<input type="hidden" style="width: 100%;" name="zspmdm" value="">
+								<input type="hidden" style="width: 100%;" name="zszmdm" value="">
+								<input type="hidden" style="width: 100%;" name="yzpzzldm" value="">
+								<input type="hidden" style="width: 100%;" name="sl1" value="">
+								<input type="hidden" style="width: 100%;" name="jsyj" value="">	
+								<input type="hidden" style="width: 100%;" name="nsqx_dm" value="11">
+							</td>
+						</tr>
+					
+				
+			</tbody></table>
+		
+		<!-- 新版电局特色业务专区  END-->
+	</div>
+	
+	<table class="tb" id="tb" border="1" cellpadding="2" cellspacing="0">
+		<tbody><tr>
+			<td colspan="8" style="text-align: left;padding-left: 20px;"><span>以下由纳税人填写：</span></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><span>声明</span></td>
+			<td colspan="6" style="text-align: left;padding-left: 20px;font-size: 12px;">
+				<span>此表是根据国家税收法律法规及相关规定填写的，本人（单位）对填报内容（及附带资料）的真实性、可靠性、完整性负责。</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: right;padding-right: 5px; width:10%; "><span>经办人:</span></td>
+			<td colspan="2" style="text-align:center; width:40%; "><input name="sqr" class="srx" value="XXX">
+			</td>
+			<td colspan="2" style="text-align: right;padding-right: 5px; width:10%; "><span>经办人身份证号码:</span></td>
+			<td colspan="2" style="text-align:center; width:40%; "><input name="dlrsfzjhm" class="srx" value="3204021XXXXXXXXXX13">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: right;padding-right: 5px; width:10%; "><span>代理机构:</span></td>
+			<td colspan="2" style="text-align:center; width:40%; "><input name="dlrmc" class="srx" value="">
+			</td>
+			<td colspan="2" style="text-align: right;padding-right: 5px; width:10%; "><span>代理机构统一社会信用代码:</span></td>
+			<td colspan="2" style="text-align:center; width:40%; "><input name="smr" class="srx" value="">
+			</td>
+		</tr>
+	</tbody></table>
+	
+	<input type="hidden" name="jsonData" id="jsonData" value="null">
+	<input type="hidden" name="djxh" id="djxh" value="10113204000047917036">
+	<input type="hidden" name="nsrsbh" id="nsrsbh" value="91320402791965190J">
+	<input type="hidden" name="nsrmc" id="nsrmc" value="常州大道投资管理咨询有限公司">
+	<input type="hidden" name="skssq_q" id="skssq_q" value="">
+	<input type="hidden" name="skssq_z" id="skssq_z" value="">
+	
+	<input type="hidden" name="tynssbbxxMap" id="tynssbbxxMap" value="">
+	<input type="hidden" name="cxstysbuuid" id="cxstysbuuid" value="z10113204000047917036240704CXSSB001">
+	<input type="hidden" name="tzFlag" id="tzFlag" value="4">
+	<input type="hidden" name="sjlybz" id="sjlybz" value="">
+	<input type="hidden" name="nd" id="nd" value="">
+	<input type="hidden" name="yf" id="yf" value="">
+	<input type="hidden" name="sfdzqybz" id="sfdzqybz" value="N">
+
+</body></html>

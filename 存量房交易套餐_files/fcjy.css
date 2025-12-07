@@ -1,0 +1,68 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.tit{
+    width: 96%;
+    margin: 15px auto;
+    font-weight: bold;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+.line{
+    margin: 60px auto;
+}
+.line_tit{
+    text-align: center;
+    padding: 20px 0;
+}
+.line_tit span{
+    font-size: 20px;
+    margin: 0 30px;
+    line-height: 41px;
+    vertical-align: top;
+}
+.line_tit img{
+    width: 200px;
+    vertical-align: top;
+    margin-top: 17px;
+}
+.line_block{
+    text-align: center;
+    padding: 20px 0;
+}
+.line_block span{
+    width: 300px;
+    color: #fff;
+    line-height: 46px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.line_block img{
+    width: 70px;
+    vertical-align: top;
+    margin: 18px 25px 0;
+}
+.line1 .line_tit span{
+    color: #46A7D7;
+}
+.line1 .line_block span{
+    background-color: #46A7D7;
+}
+.line2 .line_tit span{
+    color: #EDCE69;
+}
+.line2 .line_block span{
+    background-color: #EDCE69;
+}
+.line3 .line_tit span{
+    color: #A1DC74;
+}
+.line3 .line_block span{
+    background-color: #A1DC74;
+}

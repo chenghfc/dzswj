@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- saved from url=(0192)https://etax.jiangsu.chinatax.gov.cn/shenqing/ywForm/webPage.action?name=dzsdwscx&nsrdzdah=10113204000164699473&new_dlm=91320402791965190J&username=91320402791965190J&djxh=10113204000047917036 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript" src="./json2(1).js"></script>
+<script type="text/javascript" src="./base64.min.js"></script>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-migrate-1.2.1(1).min.js"></script>
+<script type="text/javascript" src="./help_gy.js"></script>
+<script type="text/javascript">
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--  ca签名实现部分 -->
+<script type="text/javascript">
+var _nsrsbh="91320402791965190J";//当前登录用户的nsrsbh
+var _old_nsrsbh="91320402791965190J";//旧纳税人识别号
+var _djxh="10113204000047917036";//纳税人电子档案号
+var _swrybj="0";//税务员标记
+var _YHXX=_nsrsbh+","+_old_nsrsbh+","+_djxh;
+//申请签名状态，0不需要签名 1需要签名 
+var _sqqm=""; 
+
+</script>
+<link rel="stylesheet" href="./layer(1).css" id="layui_layer_skinlayercss" style=""></head><body><div id="div_calogin" style="display:none"></div>
+<input type="hidden" name="_swrybj" id="_swrybj" value="0">
+
+
+<!-- layer -->
+<script type="text/javascript" src="./layer(2).js"></script>
+<script type="text/javascript" src="./jquery.form.js"></script>
+<script type="text/javascript" src="./ligerui.min.js"></script>
+<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./ligerui-all.css">
+<link title="index" name="styleTag" rel="stylesheet" type="text/css" href="./web.css">
+<script type="text/javascript">
+	$(function(){
+	   initItemList("dzsdwscx");
+	   window["f_doEdit"]=function(id,formdefid){	
+	      if(formdefid == "dzsdwscx"){
+	         window.location.href = "/shenqing/ywForm/wssdqr.action?sign=editForm&type=edit&ywdm="+id;    
+	      }						
+       };
+   	   window["f_doView"]=function (id,formdefid){
+   	     if(formdefid == "dzsdwscx"){
+	        window.location.href = "/shenqing/ywForm/wssdqr.action?sign=view&type=view&ywdm="+id;   
+	      }		
+   	   };
+   	   window["f_doremove"]=function (id, formDefId) {
+ 				var coverLayer = $('<div class="sq-busy-cover"></div>');
+ 				$.ajax({
+ 					cache : true,
+ 					type : "POST",
+ 					url : "/shenqing/ywForm/ylcjbg.action",
+ 					data : {
+ 					    sign : "removecg",
+ 						formId : id
+ 					},
+ 					async : false,
+ 					error : function(response) {
+ 					    layer.alert("删除失败!",{icon:2}); 						
+ 					},
+ 					success : function(obj) {
+     					if(obj.RESULT>0){
+     					    layer.alert("删除成功!",{icon:1}); 
+ 						} else
+ 						    layer.alert("删除失败!" + obj.Msg,{icon:2});
+ 						    $("#maingrid").ligerGrid().loadData();
+ 					}
+ 				});
+   	  };
+	});
+	
+	function initItemList(ids) {
+		itemsList(ids);
+		window.onresize = function() {
+			itemsList(ids);
+		};
+		$('.title ul li').click(function() {
+			var cur = $(this), tabul = cur.parent(), cont = cur.parents('.title').next(), i = tabul.children().index(cur);
+			tabul.children().removeClass('on');
+			cur.addClass('on');
+			cont.children().addClass('hide');
+			cont.children().eq(i).removeClass('hide');
+		});
+	}
+	
+	//初始化办理中业务列表
+	function itemsList(ids) {
+		width=document.body.clientWidth*0.93;	
+		var columns = [
+				{
+					display : '业务名称',
+					name : 'FORMNAME',
+					width : width * 0.4
+				},
+				{
+					display : '提交日期',
+					name : 'CREATTIME',
+					width : width * 0.2
+				},
+				{
+					display : '表单状态',
+					name : 'STATUS',
+					width : width * 0.2,
+					render : function(r, i) {
+						var status = r.STATUS;
+						if (save == status || "SAVE" == status) {
+							return "草稿";
+						} else if (process == status || "PROCESSING" == status) {
+							return "受理中";
+						} else if (agree == status) {
+							return "通过";
+						} else if (refuse == status ) {
+							return "未通过";
+						} else if(SUBMITSUCCESS==status){
+							return "提交成功";
+						}else
+						return "提交失败";
+					}
+				},
+				{
+					display : '操作',
+					width : width * 0.2,
+					render : function(r, i) {
+					var amt = r.STATUS;
+					if (process == amt || "PROCESSING" == amt||agree==amt||SUBMITSUCCESS==amt) {
+							return "<a  href =\"javascript:f_doView('" + r.ID
+									+ "','" + r.FORMDEFID + "')\" >详情</a>";
+						}else{
+							return "<a  href =\"javascript:f_doEdit('" + r.ID
+							+ "','" + r.FORMDEFID+ "')\" >修改</a>"
+							+ "或"
+							+ "<a  href =\"javascript:f_doremove('"
+							+ r.ID + "','" + r.FORMDEFID
+							+ "')\" >删除</a>";
+						}
+						
+					}
+				}];
+		   $("#maingrid").ligerGrid({
+					dataAction : 'local',
+					url : '/shenqing/ywForm/yhba.action?sign=init&formDefList='+ ids,
+					columns : columns,
+					height : '200',
+					pageSize : 10,
+					width : '100%',
+					enabledSort : true,
+					rownumbers : true,
+					autoFilter : false
+		  });
+	}
+	
+	 function dzsdwscxCheck_q(url,formDefId,appType,appid){	
+	   var coverLayer=$('<div class="sq-busy-cover"></div>');
+	   $('body').append(coverLayer);
+	   var queryLite = false;
+	   var queryFormDefId = formDefId;		   
+	   $.ajax({
+			cache : false,
+			type : "POST",
+			url : url+'/bpmForm/bpmFormHandlerAction.action',
+			data : {
+					sign:'getJsgzrz_q',
+					formDefId:formDefId,
+					appType:appType,
+					queryLite:queryLite,
+					queryFormDefId:queryFormDefId
+			},
+			async : false,
+			error : function() {
+				if (formDefId == 'dzsdwscx') {
+					window.location.href = url + "/ywForm/webPage.action?name=dzsdwscx";
+				} else if (formDefId == 'wssdqr') {
+					window.location.href = url + "/ywForm/webPage.action?name=mainwssdqr";
+				} else if (formDefId == 'shbxfzjwsdzsdqrs') {
+					window.location.href = url + "/ywForm/webPage.action?name=shbxfzjwsdzsdqrs";
+				}
+				return false;
+			},
+			success : function(obj) {
+				coverLayer.detach();
+				if (obj.result != "0000") {
+					layer.alert(obj.msg, {
+						icon : 0
+					});
+				} else if (formDefId == 'dzsdwscx') {
+					window.location.href = url + "/ywForm/wssdqr.action?sign=openMainForm&formDefId=" + formDefId + "&appType=" + appType;
+				} else if (formDefId == 'wssdqr') {
+					window.location.href = url + "/ywForm/wssdqr.action?sign=openForm&formDefId=" + formDefId + "&appType=" + appType;
+				} else if (formDefId == 'shbxfzjwsdzsdqrs') {
+					window.location.href = url + "/ywForm/wssdqr.action?sign=openFormShbxfzjws";
+				}
+			}
+		});	
+	 }
+</script>
+<title>电子送达文书查询</title>
+
+
+    <div class="mainContent">
+		<div class="welcometouse" style="padding-top: 20px; margin-left: 0px;" align="center">
+			 <div class="sq_top">
+				<span class="top_title">业务功能</span>
+			 </div>
+			 <div class="app_list">
+				  <dl>
+					<dt>
+					  <a href="javascript:void(0)" onclick="dzsdwscxCheck_q(&#39;/shenqing&#39;,&#39;dzsdwscx&#39;,&#39;fp&#39;,&#39;dzsdwscx&#39;)">	
+					  	 <img width="88" height="94" src="./tb_12.png">
+					  </a>
+					</dt>
+					<dd>电子送达文书查询</dd>
+				  </dl>	
+				  
+				  <dl>
+					<dt>
+					  <a href="javascript:void(0)" onclick="dzsdwscxCheck_q(&#39;/shenqing&#39;,&#39;wssdqr&#39;,&#39;fp&#39;,&#39;wssdqr&#39;)">	
+					  	 <img width="88" height="94" src="./tb_12.png">
+					  </a>
+					</dt>
+					<dd>税务文书电子送达确认书查询</dd>
+				  </dl>		
+
+				<dl>
+					<dt>
+						<a href="javascript:void(0)" onclick="dzsdwscxCheck_q(&#39;/shenqing&#39;,&#39;shbxfzjwsdzsdqrs&#39;,&#39;fp&#39;,&#39;shbxfzjwsdzsdqrs&#39;)">
+							<img src="./tb_12.png">
+						</a>
+					</dt>
+					<dd>社会保险费文书电子送达确认书查询</dd>
+				</dl>
+
+				<div style="clear: both"></div>
+			 </div>
+		</div>
+		<div class="welcometouse" align="center">   	
+	    	<div>
+	    		<div class="sq_top" style="background:none;border:0">
+	    	       <span class="top_title">办理中业务</span>
+	    	    </div>
+	    		<div class="top_content">
+		            <div id="maingrid" class="l-panel l-frozen" ligeruiid="maingrid" style="width: 100%;">        <div class="l-panel-header" style="display: none;"><span class="l-panel-header-text"></span></div>                    <div class="l-grid-loading" style="display: none;">加载中...</div>                <div class="l-panel-bwarp">            <div class="l-panel-body">                <div class="l-grid" id="maingridgrid" style="height: 168px;">                    <div class="l-grid-dragging-line"></div>                    <div class="l-grid-popup"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="1" ligeruiid="CheckBox1004"></div></td><td class="l-column-right">业务名称</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="2" ligeruiid="CheckBox1005"></div></td><td class="l-column-right">提交日期</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="3" ligeruiid="CheckBox1006"></div></td><td class="l-column-right">表单状态</td></tr><tr><td class="l-column-left"><div class="l-checkbox-wrapper"><a class="l-checkbox l-checkbox-checked"></a><input type="checkbox" checked="checked" class="l-checkbox l-hidden" columnindex="4" ligeruiid="CheckBox1007"></div></td><td class="l-column-right">操作</td></tr></tbody></table></div>                  <div class="l-grid1" style="width: 27px;">                      <div class="l-grid-header l-grid-header1" style="height: 23px;">                          <div class="l-grid-header-inner"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell l-grid-hd-cell-rownumbers" id="maingrid|hcell|c101" columnindex="0" style="height: 23px; width: 26px;"><div class="l-grid-hd-cell-inner"></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body1" style="height: 128px;"><div class="l-grid-body-inner"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody></tbody></table></div></div>                  </div>                  <div class="l-grid2" style="width: 1365px; left: 27px;">                      <div class="l-grid-header l-grid-header2" style="height: 23px;">                          <div class="l-grid-header-inner" style="width: 1365px;"><table class="l-grid-header-table" cellpadding="0" cellspacing="0"><tbody><tr class="l-grid-hd-row"><td class="l-grid-hd-cell" id="maingrid|hcell|c102" columnindex="1" columnname="FORMNAME" style="height: 23px; width: 529.356px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">业务名称</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c103" columnindex="2" columnname="CREATTIME" style="height: 23px; width: 264.678px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">提交日期</span></div></td><td class="l-grid-hd-cell" id="maingrid|hcell|c104" columnindex="3" columnname="STATUS" style="height: 23px; width: 264.678px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">表单状态</span></div></td><td class="l-grid-hd-cell l-grid-hd-cell-last" id="maingrid|hcell|c105" columnindex="4" style="height: 23px; width: 264.678px;"><div class="l-grid-hd-cell-inner"><span class="l-grid-hd-cell-text">操作</span></div></td></tr></tbody></table></div>                      </div>                      <div class="l-grid-body l-grid-body2 l-scroll" style="height: 146px;"><div class="l-grid-body-inner" style="width: 1325px;"><table class="l-grid-body-table" cellpadding="0" cellspacing="0"><tbody></tbody></table></div></div>                  </div>                 </div>              </div>         </div>         <div class="l-panel-bar">            <div class="l-panel-bbar-inner">                <div class="l-bar-group  l-bar-message"><span class="l-bar-text">显示从0到0，总 0 条 。每页显示：10</span></div>            <div class="l-bar-group l-bar-selectpagesize"><select name="rp"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option></select></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                    <div class="l-bar-button l-bar-btnfirst"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnprev"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group"><span class="pcontrol"> <input type="text" size="4" value="1" style="width:20px" maxlength="3"> / <span>1</span></span></div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnnext"><span class="l-disabled"></span></div>                    <div class="l-bar-button l-bar-btnlast"><span class="l-disabled"></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-bar-group">                     <div class="l-bar-button l-bar-btnload"><span class=""></span></div>                </div>                <div class="l-bar-separator"></div>                <div class="l-clear"></div>            </div>         </div></div>    	
+	    	    </div>
+	        </div>
+	        
+	        <div class="welcometouse" align="center">   	
+	    	
+            <div>
+    		   <div class="sq_top" style="background:none;border:0;margin: 20px 0 0 1%;">
+    	          <span class="top_title">准备资料（标注<span style="color:red">*</span>的为必报项）</span>
+    	       </div>
+    	       <div class="content_news">
+				 	 <div class="title">
+						<ul>
+							<li class="title_left on">电子送达文书查询</li>
+						</ul>					
+				  	</div>
+					<div class="content_li">
+						 <ul class="">
+						 <li></li>				     
+						 </ul>
+					</div>
+			   </div>
+    	    </div>
+         </div>
+	      
+	        
+	        
+         </div>
+	</div>
+
+
+</body></html>

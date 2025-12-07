@@ -1,0 +1,12 @@
+<svg id="抵扣类勾选" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_309" data-name="Rectangle 309" width="56" height="56" fill="#c4c4c4" opacity="0"/>
+  <rect id="Rectangle_311" data-name="Rectangle 311" width="46" height="46" rx="4" transform="translate(5 5)" fill="#12b787"/>
+  <g id="组_24" data-name="组 24" transform="translate(-160 -1080.576)">
+    <path id="路径_21" data-name="路径 21" d="M208.9,286.508h-9.453V260.917h23.025V270.1" transform="translate(-26.443 832.659)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="路径_22" data-name="路径 22" d="M227.152,285.176a7.762,7.762,0,1,1-7.762-7.761A7.761,7.761,0,0,1,227.152,285.176Z" transform="translate(-24.443 830.083)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="路径_23" data-name="路径 23" d="M216.591,288.437l1.681,1.629,4.75-4.467" transform="translate(-24.86 827.785)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <line id="直线_27" data-name="直线 27" x1="9" y2="9" transform="translate(177.685 1098.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <circle id="椭圆_7" data-name="椭圆 7" cx="2" cy="2" r="2" transform="translate(183.185 1104.372)" fill="#fff"/>
+    <circle id="椭圆_8" data-name="椭圆 8" cx="2" cy="2" r="2" transform="translate(176.685 1097.75)" fill="#fff"/>
+  </g>
+</svg>

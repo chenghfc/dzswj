@@ -1,0 +1,224 @@
+/*风险承诺书表格 start*/
+#table_main {
+	overflow-y: scroll;
+}
+
+/*隐藏滚轮*/
+/* ::-webkit-scrollbar{
+	display: none;
+}  */
+
+#box_ele {
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	margin-top: 0;
+	padding-bottom: 30px;
+	padding-top: 20px;
+	padding-left: 50px;
+	background-color: #fff;
+	position: fixed;
+}
+
+
+.fxcns_div {
+	padding-bottom: 80px;
+}
+
+.fxcns_div td {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border: none;
+}
+
+.fxcns_div .fxcns_table {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.fxcns_div th, .fxcns_div table, .fxcns_div thead, .fxcns_div tbody {
+	border: none;
+}
+
+.fxcns_div tr {
+	border-bottom: 1px solid #ccc;
+}
+
+.fxcns_div #main {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.fxcns_div .next {
+	position: static;
+}
+
+.wqrRow {
+	font-weight: bold;
+}
+/*风险承诺书表格 end*/
+/*风险承诺书 start*/
+#fxcns_content {
+	padding: 100px 0;
+	margin: 0 auto;
+	width: 1000px;
+	color: #333;
+	line-height: 20px;
+}
+
+#fxcns_content .title {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 0;
+	line-height: 2;
+}
+
+#fxcns_content .tit {
+	margin: 10px 0;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#fxcns_content .section {
+	line-height: 2;
+	text-indent: 2em;
+	font-size: 14px !important;
+}
+
+#fxcns_content .right_section {
+	margin: 15px 0;
+	text-align: right;
+	font-size: 14px;
+}
+
+#fxcns_content .left_section {
+	font-size: 14px;
+}
+
+#fxcns_content .btnbox {
+	text-align: center;
+	margin-top: 30px;
+}
+
+#fxcns_content .btn:hover {
+	background-color: #50B6DC;
+}
+
+#fxcns_content .btn {
+	color: #fff;
+	display: inline-block;
+	width: 200px;
+	line-height: 36px;
+	margin: 0 20px;
+	cursor: pointer;
+	background-color: #60C6EC;
+	border-radius: 4px;
+}
+/*风险承诺书 end*/
+/*风险承诺书签署弹窗 start*/
+#fxcns_dialog .dia_top {
+	margin-top: 20px;
+}
+
+#fxcns_dialog .cl:after {
+	clear: both;
+	display: block;
+	content: "";
+}
+
+#fxcns_dialog .fl {
+	float: left;
+}
+
+#fxcns_dialog .fr {
+	float: right;
+}
+
+#fxcns_dialog {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#fxcns_dialog .dia_header {
+	padding: 5px 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+#fxcns_dialog .header_tit {
+	padding-left: 10px;
+	border-left: 5px solid #0E89E8;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#fxcns_dialog .header_close {
+	width: 15px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+#fxcns_dialog .header_close img {
+	width: 100%;
+	vertical-align: top;
+}
+
+#fxcns_dialog .dia_eontent {
+	padding: 20px 50px 10px;
+}
+
+#fxcns_dialog .content_left img {
+	width: 100%;
+}
+
+#fxcns_dialog .content_left {
+	width: 150px;
+	margin-top: 40px;
+	margin-left: 50px;
+	margin-bottom: 50px;
+}
+
+#fxcns_dialog .content_right {
+	width: 520px;
+	margin-left: 20px;
+	margin-top: 50px;
+	margin-right: 15px;
+}
+
+#fxcns_dialog .content_right .tit {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#fxcns_dialog .content_right .info {
+	margin-left: 50px;
+	text-indent: 2em;
+}
+
+#fxcns_dialog .btnbox {
+	text-align: center;
+}
+
+#fxcns_dialog .btn:hover {
+	background-color: #50B6DC;
+}
+
+#fxcns_dialog .btn {
+	color: #fff;
+	display: inline-block;
+	width: 200px;
+	line-height: 36px;
+	margin: 0 20px;
+	cursor: pointer;
+	background-color: #60C6EC;
+	border-radius: 4px;
+}
+
+#fxcns_dialog .btnbox a {
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+/*风险承诺书签署弹窗 end*/

@@ -1,0 +1,10 @@
+<svg id="开票数据统计及发票领用查询" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle_296" data-name="Rectangle 296" width="56" height="56" fill="#f17c38" opacity="0"/>
+  <rect id="Rectangle_297" data-name="Rectangle 297" width="46" height="46" rx="4" transform="translate(5 5)" fill="#5590e8"/>
+  <path id="路径_1" data-name="路径 1" d="M-86.5,696.949V692.5h-29v7.668a3.97,3.97,0,0,1,2.444,3.665A3.972,3.972,0,0,1-115.5,707.5v8h20.246" transform="translate(128.493 -676)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+  <g id="组_3" data-name="组 3" transform="translate(-504.5 -902)">
+    <line id="直线_23" data-name="直线 23" y1="6.061" x2="5.454" transform="translate(543.046 928.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <line id="直线_24" data-name="直线 24" y1="6.061" x2="5.454" transform="translate(532.289 929.257)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <line id="直线_22" data-name="直线 22" x2="7.5" transform="translate(537.743 929.257) rotate(45)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!-- saved from url=(0103)https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html -->
+<html id="ng-app" xmlns:ng="http://angularjs.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important}ng\:form{display:block}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important}.ng-hide-add-active,.ng-hide-remove{display:block!important}</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <script src="./jquery.min.js"></script>
+    <title>通用申报表（税及附征税费）</title>
+
+    <script type="text/javascript">
+      var subViewCustomScripts = ['/static/sbzx_res/tysb/js/tysb_cus.js', '/static/sbzx_res/tysb/js/tysbEvent.js'];
+      // 提示事件
+      $(document).on('mouseover', '.tips-title', function (event) {
+        $('.tips-title').css('cursor', 'pointer');
+        layer.tips($(this).attr('_tips_title'), this, {
+          tips: [1, '#27282E'],
+          time: 9999999,
+          skin: 'xdj-tips',
+          area: 'auto'
+        });
+      });
+      $(document).on('mouseout', '.tips-title', function (event) {
+        layer.closeAll('tips');
+      });
+    </script>
+  <style>
+    #zxqyxz{
+      color:#666;
+    }
+    .ts-content{
+      text-indent: 2em;
+    }
+    .ts-content .ts-content-link{
+      text-indent: 0;
+      cursor: pointer;
+      color: #4285F4;
+    }
+    .ts-content-div{
+      margin: 24px 0 53px 26px;
+    }
+    .ts-content-div input{
+      vertical-align:middle;
+      margin-right:8px;
+    }
+    .ts-content-div label{
+      margin-right:24px;
+    }
+  </style><link type="text/css" rel="stylesheet" href="./selectpage.css"><link type="text/css" rel="stylesheet" href="./select2.css"><link type="text/css" rel="stylesheet" href="./table.css"><link type="text/css" rel="stylesheet" href="./common.css"><link type="text/css" rel="stylesheet" href="./iconfont.css"><link type="text/css" rel="stylesheet" href="./layui.css"><link type="text/css" rel="stylesheet" href="./zTreeStyle.css"><script type="text/javascript" src="./viewInit.js"></script><script type="text/javascript" src="./loader.js"></script><script type="text/javascript" src="./jquery.min.js"></script><script type="text/javascript" src="./layui.js"></script><script type="text/javascript" src="./transfer.js"></script><link id="layuicss-layer" rel="stylesheet" href="./layer.css" media="all"><link id="layuicss-laydate" rel="stylesheet" href="./laydate.css" media="all"><script type="text/javascript" src="./jquery.base64.js"></script><script type="text/javascript" src="./jsonpath(1).js"></script><script type="text/javascript" src="./angular.js"></script><script type="text/javascript" src="./jquery.ztree.core.min.js"></script><script type="text/javascript" src="./jquery.ztree.excheck.js"></script><script type="text/javascript" src="./jquery.ztree.exhide-3.5.min.js"></script><script type="text/javascript" src="./select2.js"></script><script type="text/javascript" src="./selectPage.js"></script><script type="text/javascript" src="./common(2).js"></script><script type="text/javascript" src="./viewDirective.js"></script><script type="text/javascript" src="./viewEngine.js"></script><script type="text/javascript" src="./tysb_cus.js"></script><script type="text/javascript" src="./tysbEvent.js"></script><script type="text/javascript" src="./lastSubViewCustomScript.js"></script></head>
+  
+  <body style="overflow: auto;" class="ng-scope">
+    <div id="viewCtrlId" ng-controller="viewCtrl" class="ng-scope">
+      <div>
+        <ng-codetable url="dm_gy_zsxm.json" name="zsxmDmCT" node="" dm="root.dm" mc="root.mc" class="ng-scope"></ng-codetable>
+        <ng-codetable url="dm_gy_zsxm1.json" name="zsxm1DmCT" node="" dm="root.dm" mc="root.mc" class="ng-scope"></ng-codetable>
+        <ng-codetable url="dm_gy_zspm.json" name="zspmDmCT" node="" dm="root.dm" mc="root.mc" class="ng-scope"></ng-codetable>
+        <ng-codetable url="dm_gy_zszm.json" name="zszmDmCT" node="" dm="root.dm" mc="root.mc" class="ng-scope"></ng-codetable>
+        <ng-codetable url="dm_gy_lslfDm.json" name="jzzcztCT" node="" dm="root.dm" mc="root.mc" class="ng-scope"></ng-codetable>
+        <ng-codetable url="dm_gy_sfzjlx.json" name="sfzjlxCT" node="" dm="" mc="" class="ng-scope"></ng-codetable>
+        <ng-codetable url="phjmxz.json" name="phjmxzCT" node="" dm="" mc="" class="ng-scope"></ng-codetable>
+        <div class="NewTableHead" ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbbhead">
+          <h1>通用申报表（税及附征税费）</h1>
+          <li class="dateTxt">
+            <span class="date">
+              税款所属期：<input type="text" class="topInput ng-pristine ng-valid" ng-model="sbbhead.skssqq" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbbhead.skssqq" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbbhead.skssqq" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">至<input type="text" class="topInput ng-pristine ng-valid" ng-model="sbbhead.skssqz" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbbhead.skssqz" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbbhead.skssqz" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+            </span>
+            <span class="date-center" ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbbhead">填写日期：<input type="text" class="topInput ng-pristine ng-valid" ng-model="sbbhead.sbrq1" value="" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbbhead.sbrq1" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbbhead.sbrq1" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></span>
+            <span class="rmb">金额单位：元，至角分</span>
+          </li>
+          <!--    <li class="dateTxt">税款所属期:<input  type="text" class="topInput"   ng-model="sbbhead.skssqq" readonly>-->
+          <!--        至<input  type="text" class="topInput"   ng-model="sbbhead.skssqz" readonly>  </li>-->
+        </div>
+        <div class="NewTableTop NewTableMain" ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbbhead">
+          <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tbody><tr>
+              <td class="title01">纳税人名称</td>
+              <td class="read">
+                <span class="textline ng-binding" ng-bind="sbbhead.nsrmc">常州XXXX有限公司</span>
+              </td>
+              <td class="title01">纳税人识别号（统一社会信用代码）</td>
+              <td class="read"><span class="textline ng-binding" ng-bind="sbbhead.nsrsbh">913204027919XXXXXX</span></td>
+            </tr>
+          </tbody></table>
+        </div>
+
+        <div class="NewTableMain overflowx" ng-jprefix="fq_" style="position: relative; max-height: 355px;">
+          <div style="overflow-x: scroll; width: 100%">
+            <table border="0" cellspacing="1" cellpadding="0" ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb" style="padding-right: 241px; ">
+              <tbody><tr>
+                <td align="center" class="title01" style="width: 60px"><strong>选择</strong></td>
+                <td align="center" class="title01 title02" style="min-width: 160px">
+                  <strong>征收项目</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 160px"><strong>征收品目</strong></td>
+                <td align="center" class="title01 title02" style="min-width: 160px">
+                  <strong>征收子目</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 160px">
+                  <strong>税（费）款所属期起</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 160px">
+                  <strong>税（费）款所属期止</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 120px">
+                  <strong>① <span style="color: red">* </span>应税项</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 120px">
+                  <strong>② 减除项</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 122px">
+                  <strong>③ 应税所得率</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 170px">
+                  <strong>④ 计税（费）依据 </strong><img _tips_title="本项=(①-②)* ③" class="tips-title" alt="提示" src="./info-circle.svg">
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 210px">
+                  <strong>⑤ <span style="color: red">* </span>税（费）率或单位税额</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 160px">
+                  <strong>⑥ 速算扣除数 </strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 200px">
+                  <strong>⑦ <span style="color: red">* </span>本期应纳税（费）额</strong>
+                </td>
+                <td align="center" class="title01 title02" style="min-width: 160px"><strong>减免性质</strong></td>
+                <td align="center" class="title01 title02" style="min-width: 200px">
+                  <strong>⑧ <span style="color: red">* </span>本期减免税（费）额 </strong>
+                </td>
+
+                <!--    <td align="center" class="title01 title02" style="min-width: 100px"><strong>本期是否适用小微企业“六税两费”减征政策</strong></td>
+            <td align="center" class="title01 title02" style="min-width: 130px"><strong>减征政策适用主体</strong></td>
+            <td align="center" class="title01 title02" style="min-width: 140px"><strong>小微企业“六税两费”减免性质</strong></td>
+            <td align="center" class="title01 title02" style="min-width: 140px"><strong>小微企业“六税两费”减征比例（%）</strong></td>
+            <td align="center" class="title01 title02" style="min-width: 140px"><strong>小微企业“六税两费”减征额</strong></td>-->
+
+                <td align="center" class="title01 title02" style="min-width: 178px">
+                  <strong>⑨ 本期已缴税（费）额</strong>
+                </td>
+                <td ng-show="fq_.t_whdGhjf == &#39;Y&#39;" align="center" class="title01 title02 ng-hide" style="min-width: 130px">
+                  <strong>操作</strong>
+                </td>
+                <td align="center" class="title01 title02 ng-scope fied-right-td" style="min-width: 241px; height: 40px; width: 241px;" fixed-right-append="">
+                  <strong>⑩ 本期应补（退）税（费）额 </strong><img _tips_title="本项=⑦-⑧-⑨" class="tips-title" alt="提示" src="./info-circle.svg">
+                </td>
+                <td align="center" class="title01 title02" style="display: none"><strong>认定凭证UUID</strong></td>
+                <td align="center" class="title01 title02" style="display: none"><strong>实际经营月份</strong></td>
+                <td align="center" class="title01 title02" style="display: none"><strong>已申报月份</strong></td>
+                <td align="center" class="title01 title02" style="display: none"><strong>是否提交标志</strong></td>
+                <td align="center" class="title01 title02" style="display: none"><strong>纳税期限代码</strong></td>
+              </tr>
+
+              <!-- ngRepeat: p in sbxxGridlb track by $index --><tr ng-repeat="p in sbxxGridlb track by $index" ng-repeat-init="sbxxGridlb" eval-elem="sfkssqq,sfkssqz" default-value="{&quot;yssdl&quot;:1,&quot;sybzDm1&quot;:&quot;&quot;,&quot;sybh1&quot;:&quot;&quot;,&quot;syzldz&quot;:&quot;&quot;,&quot;zsxmDm&quot;:&quot;&quot;,&quot;zspmDm&quot;:&quot;&quot;,&quot;zszmDm&quot;:&quot;&quot;,&quot;t_zszmMc&quot;:&quot;&quot;,&quot;sfkssqq&quot;:&quot;formData.fq_.sbxxGrid.sbxxGridlbVO[0].skssqq&quot;,&quot;sfkssqz&quot;:&quot;formData.fq_.sbxxGrid.sbxxGridlbVO[0].skssqz&quot;,&quot;ysx&quot;:0,&quot;jcx&quot;:0,&quot;jsfyj&quot;:0,&quot;sflhdwse&quot;:0.02,&quot;sskcs&quot;:0,&quot;bqynsfe&quot;:0,&quot;bqjmsfe&quot;:0,&quot;bqsfsyxgmyhzc&quot;:&quot;&quot;,&quot;jzzcsyztDm&quot;:&quot;&quot;,&quot;bqyjsfe&quot;:0,&quot;bqybtsfe&quot;:0,&quot;wdqzdbz&quot;:&quot;&quot;,&quot;rdpzuuid&quot;:&quot;&quot;,&quot;rdzsuuid&quot;:&quot;&quot;,&quot;ysbse&quot;:0,&quot;ssjmxzDm&quot;:&quot;&quot;}" class="ng-scope">
+                <td align="center" class="title01 edit" isbinded="true"><input type="checkbox" ng-model="p.t_checkedbz" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].t_checkedbz" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].t_checkedbz" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html"></td>
+                <td ng-show="fq_.t_whdGhjf != &#39;Y&#39;" width="20" align="center" class="read left">
+                  <input title="其他收入" type="text" ng-value="CT.zsxmDmCT[p.zsxmDm]" readonly="" value="其他收入">
+                </td>
+
+                <td ng-show="fq_.t_whdGhjf != &#39;Y&#39;" class="read left">
+                  <input title="工会经费" type="text" ng-value="CT.zspmDmCT[p.zspmDm]" readonly="" value="工会经费">
+                </td>
+
+                <!--            <td ng-show="fq_.t_whdGhjf != 'Y'" class="read left"><input  type="text" ng-model="p.t_zszmMc" ng-value="p.t_zszmMc=p.zszmDm==''||p.zszmDm==null?'':CT.zszmDmCT[p.zszmDm]" type="text" readonly></td>-->
+                <td ng-show="fq_.t_whdGhjf != &#39;Y&#39;" class="read left" isbinded="true">
+                  <input title="工会经费0.8%" type="text" ng-model="p.zszmMc" ng-value="p.zszmMc = p.zszmMc==&#39;&#39; || p.zszmMc==null || p.zszmMc== undefined ? (!!p.zszmDm ? CT.zszmDmCT[p.zszmDm].zszmMc : &#39;&#39;) : p.zszmMc" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zszmMc" isbinded="true" value="工会经费0.8%"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zszmMc" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+
+                <td class="edit right ng-hide" ng-show="fq_.t_whdGhjf == &#39;Y&#39;" isbinded="true">
+                  <div class="select2-container form-control ng-isolate-scope ng-pristine ng-valid" id="s2id_autogen3"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-4" title=""> </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen4" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-4" id="s2id_autogen4"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen4_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-4" id="s2id_autogen4_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-4">   </ul></div></div><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zsxmDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"><select ng-select-query="" class="form-control ng-isolate-scope ng-pristine ng-valid select2-offscreen" placeholder="" ng-model="p.zsxmDm" ng-selected="value.zsxmDm==p.zsxmDm" ng-change="externalMethods(&#39;zsxmChange&#39;,$index)" ng-options="value.zsxmDm as value.zsxmMc for (key,value) in formData.fq_.zsxmOption" tabindex="-1" title="" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zsxmDm" isbinded="true"><option value="" class=""></option></select>
+                  <input type="hidden" ng-model="p.zsxmMc" ng-value="p.zsxmDm" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zsxmMc" isbinded="true" value="39900"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zsxmMc" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+
+                <td class="edit right ng-hide" ng-show="fq_.t_whdGhjf == &#39;Y&#39;" isbinded="true">
+                  <div class="select2-container form-control ng-isolate-scope ng-pristine ng-valid" id="s2id_autogen5"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-6" title=""> </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen6" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-6" id="s2id_autogen6"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen6_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-6" id="s2id_autogen6_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-6">   </ul></div></div><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zspmDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"><select ng-select-query="" class="form-control ng-isolate-scope ng-pristine ng-valid select2-offscreen" placeholder="" ng-model="p.zspmDm" ng-selected="value.zspmDm==p.zspmDm" ng-change="p.zszmDm=&#39;&#39;;" ng-options="value.zspmDm as value.zspmMc for (key,value) in formData.fq_.zspmlb | cascadeFilter:&#39;zsxmDm&#39;:p.zsxmDm" tabindex="-1" title="" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zspmDm" isbinded="true"><option value="" class=""></option></select>
+                  <!-- <input
+                    type="hidden"
+                    ng-model="p.zspmMc"
+                    ng-value="(p.t_sfhdBz=='Y'||(formData.fq_.qqdcxBz)=='Y')?p.zspmMc = p.zspmMc:p.zspmMc = CT.zspmCT[p.zspmDm].zspmMc"
+                  /> -->
+                </td>
+
+                <td class="edit right ng-hide" ng-show="fq_.t_whdGhjf == &#39;Y&#39;" isbinded="true">
+                  <div class="select2-container form-control ng-isolate-scope ng-pristine ng-valid" id="s2id_autogen7"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-8" title=""> </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen8" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-8" id="s2id_autogen8"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen8_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-8" id="s2id_autogen8_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-8">   </ul></div></div><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zszmDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"><select ng-select-query="" class="form-control ng-isolate-scope ng-pristine ng-valid select2-offscreen" placeholder="" ng-model="p.zszmDm" ng-selected="value.zszmDm==p.zszmDm" ng-options="value.zszmDm as value.zszmMc for (key,value) in formData.fq_.zszmlb | cascadeFilter:&#39;zspmDm&#39;:p.zspmDm" tabindex="-1" title="" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zszmDm" isbinded="true"><option value="" class=""></option></select>
+                  <input type="hidden" ng-model="p.zszmMc" ng-value="p.zszmMc = p.zszmMc==&#39;&#39; || p.zszmMc==null || p.zszmMc== undefined ? (!!p.zszmDm ? CT.zszmDmCT[p.zszmDm].zszmMc : &#39;&#39;) : p.zszmMc" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zszmMc" isbinded="true" value="工会经费0.8%"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].zszmMc" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+
+                <td class="read mid" isbinded="true">
+                  <input type="text" ng-model="p.sfkssqq" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sfkssqq" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sfkssqq" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read mid" isbinded="true">
+                  <input type="text" ng-model="p.sfkssqz" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sfkssqz" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sfkssqz" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+
+                <td class="edit right" isbinded="true">
+                  <input ng-model="p.ysx" ng-datatype="number" type="text" ng-click="externalMethods(&#39;ysxFocus&#39;,$index)" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ysx" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ysx" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td ng-show="p.zspmDm!=&#39;301380000&#39;" class="edit right" isbinded="true">
+                  <input ng-datatype="number" ng-model="p.jcx" type="text" ng-change="p.t_changed=&#39;jcx&#39;" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].jcx" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].jcx" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td ng-show="p.zspmDm==&#39;301380000&#39;" class="read right ng-hide" isbinded="true">
+                  <input ng-datatype="number" ng-model="p.jcx" type="text" ng-change="p.t_changed=&#39;jcx&#39;" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].jcx" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].jcx" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read right" isbinded="true">
+                  <input ng-model="p.yssdl" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].yssdl" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].yssdl" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read right" isbinded="true">
+                  <input ng-model="p.jsfyj" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].jsfyj" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].jsfyj" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read right" isbinded="true"><input ng-datatype="number{6}" ng-model="p.sflhdwse" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sflhdwse" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sflhdwse" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                <td class="read right" isbinded="true">
+                  <input ng-model="p.sskcs" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sskcs" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].sskcs" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read right" isbinded="true"><input ng-model="p.bqynsfe" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqynsfe" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqynsfe" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                <td class="edit mid ng-hide" ng-show="((formData.fq_.nsrjbxx.swjgDm).substring(1,3)==&#39;44&#39;||(formData.fq_.nsrjbxx.swjgDm).substring(1,5)==&#39;3502&#39;)&amp;&amp;(p.zsxmDm==&#39;10109&#39;||p.zsxmDm==&#39;30203&#39;||p.zsxmDm==&#39;30216&#39;||p.zsxmDm==&#39;30446&#39;)" isbinded="true">
+                  <div class="select2-container form-control ng-isolate-scope ng-pristine ng-valid" id="s2id_ssjmxzDm_selId"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-9" title=""> </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen9" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-9" id="s2id_autogen9"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen9_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-9" id="s2id_autogen9_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-9">   </ul></div></div><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ssjmxzDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"><select id="ssjmxzDm_selId" ng-select-query="" class="form-control ng-isolate-scope ng-pristine ng-valid select2-offscreen" placeholder="" ng-model="p.ssjmxzDm" ng-options="value.dm as value.mc+&#39;|&#39;+value.swsxMc for (key,value) in formData.fq_.option | cascadeFilter:&#39;pc&#39;:p.zspmDm" ng-selected="key==value.pc" ng-change="p.bqjmsfe=0;p.t_changed=&#39;ssjmxzDm&#39;" tabindex="-1" title="" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ssjmxzDm" isbinded="true" selected="selected"><option value="" class=""></option><option value="0" label="其他|其他">其他|其他</option><option value="1" label="《财政部 税务总局 住房城乡建设部关于保障性住房有关税费政策的公告》 财政部 税务总局 住房城乡建设部公告2023年第70号第五条|保障性住房项目免收各项行政事业性收费和政府性基金">《财政部 税务总局 住房城乡建设部关于保障性住房有关税费政策的公告》 财政部 税务总局 住房城乡建设部公告2023年第70号第五条|保障性住房项目免收各项行政事业性收费和政府性基金</option></select>
+                </td>
+                <td class="edit mid" ng-show="((formData.fq_.nsrjbxx.swjgDm).substring(1,3)!=&#39;44&#39; &amp;&amp; (formData.fq_.nsrjbxx.swjgDm).substring(1,5)!=&#39;3502&#39;)||(p.zsxmDm!=&#39;10109&#39;&amp;&amp;p.zsxmDm!=&#39;30203&#39;&amp;&amp;p.zsxmDm!=&#39;30216&#39;&amp;&amp;p.zsxmDm!=&#39;30446&#39;)" isbinded="true">
+                  <div class="select2-container form-control ng-isolate-scope ng-pristine ng-valid" id="s2id_ssjmxzDm_selId"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-10" title=""> </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen10" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-10" id="s2id_autogen10"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen10_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-10" id="s2id_autogen10_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-10">   </ul></div></div><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ssjmxzDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"><select id="ssjmxzDm_selId" ng-select-query="" class="form-control ng-isolate-scope ng-pristine ng-valid select2-offscreen" placeholder="" ng-model="p.ssjmxzDm" ng-options="value.dm as value.mc+&#39;|&#39;+value.swsxMc for (key,value) in formData.fq_.option | cascadeFilter:&#39;pc&#39;:p.zspmDm" ng-selected="key==value.pc" ng-change="externalMethods(&#39;jmxzDmChange&#39;,$index)" tabindex="-1" title="" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ssjmxzDm" isbinded="true" selected="selected"><option value="" class=""></option><option value="0" label="其他|其他">其他|其他</option><option value="1" label="《财政部 税务总局 住房城乡建设部关于保障性住房有关税费政策的公告》 财政部 税务总局 住房城乡建设部公告2023年第70号第五条|保障性住房项目免收各项行政事业性收费和政府性基金">《财政部 税务总局 住房城乡建设部关于保障性住房有关税费政策的公告》 财政部 税务总局 住房城乡建设部公告2023年第70号第五条|保障性住房项目免收各项行政事业性收费和政府性基金</option></select>
+                </td>
+                <td class="edit right" isbinded="true">
+                  <input ng-model="p.bqjmsfe" ng-datatype="number" type="text" ng-change="p.t_changed=&#39;bqjmsfe&#39;" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqjmsfe" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqjmsfe" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <!--        <td class="edit right">
+              <select class="form-control" placeholder="" ng-model="p.bqsfsyxgmyhzc"  >
+                <option  value="Y">是</option>
+                <option  value="N">否</option>
+              </select>
+              <input ng-model="p.bqsfsyxgmyhzc"  type="hidden" readonly >
+            </td>
+            <td class="edit right">
+              <select  placeholder="" ng-model="p.jzzcsyztDm"  ng-options="key as value.mc for (key,value) in CT.jzzcztCT | cascadeFilter:'showBz':'Y'">
+                <option value=""></option>
+                <option value="11">增值税小规模纳税人</option>
+                <option value="21">小型微利企业（增值税一般纳税人）</option>
+                <option value="22">个体工商户（增值税一般纳税人）</option>
+              </select>
+            </td>
+            <td  class="edit mid">
+              <select ng-select-query class="form-control" placeholder="" type="text" ng-model="p.phjmxzDm"   ng-options="value.dm as value.mc for (key,value) in CT.phjmxzCT|cascadeFilter:'pc':p.zsxmDm | cascadeFilter:'bz':formData.fq_.jzxx.xgmzg.enableNewJzxx | cascadeFilter:'ztDm':p.jzzcsyztDm"
+                      ng-change="externalMethods('ybnsrzzsPhjmxzChoose',$index)"><option  value=""></option></select>
+              <input type="hidden" ng-model="p.t_phjmxzMc">
+            </td>
+            <td class="read right">
+              <input ng-show="p.phjzbl==''||p.phjzbl==null||p.phjzbl==undefined||p.phjzbl==0"  readonly value="0.00"  type="text">
+              <input ng-show="p.phjzbl!=''&&p.phjzbl!=null&&p.phjzbl!=undefined&&p.phjzbl!=0"  readonly value="{{(p.phjzbl*100).toFixed(2)}}"  type="text">
+            </td>
+            <td class="read right"><input ng-datatype="number" type="text" ng-model="p.phjmse" ng-change="p.t_changed='phjmse'" readonly></td>
+            <td style="display: none;"><input type="text" ng-model="p.phjmswsxDm"></td>-->
+                <td class="edit right" style="" isbinded="true">
+                  <input ng-model="p.bqyjsfe" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqyjsfe" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqyjsfe" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td style="" class="edit center ng-hide" ng-show="fq_.t_whdGhjf == &#39;Y&#39;">
+                  <div class="sbtnbox">
+                    <a class="layui-btn layui-btn-xs" ng-href="#" ng-click="add()" href="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html#">增行</a>
+                    <!-- ngIf: $index!=0 -->
+                  </div>
+                </td>
+                <td class="read right ng-scope fied-right-td" fixed-right-append="" style="width: 241px;" isbinded="true">
+                  <input ng-model="p.bqybtsfe" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqybtsfe" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].bqybtsfe" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read left" style="display: none" isbinded="true"><input ng-model="p.rdpzuuid" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].rdpzuuid" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].rdpzuuid" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                <td class="read left" style="display: none" isbinded="true"><input ng-model="p.t_sjjyyf" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].t_sjjyyf" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].t_sjjyyf" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                <td class="read left" style="display: none" isbinded="true"><input ng-model="p.ysbyf" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ysbyf" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].ysbyf" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                <td class="read left" style="display: none">
+                  <input ng-value="p.t_sftj=p.t_checkedbz==true?&#39;Y&#39;:&#39;N&#39;" type="text" readonly="" value="Y">
+                </td>
+                <td class="read left" style="display: none" isbinded="true"><input ng-model="p.t_nsqxDm" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].t_nsqxDm" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.sbxxGridlb[0].t_nsqxDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+              </tr><!-- end ngRepeat: p in sbxxGridlb track by $index -->
+              <!--      <tr ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid">
+            <td align="center" class="title01" colspan="2">合计(已勾选)</td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly ></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read right"><input type="text" ng-datatype="number" ng-model="sbxxGrid.t_jsfyjHjYgx" readonly ></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read right"><input ng-model="sbxxGrid.t_bqynsfehjYgx" ng-datatype="number"   type="text"  readonly></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly ></td>
+            <td class="read right"><input ng-model="sbxxGrid.t_bqjmsfehjYgx" ng-datatype="number"   type="text" readonly ></td>
+    &lt;!&ndash;        <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read right"><input type="text" ng-datatype="number" ng-model="sbxxGrid.t_phjmseHjYgx" readonly ></td>&ndash;&gt;
+            <td class="read right"><input  ng-datatype="number" ng-model="sbxxGrid.t_bqyjsfehjYgx"  type="text"   readonly></td>
+            <td class="read right"><input ng-model="sbxxGrid.t_bqybtsfehjYgx" ng-datatype="number"   type="text"  readonly></td>
+            <td class="read mid" style="display: none"><input  type="text"  value="&#45;&#45;" readonly ></td>
+            <td class="read mid" style="display: none"><input  type="text"  value="&#45;&#45;" readonly ></td>
+            <td class="read mid" style="display: none"><input  type="text"  value="&#45;&#45;" readonly ></td>
+            <td class="read mid" style="display: none"><input  type="text"  value="&#45;&#45;" readonly ></td>
+            <td class="read mid" style="display: none"><input  type="text"  value="&#45;&#45;" readonly ></td>
+          </tr>-->
+              <tr ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid">
+                <td align="center" colspan="2" class="title01">合计</td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read right" isbinded="true">
+                  <input type="text" ng-datatype="number" ng-model="sbxxGrid.t_jsfyjhj" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_jsfyjhj" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_jsfyjhj" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read right" isbinded="true">
+                  <input ng-model="sbxxGrid.t_bqynsfehj" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqynsfehj" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqynsfehj" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read mid"><input type="text" value="--" readonly=""></td>
+                <td class="read right" isbinded="true">
+                  <input ng-model="sbxxGrid.t_bqjmsfehj" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqjmsfehj" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqjmsfehj" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <!--        <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read mid"> <input  type="text"  value="&#45;&#45;" readonly></td>
+            <td class="read mid"><input  type="text"  value="&#45;&#45;" readonly  ></td>
+            <td class="read right"> <input ng-model="sbxxGrid.t_phjmsehj" ng-datatype="number"   type="text"  readonly></td>-->
+                <td class="read right" style="" isbinded="true">
+                  <input ng-datatype="number" ng-model="sbxxGrid.t_bqyjsfehj" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqyjsfehj" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqyjsfehj" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read mid ng-hide" ng-show="fq_.t_whdGhjf == &#39;Y&#39;"><input type="text" value="--" readonly=""></td>
+                <td class="read right ng-scope fied-right-td" fixed-right-append="" style="width: 241px;" isbinded="true">
+                  <input ng-model="sbxxGrid.t_bqybtsfehj" ng-datatype="number" type="text" readonly="" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" jpath="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqybtsfehj" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_bqybtsfehj" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                </td>
+                <td class="read mid" style="display: none"><input type="text" value="--" readonly=""></td>
+                <td class="read mid" style="display: none"><input type="text" value="--" readonly=""></td>
+                <td class="read mid" style="display: none"><input type="text" value="--" readonly=""></td>
+                <td class="read mid" style="display: none"><input type="text" value="--" readonly=""></td>
+                <td class="read mid" style="display: none"><input type="text" value="--" readonly=""></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <div class="xdj-collapse xdj-show">
+          <div class="xdj-colla-item">
+            <h2><i class="icon iconfont icon-XFXyou"></i><span>申报受理信息</span></h2>
+            <div class="xdj-colla-content">
+              <div class="NewTableMain" style="margin: 0px; padding: 0px">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody><tr ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm">
+                    <td class="title01" style="min-width: 120px">办税人</td>
+                    <td class="read" isbinded="true"><input class="ng-pristine ng-valid" type="text" ng-model="slrxxForm.bsr" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.bsr" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.bsr" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                    <!--        <td align="left" ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.sbbhead">申报日期：<input type="text" class="botInput"  ng-model="sbbhead.sbrq1"  value="" readonly/></td>-->
+                    <td class="title01" style="min-width: 200px">
+                      <span style="color: red">* </span>办理人员身份证件类型
+                    </td>
+                    <td class="read" isbinded="true">
+                      <div class="select2-container select2-container-disabled ng-isolate-scope ng-pristine ng-valid select2-allowclear" id="s2id_autogen1" style="width: 100%"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2" title="201|居民身份证">201|居民身份证</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2" disabled=""><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen2_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-2">   </ul></div></div><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.blrysfzjlxDm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"><select style="width: 100%" ng-model="slrxxForm.blrysfzjlxDm" ng-select-query="" ng-options="value.dm as value.dm+&#39;|&#39;+value.mc for (key,value) in CT.sfzjlxCT" disabled="" class="ng-isolate-scope ng-pristine ng-valid select2-offscreen" tabindex="-1" title="" jpath="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.blrysfzjlxDm" isbinded="true"><option value="" class=""></option><option value="001" label="101|组织机构代码证">101|组织机构代码证</option><option value="002" label="102|营业执照">102|营业执照</option><option value="003" label="103|税务登记证">103|税务登记证</option><option value="004" label="199|其他单位证件">199|其他单位证件</option><option value="005" selected="selected" label="201|居民身份证">201|居民身份证</option><option value="006" label="202|军官证">202|军官证</option><option value="007" label="203|武警警官证">203|武警警官证</option><option value="008" label="204|士兵证">204|士兵证</option><option value="009" label="205|军队离退休干部证">205|军队离退休干部证</option><option value="010" label="206|残疾人证">206|残疾人证</option><option value="011" label="207|残疾军人证（1-8级）">207|残疾军人证（1-8级）</option><option value="012" label="208|外国护照">208|外国护照</option><option value="013" label="210|港澳居民来往内地通行证">210|港澳居民来往内地通行证</option><option value="014" label="212|中华人民共和国往来港澳通行证">212|中华人民共和国往来港澳通行证</option><option value="015" label="213|台湾居民来往大陆通行证">213|台湾居民来往大陆通行证</option><option value="016" label="214|大陆居民往来台湾通行证">214|大陆居民往来台湾通行证</option><option value="017" label="215|外国人居留证">215|外国人居留证</option><option value="018" label="216|外交官证">216|外交官证</option><option value="019" label="217|使（领事）馆证">217|使（领事）馆证</option><option value="020" label="218|海员证">218|海员证</option><option value="021" label="219|香港永久性居民身份证">219|香港永久性居民身份证</option><option value="022" label="220|台湾身份证">220|台湾身份证</option><option value="023" label="221|澳门特别行政区永久性居民身份证">221|澳门特别行政区永久性居民身份证</option><option value="024" label="222|外国人身份证件">222|外国人身份证件</option><option value="025" label="224|就业失业登记证">224|就业失业登记证</option><option value="026" label="225|退休证">225|退休证</option><option value="027" label="226|离休证">226|离休证</option><option value="028" label="227|中国护照">227|中国护照</option><option value="029" label="228|城镇退役士兵自谋职业证">228|城镇退役士兵自谋职业证</option><option value="030" label="229|随军家属身份证明">229|随军家属身份证明</option><option value="031" label="230|中国人民解放军军官转业证书">230|中国人民解放军军官转业证书</option><option value="032" label="231|中国人民解放军义务兵退出现役证">231|中国人民解放军义务兵退出现役证</option><option value="033" label="232|中国人民解放军士官退出现役证">232|中国人民解放军士官退出现役证</option><option value="034" label="233|外国人永久居留身份证（外国人永久居留证）">233|外国人永久居留身份证（外国人永久居留证）</option><option value="035" label="234|就业创业证">234|就业创业证</option><option value="036" label="235|香港特别行政区护照">235|香港特别行政区护照</option><option value="037" label="236|澳门特别行政区护照">236|澳门特别行政区护照</option><option value="038" label="237|中华人民共和国港澳居民居住证">237|中华人民共和国港澳居民居住证</option><option value="039" label="238|中华人民共和国台湾居民居住证">238|中华人民共和国台湾居民居住证</option><option value="040" label="291|医学出生证明">291|医学出生证明</option><option value="041" label="299|其他个人证件">299|其他个人证件</option></select>
+                    </td>
+                    <td class="title01" style="min-width: 200px">
+                      <span style="color: red">* </span>办理人员身份证件号码
+                    </td>
+                    <td class="read" isbinded="true">
+                      <input class="ng-pristine ng-valid" type="text" style="" ng-model="slrxxForm.blrysfzjhm" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.blrysfzjhm" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.blrysfzjhm" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                    </td>
+                  </tr>
+                  <tr ng-jprefix="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm">
+                    <td class="title01"><span style="color: red">* </span>受理人</td>
+                    <td class="read" isbinded="true"><input class="ng-pristine ng-valid" type="text" ng-model="slrxxForm.t_slrMc" style="" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.t_slrMc" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.t_slrMc" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                    <td class="title01"><span style="color: red">* </span>受理日期</td>
+                    <td class="read" isbinded="true"><input type="text" class="ng-pristine ng-valid" ng-model="slrxxForm.slrq" value="" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.slrq" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.slrq" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon"></td>
+                    <td class="title01"><span style="color: red">* </span>受理税务机关</td>
+                    <td class="read" isbinded="true">
+                      <input type="text" class="ng-pristine ng-valid" value=" " ng-model="slrxxForm.t_slswjgMc" readonly="" ng-blur="fsBlur($event, oldValue)" jpath="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.t_slswjgMc" isbinded="true"><img style="vertical-align:middle;display:none" height="16" width="16" target="ht_.fxmtysbbdVO.fxmtySbb.slrxxForm.t_slswjgMc" src="https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/tysb/form/tysb_BDA0610100.html" class="tipicon">
+                    </td>
+                  </tr>
+                </tbody></table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--  <div style="display:none" class="tax-text-primary marginT20 marginB20" ng-show-html="formData.qcs.showWxts == undefined">
+    <h5>温馨提示</h5>
+    <ul class="text-center">
+      <li>根据 《财政部 国家税务总局关于扩大有关政府性基金免征范围的通知》（财税〔2016〕12号）规定，从2016年2月1日起，月纳税营业额或销售额不超10万元（季纳税营业额或销售额不超过30万元）的缴纳义务人，免征教育费附加、地方教育附加。</li>
+      <li>如系统无自动计算减免税额，则 “增值税教育费附加”和“增值税地方教育费附加”需手动选择减免，具体操作方式为：在“减免性质代码列”选择“其他”，并录入减免金额。</li>
+    </ul>
+  </div>-->
+        <!-- 安徽个性化中小企业选择弹框 -->
+        <div id="zxqyxzDialog" style="display: none">
+          <div id="zxqyxz">
+            <div class="NewTableMain">
+            <p>尊敬的纳税人、缴费人:</p>
+            <p class="ts-content">
+              根据《安徽省财政厅国家税务总局安徽省税务局关于我省中小微企业减征地方水利建设基金的通知》规定，中小微企业可享受2022年度地方水利建设基金减按90%征收的优惠政策。
+            </p>
+            <p class="ts-content">
+              企业划型标准按照《
+              <span class="ts-content-link" ng-click="externalMethods(&#39;handlePush&#39;,&#39;zxqy&#39;)">
+                中小企业划型标准规定
+              </span>
+              》 (工信部联企业[2011] 300号)和《
+              <span class="ts-content-link" ng-click="externalMethods(&#39;handlePush&#39;,&#39;jry&#39;)">金融业企业划型标准规定</span>》(银发(2015]
+              309号)中的营业收入指标、资产总额指标确定。其中，营业收入指标按照缴费人上一会计年度增值税销售额确定，资产总额指标按照缴费人上一会计年度年末值确定。对于《中小企业划型标准规定》和《金融业企业划型标准规定》所列行业以外的缴费人，以及《中小企业划型标准规定》所列行业未采用营业收入指标或资产总额指标划型确定的缴费人，微型企业标准为增值税销售额(年)100万元以下(不含100万元):小型企业标准为增值税销售额(年)2000万元以下(不含2000万元)中型企业标准为增值税销售额(年)1亿元以下(不含1亿元)。
+            </p>
+            <p class="ts-content">当前您的企业划型为空，请选择确定企业类型：</p>
+            <div class="ts-content-div">
+              <label><input type="radio" ng-model="formData.ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_qylxxzBz" ng-click="externalMethods(&#39;zxqyClick&#39;,&#39;1&#39;)" value="1" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" name="00D">大型</label>
+              <label><input type="radio" ng-model="formData.ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_qylxxzBz" ng-click="externalMethods(&#39;zxqyClick&#39;,&#39;2&#39;)" value="2" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" name="00E">中型</label>
+              <label><input type="radio" ng-model="formData.ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_qylxxzBz" ng-click="externalMethods(&#39;zxqyClick&#39;,&#39;3&#39;)" value="3" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" name="00F">小型</label>
+              <label><input type="radio" ng-model="formData.ht_.fxmtysbbdVO.fxmtySbb.sbxxGrid.t_qylxxzBz" ng-click="externalMethods(&#39;zxqyClick&#39;,&#39;4&#39;)" value="4" ng-blur="fsBlur($event, oldValue)" class="ng-pristine ng-valid" name="00G">微型</label>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div ng-render-finish="" class="ng-isolate-scope"></div>
+      </div>
+    </div>
+  
+
+<script>
+  $(function () {
+    $('.xdj-collapse .xdj-colla-item h2').on('click', function () {
+      var id = $(this).parents('.xdj-collapse');
+      id.toggleClass('xdj-show');
+    });
+  });
+</script>
+<span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span></body></html>

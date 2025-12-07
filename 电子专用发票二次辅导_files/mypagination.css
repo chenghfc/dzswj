@@ -1,0 +1,276 @@
+@CHARSET "UTF-8";.table1 td {
+	text-align: center;
+}
+
+.datacontent .table1 td, .datacontent p {
+	font-size: 13px;
+}
+
+.tab_ul {
+	height: 40px;
+	border-bottom: 1px solid #888;
+	width: 98%;
+	margin: 10px auto;
+}
+
+.tab_panel.active {
+	color: #0994dc;
+	border-bottom: 1px solid #fff;
+}
+
+.tab_panel {
+	float: left;
+	color: #aaa;
+	padding: 10px 16px;
+	list-style: none;
+	margin: 0;
+	cursor: pointer;
+	position: relative;
+	bottom: -2px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border: 1px solid #888;
+	border-bottom: 1px solid #888;
+}
+
+html {
+	font-family: "Microsoft YaHei"
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+
+a {
+	text-decoration: none;
+}
+
+table, thead, tbody, th, table td {
+	border-collapse: collapse;
+	border-spacing: 0;
+	vertical-align: middle;
+	border: 1px solid #bbb;
+	line-height: 40px;
+}
+
+tr{
+	cursor: pointer;
+}
+
+tr:not(.nohover):hover{
+	background-color: #e5e5e5;
+} 
+
+th {
+	white-space: nowrap;
+	padding: 0 5px;
+	background-color: #f0f0f0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0994dc;
+}
+
+td div {
+	width: continer;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin: 0 10px;
+}
+
+td {
+	max-width: 220px;
+}
+
+table {
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+}
+
+table a:link {
+	color: #1225b1;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#alert_tt_zlllmc{
+	color: #999;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.bt {
+	color: #409eff;
+	cursor: pointer;
+}
+
+.bt:hover {
+	color: #4585eb;
+}
+
+.box2 {
+	padding-top: 20px;
+	position: fixed;
+	padding-bottom: 30px;
+	bottom: 0;
+	padding-left: 50px;
+	background-color: #fff;
+}
+
+.main {
+	margin-bottom: 80px;
+	padding: 30px 30px;
+	overflow: auto;
+	width: auto;
+}
+
+.datacontent {
+	position: relative;
+	width: auto;
+	padding: 0 10px;
+	margin-top: 30px;
+}
+
+
+.manage_table_title {
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+	font-weight: 600;
+	padding: 10px 0;
+	border-bottom: 1px solid #4585eb;
+}
+.nodata{
+	display: none;
+	width: 100%;
+	margin: 80px 0;
+	line-height: 80px;
+	font-size: 16px;
+	text-align: center;
+}
+/*分页样式*/
+._my-paging-box {
+	display: inline-block;
+}
+
+._my-paging-box .pg-item {
+	float: left;
+	line-height: 30px;
+}
+
+#infosearch .pg-item{
+	position: static;
+}
+
+._my-paging-box .pg-item+.pg-item {
+	margin-left: 15px;
+}
+/*总条数*/
+._my-paging-box .total span {
+	display: inline-block;
+	padding: 0 5px;
+}
+/*每页条数*/
+._my-paging-box .sizes {
+	cursor: pointer;
+	padding: 0 25px 0 8px;
+	min-width: 100px;
+	box-sizing: border-box;
+	border: 1px solid #dcdfe6;
+	border-radius: 3px;
+	height: 30px;
+}
+/*分页按钮*/
+._my-paging-box .link-list {
+	margin: 0;
+	padding: 0;
+}
+
+._my-paging-box .link-list li {
+	float: left;
+	list-style: none;
+}
+
+._my-paging-box .link-list li+li {
+	margin-left: 8px;
+}
+
+._my-paging-box .link-btn {
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	width: auto;
+	cursor: pointer;
+	text-align: center;
+	background: #f4f4f5;
+}
+
+._my-paging-box .link-btn:hover {
+	color: #409eff;
+}
+
+._my-paging-box .link-btn.active {
+	background: #409eff;
+	color: #fff;
+}
+
+._my-paging-box .link-btn.disabled {
+	background: #eee;
+	color: #ccc;
+	cursor: default;
+}
+/*跳*/
+.jumper span {
+	float: left;
+}
+
+.jumper input {
+	float: left;
+	margin: 0 5px;
+	padding: 0 5px;
+	width: 50px;
+	height: 30px;
+	border-radius: 2px;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.newsTex h1 {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.newsCon {
+    width: 100%;
+    line-height: 24px;
+    margin: 0;
+    padding: 10px 0 50px;
+    font-size: 14px;
+    text-indent: 2em;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.msgbar {
+    line-height: 30px;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+}

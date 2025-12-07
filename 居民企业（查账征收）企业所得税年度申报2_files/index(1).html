@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<!-- saved from url=(0194)https://etax.jiangsu.chinatax.gov.cn:8443/sbzx/view/sdsfsgjssb/static/sb/qysds_a_24nd/begin/index.html?ywlx=sb&ywbm=qysds_a_24nd&vueYwbm=qysds_a_24nd&ywlc=begin&SssqQ=2024-01-01&SssqZ=2024-12-31 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <title></title>
+    <link href="./common.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./table-b5d88b9a39-28964331.css">
+    <link rel="stylesheet" type="text/css" href="./iconfont-5de44933ef-28964331.css">
+    <link rel="stylesheet" type="text/css" href="./layui.css">
+    <link rel="stylesheet" href="./table-step-dba1d0d2c6-28964331.css">
+    <script type="text/javascript" src="./jquery-07070a4f96-28964331.min.js"></script>
+    <script type="text/javascript" src="./json3-3e5137f1f0-28964331.min.js"></script>
+    <script type="text/javascript" src="./mask-454634bf2c-28964331.js"></script>
+
+    <style>
+      select {
+        width: 70px;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: inherit;
+        border: none;
+        color: #148ac3;
+        margin-right: 5px;
+      }
+
+      span.disabled {
+        color: gray;
+      }
+
+      .tablelist-main {
+        overflow: auto;
+      }
+      .NewTableMain .title01 {
+        padding: 2px 16px;
+        line-height: 36px;
+      }
+      .w-147 {
+        width: 147px;
+      }
+      .w-160 {
+        width: 160px;
+      }
+    </style>
+
+    <script>
+      var jsonParams = '';
+      var pathRoot = '';
+      var pathRes = '';
+      var disSelectedTableFlag = 'ForeseePropertyUtil.getDbProperty("sbzs.disSelectedTable.qysds_a_17nd.all")';
+    </script>
+    <script>
+      var addTableNames = '';
+      var delTableNames = '';
+      var yzcbz = '';
+      var prepareFormFlag = true;
+      function prepareForms() {
+        //提交前申报表填报校验
+        var flag = beforeOnsubmit();
+        if (!flag) {
+          return;
+        }
+        if (prepareFormFlag) {
+            var startTime = arguments[0];
+            var endTime = arguments[1];
+            var nsqx = '';
+            var djxh = $('#djxh').val();
+            var gsdjxh = $('#gsdjxh').val();
+            var dsdjxh = $('#dsdjxh').val();
+            var nsrsbh = $('#nsrsbh').val();
+            var sbywbm = $('#sbywbm').val();
+            var zsxmDm = $('#zsxmDm').val();
+            var sssqQ = $('#sssqQ').val();
+            var sssqZ = $('#sssqZ').val();
+            var gdslxDm = location.search.indexOf('gdslxDm=1') > -1 ? 1 : 2;
+            var tbbd = $('#tbbd').val();
+            var jwsdssdmfs = $('#jwsdssdmfs').val();
+            var data = {
+              sssqQ: startTime,
+              sssqZ: endTime,
+              nsqxDm: nsqx,
+              djxh: djxh,
+              sbywbm: sbywbm,
+              zsxmDm: zsxmDm,
+              gdslxDm: gdslxDm
+            };
+            if (parent.isJmsb()) {
+              // 静默申报的情况下不弹出提示 直接进入申报表
+              jumpToForm(gsdjxh, tbbd, jwsdssdmfs);
+            } else {
+              addTablesShowTips(gsdjxh, tbbd, jwsdssdmfs);
+            }
+          }
+        $('body').unmask();
+      }
+
+      function addTablesShowTips(gsdjxh, tbbd, jwsdssdmfs) {
+        var start = '<div class="layer-content-overflow">';
+        var end = '</div>';
+        if (!isNull(addTableNames) && !isNull(delTableNames) && !isNull(disSelectedTableFlag)) {
+          var html = layer.alert(
+            start +
+              '您新增勾选【' +
+              addTableNames +
+              '】，减少勾选【' +
+              delTableNames +
+              '】填报，相关数据将被清除，进入报表后请重点关注存在表表关联的数据是否准确！点击“确定”，进入“下一步”；点击“取消”，则返回重新确认选择申报表单。' +
+              end,
+            {
+              title: '提示',
+              icon: 6,
+              closeBtn: 0,
+              btn: ['确定', '取消'],
+              yes: function (index) {
+                layer.close(index);
+                jumpToForm(gsdjxh, tbbd, jwsdssdmfs);
+              },
+              cancel: function (index) {
+                layer.close(index);
+              }
+            }
+          );
+        } else if (!isNull(addTableNames) && !isNull(disSelectedTableFlag)) {
+          layer.alert(
+            start +
+              '您新增勾选【' +
+              addTableNames +
+              '】填报，进入报表后请重点关注存在表表关联的数据是否准确！点击“确定”，进入“下一步”；点击“取消”，则返回重新确认选择申报表单。' +
+              end,
+            {
+              title: '提示',
+              type: 1,
+              area: ['448px'],
+              skin: 'iconStyle',
+              closeBtn: 0,
+              btn: ['确定', '取消'],
+              yes: function (index) {
+                layer.close(index);
+                jumpToForm(gsdjxh, tbbd, jwsdssdmfs);
+              },
+              cancel: function (index) {
+                layer.close(index);
+              }
+            }
+          );
+        } else if (!isNull(delTableNames) && !isNull(disSelectedTableFlag)) {
+          layer.alert(
+            start +
+              '您减少勾选【' +
+              delTableNames +
+              '】填报，相关数据将被清除，进入报表后请重点关注存在表表关联的数据是否准确！点击“确定”，进入“下一步”；点击“取消”，则返回重新确认选择申报表单。' +
+              end,
+            {
+              title: '提示',
+              icon: 6,
+              closeBtn: 0,
+              btn: ['确定', '取消'],
+              yes: function (index) {
+                layer.close(index);
+                jumpToForm(gsdjxh, tbbd, jwsdssdmfs);
+              },
+              cancel: function (index) {
+                layer.close(index);
+              }
+            }
+          );
+        } else {
+          jumpToForm(gsdjxh, tbbd, jwsdssdmfs);
+        }
+      }
+
+      function jumpToForm(gsdjxh, tbbd, jwsdssdmfs) {
+        var yqsbbz = $('#yqsbbz').val();
+        var message = {};
+        message.tbbd = tbbd;
+        message.nbyqsbbz = yqsbbz;
+        message.djxh = parent.token;
+        message.ywbm = parent.ywbm;
+        message.type = 'nextForm';
+        // 调用父页面的函数，清空按钮区域
+        parent.cleanMeunBtn();
+        parent.postMessage2Vue(message);
+      }
+
+      function getEndTime() {
+        var startTime = arguments[0];
+        var format = arguments[1];
+        var _start = new Date(startTime);
+        if (_start.getMonth() == 11) {
+          var _end = new Date(_start.getFullYear() + 1, 0, 0);
+          return _start.getFullYear() + '-12' + '-' + _end.getDate();
+        } else {
+          var _end = new Date(_start.getFullYear(), _start.getMonth() + 1, 0);
+          return (
+            _start.getFullYear() +
+            '-' +
+            (_start.getMonth() + 1 <= 9 ? '0' + (_start.getMonth() + 1) : _start.getMonth() + 1) +
+            '-' +
+            _end.getDate()
+          );
+        }
+      }
+      var startElemt = {
+        elem: '#sssqQ',
+        format: 'YYYY-MM-DD',
+        min: '2000-01-01', // 设定最小日期为当前日期
+        max: '2099-12-31', // 最大日期
+        istime: false,
+        istoday: false,
+        choose: function (datas) {
+          var startTime = getStartTime(datas, this.format);
+          $(this.elem).val(startTime);
+          /* var endTime = getEndTime(startTime,this.format,nsqx);
+							$(end.elem).val(endTime); */
+          //saveIntoSession(startTime,endTime,nsqx);
+          endElemt.min = startTime; // 开始日选好后，重置结束日的最小日期
+          endElemt.start = startTime; // 将结束日的初始值设定为开始日
+        }
+      };
+      var endElemt = {
+        elem: '#sssqZ',
+        format: 'YYYY-MM-DD',
+        min: '2000-01-01',
+        max: '2099-12-31',
+        istime: false,
+        istoday: false,
+        choose: function (datas) {
+          var endTime = getEndTime(datas, this.format);
+          $(this.elem).val(endTime);
+          //saveIntoSession(startTime,endTime,nsqx);
+          startElemt.max = endTime; // 结束日选好后，重置开始日的最大日期
+        }
+      };
+      //重写String函数
+      if (typeof String.prototype.startsWith != 'function') {
+        String.prototype.startsWith = function (prefix) {
+          return this.slice(0, prefix.length) === prefix;
+        };
+      }
+      //重写String函数
+      if (typeof String.prototype.endsWith != 'function') {
+        String.prototype.endsWith = function (suffix) {
+          return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+      }
+
+      function resizeFrame() {
+        var winH = window.innerHeight || Math.max(document.body.offsetHeight, document.documentElement.offsetHeight);
+        var stepHeight = $('.table-step-box').height() || 0;
+        var btnBoxHeight = $('.BtnBox').height() || 0;
+        var bodyHeight = winH - stepHeight - btnBoxHeight - 60;
+        $('.tablelist-main').height(bodyHeight);
+      }
+    </script>
+  <link id="layuicss-layer" rel="stylesheet" href="./layer.css" media="all"></head>
+
+  <body style="margin: 0 auto" onresize="resizeFrame()">
+    <div class="table-step-box" style="position: inherit" id="stepId"><div class="table-step-main"><div class="table-step-center" style="display: block;width: 100%;opacity: 1;"><div class="table-step-item"><div class="pro-step finish-step"><span><dd>1</dd></span><p>基本信息</p><i class="pro-line"></i></div><div class="pro-step cur-step"><span><dd>2</dd></span><p>表单选择</p><i class="pro-line"></i></div><div class="pro-step"><span><dd>3</dd></span><p>填报报表</p><i class="pro-line"></i></div><div class="pro-step"><span><dd>4</dd></span><p>提交报表</p></div></div></div></div></div>
+    <div class="boxmain tablelist-main" style="height: 401px;">
+      <!--    <div class="NewTableHead" >
+        <h1>企业所得税年度纳税申报表填报表单</h1>
+    </div>-->
+      <div class="NewTableMain table-row-hover">
+        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+          <tbody><tr>
+            <th class="title01 strong w-147">表单编号</th>
+            <th class="title01 strong">表单名称</th>
+            <th class="title01 strong w-160">是否填报</th>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01">A000000</td>
+            <td class="title01" onclick="expansionCheck(&#39;A000000&#39;);checkOne(this,&#39;A000000&#39;);">
+              企业所得税年度纳税申报基础信息表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A000000" value="" disabled="true" checked="checked" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-form-checked layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01">A100000</td>
+            <td class="title01" onclick="expansionCheck(&#39;A100000&#39;);checkOne(this,&#39;A100000&#39;);">
+              企业所得税年度纳税申报主表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A100000" value="" disabled="true" checked="checked" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-form-checked layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A101010&#39;);checkOne(this,&#39;A101010&#39;);">A101010</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A101010&#39;);checkOne(this,&#39;A101010&#39;);">
+              一般企业收入明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A101010" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A101020&#39;);checkOne(this,&#39;A101020&#39;)">A101020</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A101020&#39;);checkOne(this,&#39;A101020&#39;)">
+              金融企业收入明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A101020" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A102010&#39;);checkOne(this,&#39;A102010&#39;)">A102010</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A102010&#39;);checkOne(this,&#39;A102010&#39;)">
+              一般企业成本支出明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A102010" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A102020&#39;);checkOne(this,&#39;A102020&#39;);">A102020</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A102020&#39;);checkOne(this,&#39;A102020&#39;);">
+              金融企业支出明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A102020" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A103000&#39;);checkOne(this,&#39;A103000&#39;)">A103000</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A103000&#39;);checkOne(this,&#39;A103000&#39;)">
+              事业单位、民间非营利组织收入、支出明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A103000" value="yes" disabled="true" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A104000&#39;);checkOne(this,&#39;A104000&#39;);">A104000</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A104000&#39;);checkOne(this,&#39;A104000&#39;);">
+              期间费用明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A104000" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105000&#39;);checkOne(this,&#39;A105000&#39;);">A105000</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A105000&#39;);checkOne(this,&#39;A105000&#39;);">
+              纳税调整项目明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105000" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105010&#39;);checkOne(this,&#39;A105010&#39;);">A105010</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105010&#39;);checkOne(this,&#39;A105010&#39;);">
+              视同销售和房地产开发企业特定业务纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105010" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105020&#39;);checkOne(this,&#39;A105020&#39;)">A105020</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105020&#39;);checkOne(this,&#39;A105020&#39;)">
+              未按权责发生制确认收入纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105020" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105030&#39;);checkOne(this,&#39;A105030&#39;)">A105030</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105030&#39;);checkOne(this,&#39;A105030&#39;)">
+              投资收益纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105030" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105040&#39;);checkOne(this,&#39;A105040&#39;)">A105040</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105040&#39;);checkOne(this,&#39;A105040&#39;)">
+              专项用途财政性资金纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105040" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105050&#39;);checkOne(this,&#39;A105050&#39;)">A105050</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105050&#39;);checkOne(this,&#39;A105050&#39;)">
+              职工薪酬支出及纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105050" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105060&#39;);checkOne(this,&#39;A105060&#39;)">A105060</td>
+            <td class="title01 indent3" id="text5060" onclick="expansionCheck(&#39;A105060&#39;);checkOne(this,&#39;A105060&#39;)">广告费和业务宣传费等跨年度纳税调整明细表</td>
+            <td align="center">
+              <input type="checkbox" name="A105060" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105070&#39;);checkOne(this,&#39;A105070&#39;)">A105070</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105070&#39;);checkOne(this,&#39;A105070&#39;)">
+              捐赠支出及纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105070" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105080&#39;);checkOne(this,&#39;A105080&#39;);">A105080</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105080&#39;);checkOne(this,&#39;A105080&#39;);">
+              资产折旧、摊销及纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105080" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-form-checked layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105090&#39;);checkOne(this,&#39;A105090&#39;)">A105090</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105090&#39;);checkOne(this,&#39;A105090&#39;)">
+              资产损失税前扣除及纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105090" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105100&#39;);checkOne(this,&#39;A105100&#39;)">A105100</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105100&#39;);checkOne(this,&#39;A105100&#39;)">
+              企业重组及递延纳税事项纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105100" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105110&#39;);checkOne(this,&#39;A105110&#39;)">A105110</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A105110&#39;);checkOne(this,&#39;A105110&#39;)">
+              政策性搬迁纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A105110" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A105120&#39;);checkOne(this,&#39;A105120&#39;)">A105120</td>
+            <td class="title01" onclick="expansionCheck(&#39;A105120&#39;);checkOne(this,&#39;A105120&#39;)" id="text5120">贷款损失准备金及纳税调整明细表</td>
+            <td align="center">
+              <input type="checkbox" name="A105120" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A106000&#39;);checkOne(this,&#39;A106000&#39;)">A106000</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A106000&#39;);checkOne(this,&#39;A106000&#39;)">
+              企业所得税弥补亏损明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A106000" value="yes" disabled="true" checked="checked" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-form-checked layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107011&#39;);checkOne(this,&#39;A107011&#39;)">A107011</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A107011&#39;);checkOne(this,&#39;A107011&#39;)">
+              符合条件的居民企业之间的股息、红利等权益性投资收益优惠明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107011" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107012&#39;);checkOne(this,&#39;A107012&#39;)">A107012</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A107012&#39;);checkOne(this,&#39;A107012&#39;)">
+              研发费用加计扣除优惠明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107012" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107020&#39;);checkOne(this,&#39;A107020&#39;)">A107020</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A107020&#39;);checkOne(this,&#39;A107020&#39;)">
+              所得减免优惠明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107020" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107030&#39;);checkOne(this,&#39;A107030&#39;)">A107030</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A107030&#39;);checkOne(this,&#39;A107030&#39;)">
+              抵扣应纳税所得额明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107030" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107041&#39;);checkOne(this,&#39;A107041&#39;)">A107041</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A107041&#39;);checkOne(this,&#39;A107041&#39;)">
+              高新技术企业优惠情况及明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107041" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107042&#39;);checkOne(this,&#39;A107042&#39;)">A107042</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A107042&#39;);checkOne(this,&#39;A107042&#39;)">
+              软件、集成电路企业优惠情况及明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107042" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A107050&#39;);checkOne(this,&#39;A107050&#39;)">A107050</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A107050&#39;);checkOne(this,&#39;A107050&#39;)">
+              税额抵免优惠明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A107050" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A108000&#39;);checkOne(this,&#39;A108000&#39;)">A108000</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A108000&#39;);checkOne(this,&#39;A108000&#39;)">
+              境外所得税收抵免明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A108000" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A108010&#39;);checkOne(this,&#39;A108010&#39;)">A108010</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A108010&#39;);checkOne(this,&#39;A108010&#39;)">
+              境外所得纳税调整后所得明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A108010" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A108020&#39;);checkOne(this,&#39;A108020&#39;)">A108020</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A108020&#39;);checkOne(this,&#39;A108020&#39;)">
+              境外分支机构弥补亏损明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A108020" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A108030&#39;);checkOne(this,&#39;A108030&#39;)">A108030</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A108030&#39;);checkOne(this,&#39;A108030&#39;)">
+              跨年度结转抵免境外所得税明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A108030" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A109000&#39;);checkOne(this,&#39;A109000&#39;)">A109000</td>
+            <td class="title01 indent2" onclick="expansionCheck(&#39;A109000&#39;);checkOne(this,&#39;A109000&#39;)">
+              跨地区经营汇总纳税企业年度分摊企业所得税明细表
+            </td>
+            <td align="center" id="A109000_td">
+              <input type="checkbox" name="A109000" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr class="layui-form layui-form-item layui-input-block">
+            <td class="title01" onclick="expansionCheck(&#39;A109010&#39;);checkOne(this,&#39;A109010&#39;)">A109010</td>
+            <td class="title01 indent3" onclick="expansionCheck(&#39;A109010&#39;);checkOne(this,&#39;A109010&#39;)">
+              企业所得税汇总纳税分支机构所得税分配表
+            </td>
+            <td align="center" id="A109010_td">
+              <input type="checkbox" name="A109010" value="yes" lay-skin="primary" lay-filter="checkOne" disabled=""><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          
+          <tr id="A109106_tr" class="layui-form layui-form-item layui-input-block">
+            <td class="title01">&nbsp;</td>
+            <td class="title01" onclick="expansionCheck(&#39;A109106&#39;);checkOne(this,&#39;A109106&#39;)">
+              非货币性资产投资递延纳税调整明细表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A109106" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr id="A109107_tr" class="layui-form layui-form-item layui-input-block">
+            <td class="title01">&nbsp;</td>
+            <td class="title01" onclick="expansionCheck(&#39;A109107&#39;);checkOne(this,&#39;A109107&#39;)">
+              居民企业资产（股权）划转特殊性税务处理申报表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A109107" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr id="A109100_tr" class="layui-form layui-form-item layui-input-block">
+            <td class="title01">&nbsp;</td>
+            <td class="title01" onclick="expansionCheck(&#39;A109100&#39;);checkOne(this,&#39;A109100&#39;)">
+              企业重组所得税特殊性税务处理报告表（总信息表）
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A109100" value="yes" disabled="true" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox layui-disabled" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+          <tr id="A109109_tr" class="layui-form layui-form-item layui-input-block">
+            <td class="title01">&nbsp;</td>
+            <td class="title01" onclick="expansionCheck(&#39;A109109&#39;);checkOne(this,&#39;A109109&#39;)">
+              海上油气生产设施弃置费情况表
+            </td>
+            <td align="center">
+              <input type="checkbox" name="A109109" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+
+          
+          <tr id="A109111_tr" class="layui-form layui-form-item layui-input-block">
+            <td class="title01">&nbsp;</td>
+            <td class="title01">居民企业境外投资信息报告表</td>
+            <td align="center">
+              <input type="checkbox" name="A109111" value="yes" lay-skin="primary" lay-filter="checkOne"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+      <div class="tax-text-primary">
+        <h5>温馨提示</h5>
+        <ul class="text-center">
+          <li>企业应当根据实际情况选择需要填表的表单</li>
+        </ul>
+      </div>
+
+      <input type="hidden" id="djxh" value="">
+      <input type="hidden" id="nsrsbh" value="">
+      <input type="hidden" id="sssqQ" value="">
+      <input type="hidden" id="sssqZ" value="">
+      <input type="hidden" id="tbbd" name="tbbd" value="">
+      <input type="hidden" id="jwsdssdmfs" name="jwsdssdmfs" value="">
+      <input type="hidden" id="yqsbbz" name="yqsbbz" value="">
+    </div>
+
+    <script type="text/javascript">
+      var cp = '<%=cp%>';
+      var formInitArray = ['A100000', 'A106000']; //选填表单数组
+      var formInitStr = ''; //选填表单组合字符串
+      var hznsqy = 0; //汇总纳税企业
+      var hyDmInt = null;
+      var cyrs4xw = null;
+      var zcze4xw = null;
+      var csfjzhy = null;
+      var sshyMxDm = '';
+      var flxsgb = null;
+      var zwcz = null;
+      var gqsg = null;
+      var zcsg = null;
+      var hb = null;
+      var fenl = null;
+      var zgswjgDm = '';
+    </script>
+    <script src="./layui.js"></script>
+    <script type="text/javascript" src="./tbsbb-7c20544415-28964331.js"></script>
+  
+  <script>
+    // 生成顶部步骤条
+    (function initFrame() {
+      var stepData = ['基本信息', '表单选择', '填报报表', '提交报表'];
+      function Step(data, id) {
+        this.id = eval('$("#' + id + '")');
+        var items = '';
+        var item = function () {
+          var line = '<i class="pro-line"></i>';
+          $.each(data, function (index, value) {
+            if (index + 1 === data.length) {
+              line = '';
+            }
+            items =
+              items +
+              '<div class="pro-step"><span><dd>' +
+              (index + 1) +
+              '</dd></span><p>' +
+              value +
+              '</p>' +
+              line +
+              '</div>';
+          });
+          return items;
+        };
+        var html =
+          '<div class="table-step-main"><div class="table-step-center" style="display: block;width: 100%;opacity: 1;"><div class="table-step-item" >' +
+          item() +
+          '</div></div></div>';
+        this.id.append(html);
+        this.active = function (n) {
+          var that = this;
+          $.each(data, function (index, value) {
+            if (index < n) {
+              that.id.find('.pro-step').eq(index).addClass('finish-step');
+            } else if (index === n) {
+              that.id.find('.pro-step').eq(index).addClass('cur-step');
+            }
+          });
+        };
+      }
+
+      var sbStep = new Step(stepData, 'stepId');
+      sbStep.active(1);
+    })();
+  </script>
+
+</body></html>
